@@ -1,9 +1,21 @@
 :root {
+  --gos-blue: #0d4cd3;
+  --gos-blue-dark: #063a9c;
+  --gos-blue-soft: #e8f1ff;
+  --gos-cyan: #16a3d8;
+  --gos-mint: #24b47e;
+  --gos-red: #e94252;
+  --gos-ink: #172033;
+  --gos-muted: #667085;
+  --gos-line: #d8e3f3;
+  --gos-surface: #ffffff;
+  --gos-page: #f3f7fc;
   font-family: "Segoe UI", sans-serif;
-  color: #1d232f;
+  color: var(--gos-ink);
   background:
-    radial-gradient(circle at top left, rgba(198, 219, 255, 0.9), transparent 36%),
-    linear-gradient(135deg, #f4efe4 0%, #f7f9fd 45%, #edf2fb 100%);
+    radial-gradient(circle at top left, rgba(13, 76, 211, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 10%, rgba(22, 163, 216, 0.16), transparent 28%),
+    linear-gradient(135deg, #f7fbff 0%, var(--gos-page) 52%, #edf5ff 100%);
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light;
@@ -26,7 +38,7 @@ textarea {
 
 @media print {
   @page {
-    margin: 10mm 10mm 18mm;
+    margin: 6mm 6mm 20mm;
   }
 
   body {

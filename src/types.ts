@@ -1,6 +1,7 @@
 export interface BulletinForm {
   houseAddress: string
   managementCompany: string
+  previousManagementCompany: string
   meetingType: string
   noticeDate: string
   votingStartDate: string
@@ -15,35 +16,16 @@ export interface BulletinForm {
 }
 
 export interface BulletinQuestion {
-  id: number
   title: string
   description: string
+  explanation?: string
+  section: string
 }
 
 export type VoteChoice = 'for' | 'against' | 'abstain'
 
 export interface BulletinQuestionSection {
   title: string
+  startNumber: number
   questions: BulletinQuestion[]
-}
-
-export interface NumberedBulletinQuestion extends BulletinQuestion {
-  displayNumber: number
-}
-
-export interface NumberedBulletinQuestionSection {
-  title: string
-  questions: NumberedBulletinQuestion[]
-}
-
-export interface BulletinQuestionVoteNote {
-  id: number
-  displayNumber: number
-  title: string
-  note: string
-}
-
-export interface BulletinQuestionVoteNoteSection {
-  title: string
-  items: BulletinQuestionVoteNote[]
 }

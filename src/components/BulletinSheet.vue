@@ -2,7 +2,7 @@
 import BulletinQuestion from './BulletinQuestion.vue'
 import type {
   BulletinForm,
-  NumberedBulletinQuestionSection,
+  BulletinQuestionSection,
   VoteChoice,
 } from '../types'
 
@@ -13,30 +13,29 @@ defineProps<{
     votingStartDate: string
     votingEndDate: string
   }
-  questionSections: NumberedBulletinQuestionSection[]
+  questionSections: BulletinQuestionSection[]
   questionVotes: Record<number, VoteChoice | undefined>
 }>()
 
 defineEmits<{
-  'select-vote': [questionId: number, vote: VoteChoice]
+  'select-vote': [questionIndex: number, vote: VoteChoice]
 }>()
 </script>
 
 <template>
   <main class="bulletin-sheet">
     <section class="bulletin-card">
-      <p class="document-mark">БЮЛЛЕТЕНЬ ДЛЯ ГОЛОСОВАНИЯ</p>
-      <h2>Общее собрание собственников помещений</h2>
-      <div class="address-box">
-        <span>Многоквартирный дом</span>
-        <strong>{{ form.houseAddress }}</strong>
-      </div>
+      <p class="document-mark">РЕШЕНИЕ СОБСТВЕННИКА</p>
+      <p class="document-subtitle">помещения в многоквартирном доме, расположенном по адресу:</p>
+      <p class="document-address">{{ form.houseAddress }}</p>
+      <p class="document-subtitle">по вопросам внеочередного общего собрания собственников</p>
+      <p class="document-subtitle">с {{ formattedDates.votingStartDate }} по {{ formattedDates.votingEndDate }}</p>
 
       <div class="meta-list">
         <p><strong>Форма проведения:</strong> {{ form.meetingType }}</p>
         <p><strong>Дата уведомления:</strong> {{ formattedDates.noticeDate }}</p>
-        <p><strong>Дата начала голосования:</strong> {{ formattedDates.votingStartDate }}</p>
-        <p><strong>Дата окончания голосования:</strong> {{ formattedDates.votingEndDate }}</p>
+        <p><strong>Действующая управляющая компания:</strong> {{ form.previousManagementCompany }}</p>
+        <p><strong>Новая управляющая компания:</strong> {{ form.managementCompany }}</p>
       </div>
 
       <div class="owner-block">
@@ -95,14 +94,15 @@ defineEmits<{
           <h3 class="section-title">{{ section.title }}</h3>
           <ol
             class="question-list"
-            :start="section.questions[0]?.displayNumber"
+            :start="section.startNumber"
           >
             <BulletinQuestion
-              v-for="question in section.questions"
-              :key="question.id"
+              v-for="(question, idx) in section.questions"
+              :key="section.startNumber + idx"
               :question="question"
-              :selected-vote="questionVotes[question.id]"
-              @select="$emit('select-vote', $event.questionId, $event.vote)"
+              :question-index="section.startNumber + idx"
+              :selected-vote="questionVotes[section.startNumber + idx]"
+              @select="$emit('select-vote', $event.questionIndex, $event.vote)"
             />
           </ol>
         </section>
@@ -115,7 +115,7 @@ defineEmits<{
         </div>
         <div>
           <span>Расшифровка подписи</span>
-          <b></b>
+          <p class="signature-name">{{ form.ownerName || '______________________________' }}</p>
         </div>
       </div>
 
@@ -142,52 +142,45 @@ defineEmits<{
   max-width: 960px;
   margin: 0 auto;
   padding: 42px;
-  border: 1px solid #232323;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
   background: #fff;
-  box-shadow: none;
+  box-shadow: 0 20px 48px rgba(6, 58, 156, 0.12);
 }
 
 .document-mark {
   margin: 0;
   text-align: center;
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.bulletin-card h2 {
-  margin: 16px 0 18px;
-  text-align: center;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.address-box {
-  display: grid;
-  gap: 6px;
-  padding: 16px 18px;
-  border: 2px solid #232323;
-  background: #f6f6f6;
-}
-
-.address-box span {
-  font-size: 0.84rem;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: var(--gos-blue);
 }
 
-.address-box strong {
-  font-size: 1.18rem;
-  line-height: 1.3;
+.document-subtitle,
+.document-address {
+  margin: 4px 0 0;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.document-subtitle {
+  color: #344054;
+}
+
+.document-address {
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 700;
+  color: var(--gos-ink);
 }
 
 .meta-list,
 .owner-block,
 .notes {
   padding: 18px 20px;
-  border: 1px solid #232323;
-  background: #fff;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
+  background: #fbfdff;
 }
 
 .meta-list p,
@@ -232,13 +225,14 @@ defineEmits<{
   font-size: 0.92rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: var(--gos-blue);
 }
 
 .owner-block-head span {
   max-width: 32ch;
   text-align: right;
   font-size: 0.83rem;
-  color: #516071;
+  color: var(--gos-muted);
 }
 
 .owner-grid {
@@ -260,7 +254,7 @@ defineEmits<{
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #516071;
+  color: var(--gos-muted);
 }
 
 .owner-field input,
@@ -269,26 +263,27 @@ defineEmits<{
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #1d232f;
+  color: var(--gos-ink);
   font: inherit;
 }
 
 .owner-field input {
   padding: 6px 0 7px;
-  border-bottom: 1px solid #29364b;
+  border-bottom: 1px solid #b7c8e8;
 }
 
 .owner-field textarea {
   min-height: 88px;
   padding: 10px 12px;
-  border: 1px solid #29364b;
+  border: 1px solid #b7c8e8;
+  border-radius: 8px;
   resize: vertical;
 }
 
 .owner-field input:focus,
 .owner-field textarea:focus {
   outline: none;
-  background: #fbfcff;
+  background: #f4f9ff;
 }
 
 .owner-field input:focus {
@@ -302,8 +297,11 @@ defineEmits<{
 
 .section-title {
   margin: 0;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #232323;
+  padding: 10px 12px;
+  border-left: 4px solid var(--gos-blue);
+  border-radius: 8px;
+  background: #edf5ff;
+  color: var(--gos-blue-dark);
   font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -313,7 +311,8 @@ defineEmits<{
 
 .question-list {
   margin: 0;
-  padding-left: 22px;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 .sign-row {
@@ -328,13 +327,22 @@ defineEmits<{
 }
 
 .sign-row span {
-  color: #232323;
+  color: var(--gos-muted);
 }
 
 .sign-row b {
   display: block;
   min-height: 34px;
-  border-bottom: 1px solid #29364b;
+  border-bottom: 1px solid #b7c8e8;
+}
+
+.signature-name {
+  min-height: 34px;
+  margin: 0;
+  padding-top: 8px;
+  border-bottom: 1px solid #b7c8e8;
+  color: var(--gos-ink);
+  font-weight: 600;
 }
 
 .print-signature {
@@ -343,15 +351,31 @@ defineEmits<{
 
 @media (max-width: 980px) {
   .bulletin-sheet {
-    padding: 20px;
+    padding: 12px;
   }
 
   .bulletin-card {
-    padding: 24px;
+    padding: 18px 14px;
   }
-}
 
-@media (max-width: 720px) {
+  .document-mark {
+    font-size: 0.95rem;
+  }
+
+  .document-address {
+    font-size: 1.05rem;
+  }
+
+  .document-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .meta-list,
+  .owner-block,
+  .notes {
+    padding: 12px 14px;
+  }
+
   .owner-block-head,
   .sign-row {
     grid-template-columns: 1fr;
@@ -360,6 +384,7 @@ defineEmits<{
   .owner-block-head {
     display: grid;
     align-items: start;
+    gap: 6px;
   }
 
   .owner-block-head span {
@@ -370,6 +395,15 @@ defineEmits<{
   .sign-row {
     grid-template-columns: 1fr;
   }
+
+  .owner-field span {
+    font-size: 0.72rem;
+  }
+
+  .section-title {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
 }
 
 @media print {
@@ -379,24 +413,38 @@ defineEmits<{
 
   .bulletin-card {
     max-width: none;
-    padding: 0 0 18mm;
+    padding: 0;
     border: 0;
+    border-radius: 0;
     background: #fff;
-    font-size: 10.5pt;
-    line-height: 1.3;
+    box-shadow: none;
+    font-size: 7.6pt;
+    line-height: 1.02;
   }
 
   .document-mark {
-    margin-bottom: 8px;
-    font-size: 8pt;
+    margin-bottom: 0;
+    color: #000;
+    font-family: "Times New Roman", serif;
+    font-size: 8.8pt;
+    letter-spacing: 0;
   }
 
-  .bulletin-card h2 {
-    margin: 0 0 10px;
-    font-size: 15pt;
+  .document-subtitle,
+  .document-address {
+    margin: 0;
+    color: #000;
+    font-family: "Times New Roman", serif;
+    display: inline;
+    font-size: 7.4pt;
+    line-height: 1;
   }
 
-  .address-box,
+  .document-subtitle::after,
+  .document-address::after {
+    content: " ";
+  }
+
   .meta-list,
   .owner-block {
     padding: 0;
@@ -404,23 +452,36 @@ defineEmits<{
     background: transparent;
   }
 
-  .address-box {
-    margin-bottom: 14px;
-  }
-
-  .address-box strong {
-    font-size: 11pt;
-  }
-
   .meta-list,
   .owner-block,
   .question-sections,
   .sign-row {
-    margin-top: 12px;
+    margin-top: 2px;
+  }
+
+  .meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 4mm;
+    padding: 0;
+    border: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 6.8pt;
+    line-height: 1;
+  }
+
+  .meta-list p {
+    margin: 0;
   }
 
   .owner-block {
-    gap: 10px;
+    padding: 0.6mm 1mm;
+    border: 1px solid #bfbfbf;
+    font-family: "Times New Roman", serif;
+  }
+
+  .owner-block {
+    gap: 2px;
   }
 
   .owner-block-head {
@@ -432,15 +493,15 @@ defineEmits<{
   }
 
   .owner-block-head strong {
-    font-size: 9.4pt;
+    font-size: 8pt;
   }
 
   .owner-grid {
-    gap: 10px 14px;
+    gap: 1px 6px;
   }
 
   .owner-field span {
-    font-size: 8pt;
+    font-size: 6.8pt;
     color: #000;
   }
 
@@ -453,35 +514,41 @@ defineEmits<{
   }
 
   .owner-field input {
-    padding: 4px 0 5px;
+    padding: 0 0 1px;
     border-bottom: 1px solid #000;
   }
 
   .owner-field textarea {
-    min-height: 18mm;
-    padding: 6px 8px;
+    min-height: 8mm;
+    padding: 2px 4px;
     border: 1px solid #000;
   }
 
   .question-section + .question-section {
-    margin-top: 14px;
+    margin-top: 2px;
   }
 
   .section-title {
-    padding-bottom: 4px;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    background: transparent;
+    color: #000;
+    text-align: center;
   }
 
   .question-list {
-    padding-left: 18px;
-    font-size: 9.6pt;
+    padding-left: 0;
+    font-size: 7.8pt;
   }
 
   .section-title {
-    font-size: 9.4pt;
+    font-size: 7.3pt;
   }
 
   .question-section {
-    gap: 8px;
+    gap: 1px;
   }
 
   .question-list :deep(.question-item:first-child) {
@@ -500,16 +567,16 @@ defineEmits<{
     bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    padding-top: 4mm;
+    gap: 8mm;
+    padding: 2mm 0 4mm;
     border-top: 1px solid #000;
     background: #fff;
-    font-size: 9pt;
+    font-size: 7pt;
   }
 
   .print-signature div {
     display: grid;
-    gap: 4px;
+    gap: 1mm;
   }
 
   .print-signature span,
