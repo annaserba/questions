@@ -13,6 +13,7 @@ const props = defineProps<{
   houseAddress: string
   questionSections: BulletinQuestionSection[]
   approvedQuestions: Record<number, boolean>
+  saveStatus: string
 }>()
 
 const emit = defineEmits<{
@@ -188,6 +189,7 @@ async function copyApprovedList() {
             </button>
           </div>
         </div>
+        <p v-if="saveStatus" class="save-status">{{ saveStatus }}</p>
 
         <p v-if="approvedList.length === 0" class="empty-state">
           Отметьте вопросы чекбоксами, чтобы собрать список согласованных.
@@ -368,6 +370,13 @@ async function copyApprovedList() {
 .empty-state {
   margin: 12px 0 0;
   color: var(--gos-muted);
+}
+
+.save-status {
+  margin: 10px 0 0;
+  color: var(--gos-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .approved-list {

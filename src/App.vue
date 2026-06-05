@@ -20,6 +20,7 @@ import {
   saveOwnerFormToCookie,
 } from './data/bulletin'
 import type {
+  ApprovedQuestionRecord,
   DocumentView,
   VoterProfile,
   VoteChoice,
@@ -88,8 +89,9 @@ function getDocumentFromPath(): DocumentView {
 
 const currentDocument = ref<DocumentView>(getDocumentFromPath())
 const questionVotes = reactive<Record<number, VoteChoice | undefined>>({})
-const approvedQuestionKeyPrefix = 'voting_approved_questions'
+const approvedQuestionKey = 'voting_approved_questions'
 const approvedQuestions = reactive<Record<number, boolean>>(getApprovedQuestions())
+const approvedSaveStatus = ref('')
 const canManageMeeting = computed(() => managerUnlocked.value && isManagerIdentity())
 const startProfile = computed<VoterProfile>(() => ({
   houseAddress: form.houseAddress,
@@ -276,6 +278,79 @@ function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
   questionVotes[questionIndex] = questionVotes[questionIndex] === vote ? undefined : vote
 }
 
+function buildApprovedQuestionRecords(): ApprovedQuestionRecord[] {
+  return questionSections.value.flatMap((section) =>
+    section.questions
+      .map((question, idx) => ({
+        index: section.startNumber + idx,
+        section: section.title,
+        title: question.title,
+        description: question.description,
+      }))
+      .filter((question) => approvedQuestions[question.index] === true),
+  )
+}
+
+function applyApprovedQuestionRecords(records: ApprovedQuestionRecord[]): void {
+  Object.keys(approvedQuestions).forEach((key) => {
+    delete approvedQuestions[Number(key)]
+  })
+
+  records.forEach((question) => {
+    approvedQuestions[question.index] = true
+  })
+}
+
+async function loadApprovedQuestionsFromProject(): Promise<void> {
+  try {
+    const response = await fetch('/api/approved-questions')
+
+    if (!response.ok) {
+      return
+    }
+
+    const payload = await response.json() as { questions?: ApprovedQuestionRecord[] }
+    if (Array.isArray(payload.questions)) {
+      applyApprovedQuestionRecords(payload.questions)
+      saveApprovedQuestions()
+    }
+  } catch {
+    // Local storage remains the fallback when the dev API is unavailable.
+  }
+}
+
+async function saveApprovedQuestionsToProject(): Promise<void> {
+  approvedSaveStatus.value = 'Сохраняю в проект...'
+
+  try {
+    const response = await fetch('/api/approved-questions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        questions: buildApprovedQuestionRecords(),
+      }),
+    })
+
+    if (!response.ok) {
+      const payload = await response.json() as { error?: string }
+      throw new Error(payload.error || 'Не удалось сохранить согласованные вопросы.')
+    }
+
+    approvedSaveStatus.value = 'Сохранено в проект'
+    window.setTimeout(() => {
+      if (approvedSaveStatus.value === 'Сохранено в проект') {
+        approvedSaveStatus.value = ''
+      }
+    }, 1800)
+  } catch (error) {
+    approvedSaveStatus.value = error instanceof Error
+      ? error.message
+      : 'Не удалось сохранить согласованные вопросы.'
+  }
+}
+
 function getApprovedQuestions(): Record<number, boolean> {
   const savedValue = window.localStorage.getItem(getApprovedQuestionKey())
 
@@ -303,7 +378,7 @@ function saveApprovedQuestions(): void {
 }
 
 function getApprovedQuestionKey(): string {
-  return `${approvedQuestionKeyPrefix}:${form.houseAddress}`
+  return approvedQuestionKey
 }
 
 function toggleApprovedQuestion(questionIndex: number): void {
@@ -314,6 +389,7 @@ function toggleApprovedQuestion(questionIndex: number): void {
   }
 
   saveApprovedQuestions()
+  void saveApprovedQuestionsToProject()
 }
 
 window.addEventListener('popstate', () => {
@@ -326,12 +402,15 @@ window.addEventListener('popstate', () => {
 watch(
   () => form.houseAddress,
   () => {
-    Object.keys(approvedQuestions).forEach((key) => {
-      delete approvedQuestions[Number(key)]
-    })
-    Object.assign(approvedQuestions, getApprovedQuestions())
+    void loadApprovedQuestionsFromProject()
   },
 )
+
+watch(profileCompleted, (completed) => {
+  if (completed) {
+    void loadApprovedQuestionsFromProject()
+  }
+}, { immediate: true })
 
 watch(
   canManageMeeting,
@@ -399,6 +478,7 @@ watch(
         :house-address="form.houseAddress"
         :question-sections="questionSections"
         :approved-questions="approvedQuestions"
+        :save-status="approvedSaveStatus"
         @toggle-approved="toggleApprovedQuestion"
       />
       <BulletinSheet

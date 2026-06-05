@@ -41,3 +41,10 @@ export interface VoterProfile {
   wantsOnlineVote: OnlineVotePreference
   managerUnlocked: boolean
 }
+
+export interface ApprovedQuestionRecord {
+  index: number
+  section: string
+  title: string
+  description: string
+}

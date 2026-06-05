@@ -1,6 +1,8 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import type { Plugin } from 'vite'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { dirname, resolve } from 'node:path'
 
 interface AnalyzeQuestionPayload {
   houseAddress?: string
@@ -10,7 +12,20 @@ interface AnalyzeQuestionPayload {
   explanation?: string
 }
 
-function readJsonBody(req: import('node:http').IncomingMessage): Promise<AnalyzeQuestionPayload> {
+interface ApprovedQuestionRecord {
+  index: number
+  section: string
+  title: string
+  description: string
+}
+
+interface ApprovedQuestionsPayload {
+  questions?: ApprovedQuestionRecord[]
+}
+
+const approvedQuestionsFile = resolve(process.cwd(), 'src/data/approved-questions.json')
+
+function readJsonBody<T>(req: import('node:http').IncomingMessage): Promise<T> {
   return new Promise((resolve, reject) => {
     let body = ''
 
@@ -20,7 +35,7 @@ function readJsonBody(req: import('node:http').IncomingMessage): Promise<Analyze
 
     req.on('end', () => {
       try {
-        resolve(JSON.parse(body || '{}') as AnalyzeQuestionPayload)
+        resolve(JSON.parse(body || '{}') as T)
       } catch {
         reject(new Error('Некорректный JSON в запросе.'))
       }
@@ -38,6 +53,48 @@ function sendJson(
   res.statusCode = statusCode
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
   res.end(JSON.stringify(payload))
+}
+
+function isApprovedQuestionRecord(value: unknown): value is ApprovedQuestionRecord {
+  if (!value || typeof value !== 'object') {
+    return false
+  }
+
+  const question = value as Partial<ApprovedQuestionRecord>
+  return Number.isInteger(question.index) &&
+    typeof question.section === 'string' &&
+    typeof question.title === 'string' &&
+    typeof question.description === 'string'
+}
+
+async function readApprovedQuestionsStore(): Promise<ApprovedQuestionRecord[]> {
+  try {
+    const rawValue = await readFile(approvedQuestionsFile, 'utf-8')
+    const parsedValue = JSON.parse(rawValue) as unknown
+
+    if (Array.isArray(parsedValue)) {
+      return parsedValue.filter(isApprovedQuestionRecord)
+    }
+
+    if (parsedValue && typeof parsedValue === 'object') {
+      return Object.values(parsedValue)
+        .flatMap((questions) => Array.isArray(questions) ? questions : [])
+        .filter(isApprovedQuestionRecord)
+    }
+
+    return []
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+      return []
+    }
+
+    throw error
+  }
+}
+
+async function writeApprovedQuestionsStore(store: ApprovedQuestionRecord[]): Promise<void> {
+  await mkdir(dirname(approvedQuestionsFile), { recursive: true })
+  await writeFile(approvedQuestionsFile, `${JSON.stringify(store, null, 2)}\n`, 'utf-8')
 }
 
 function deepSeekAnalyzerPlugin(env: Record<string, string>): Plugin {
@@ -60,7 +117,7 @@ function deepSeekAnalyzerPlugin(env: Record<string, string>): Plugin {
         }
 
         try {
-          const payload = await readJsonBody(req)
+          const payload = await readJsonBody<AnalyzeQuestionPayload>(req)
           const title = payload.title?.trim()
           const description = payload.description?.trim()
 
@@ -124,10 +181,48 @@ function deepSeekAnalyzerPlugin(env: Record<string, string>): Plugin {
   }
 }
 
+function approvedQuestionsPlugin(): Plugin {
+  return {
+    name: 'approved-questions-store',
+    configureServer(server) {
+      server.middlewares.use('/api/approved-questions', async (req, res) => {
+        try {
+          if (req.method === 'GET') {
+            const store = await readApprovedQuestionsStore()
+
+            sendJson(res, 200, { questions: store })
+            return
+          }
+
+          if (req.method === 'POST') {
+            const payload = await readJsonBody<ApprovedQuestionsPayload>(req)
+
+            if (!Array.isArray(payload.questions) || !payload.questions.every(isApprovedQuestionRecord)) {
+              sendJson(res, 400, { error: 'Передайте список согласованных вопросов.' })
+              return
+            }
+
+            const store = [...payload.questions].sort((a, b) => a.index - b.index)
+            await writeApprovedQuestionsStore(store)
+            sendJson(res, 200, { ok: true, questions: store })
+            return
+          }
+
+          sendJson(res, 405, { error: 'Метод не поддерживается.' })
+        } catch (error) {
+          sendJson(res, 500, {
+            error: error instanceof Error ? error.message : 'Ошибка сохранения согласованных вопросов.',
+          })
+        }
+      })
+    },
+  }
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    plugins: [vue(), deepSeekAnalyzerPlugin(env)],
+    plugins: [vue(), deepSeekAnalyzerPlugin(env), approvedQuestionsPlugin()],
   }
 })
