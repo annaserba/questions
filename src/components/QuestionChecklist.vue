@@ -12,12 +12,12 @@ interface QuestionAnalysis {
 const props = defineProps<{
   houseAddress: string
   questionSections: BulletinQuestionSection[]
-  approvedQuestions: Record<number, boolean>
+  approvedQuestions: Record<string, boolean>
   saveStatus: string
 }>()
 
 const emit = defineEmits<{
-  'toggle-approved': [questionIndex: number]
+  'toggle-approved': [questionTitle: string]
 }>()
 
 const analyses = reactive<Record<number, QuestionAnalysis>>({})
@@ -35,7 +35,7 @@ const approvedList = computed(() =>
         section: section.title,
         title: question.title,
         description: question.description,
-        approved: props.approvedQuestions[section.startNumber + idx] === true,
+        approved: props.approvedQuestions[question.title] === true,
       }))
       .filter((question) => question.approved),
   ),
@@ -229,8 +229,8 @@ async function copyApprovedList() {
             <label class="question-check">
               <input
                 type="checkbox"
-                :checked="approvedQuestions[section.startNumber + idx] === true"
-                @change="$emit('toggle-approved', section.startNumber + idx)"
+                :checked="approvedQuestions[question.title] === true"
+                @change="$emit('toggle-approved', question.title)"
               />
               <span></span>
               <strong>{{ section.startNumber + idx }}. {{ question.title }}</strong>

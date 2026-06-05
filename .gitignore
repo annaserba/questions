@@ -52,6 +52,10 @@ out/
 .env.local
 .env.*.local
 
+# Local secrets
+*.pem
+*.key
+
 # npm cache directory
 .npm
 *.tgz

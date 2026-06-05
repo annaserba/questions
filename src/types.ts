@@ -42,9 +42,8 @@ export interface VoterProfile {
   managerUnlocked: boolean
 }
 
-export interface ApprovedQuestionRecord {
-  index: number
-  section: string
-  title: string
-  description: string
+export interface MeetingSettings {
+  noticeDate: string
+  votingStartDate: string
+  votingEndDate: string
 }

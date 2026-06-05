@@ -12,6 +12,7 @@ defineProps<{
   durationWarning: string;
   noticeWarning: string;
   gisIdentityWarning: string;
+  meetingSaveStatus: string;
 }>();
 
 defineEmits<{
@@ -188,6 +189,9 @@ const menuOpen = ref(false);
 
     <section class="panel-block rules-card">
       <div class="rule-list">
+        <p v-if="meetingSaveStatus" class="ok-status">
+          {{ meetingSaveStatus }}
+        </p>
         <p v-if="noticeWarning" class="warning">{{ noticeWarning }}</p>
         <p v-if="durationWarning" class="warning">{{ durationWarning }}</p>
         <p v-if="gisIdentityWarning" class="warning">

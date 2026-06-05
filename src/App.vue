@@ -20,8 +20,8 @@ import {
   saveOwnerFormToCookie,
 } from './data/bulletin'
 import type {
-  ApprovedQuestionRecord,
   DocumentView,
+  MeetingSettings,
   VoterProfile,
   VoteChoice,
 } from './types'
@@ -90,8 +90,11 @@ function getDocumentFromPath(): DocumentView {
 const currentDocument = ref<DocumentView>(getDocumentFromPath())
 const questionVotes = reactive<Record<number, VoteChoice | undefined>>({})
 const approvedQuestionKey = 'voting_approved_questions'
-const approvedQuestions = reactive<Record<number, boolean>>(getApprovedQuestions())
+const approvedQuestions = reactive<Record<string, boolean>>(getApprovedQuestions())
 const approvedSaveStatus = ref('')
+const meetingSaveStatus = ref('')
+const meetingSettingsLoaded = ref(false)
+let meetingSaveTimer: number | undefined
 const canManageMeeting = computed(() => managerUnlocked.value && isManagerIdentity())
 const startProfile = computed<VoterProfile>(() => ({
   houseAddress: form.houseAddress,
@@ -105,7 +108,7 @@ const questions = computed(() => buildQuestions(form))
 const questionSections = computed(() => buildQuestionSections(questions.value))
 const approvedQuestionSections = computed(() =>
   buildQuestionSections(
-    questions.value.filter((_question, idx) => approvedQuestions[idx + 1] === true),
+    questions.value.filter((question) => approvedQuestions[question.title] === true),
   ),
 )
 const latestNoticeDate = computed(() => addDays(form.votingStartDate, -10))
@@ -278,26 +281,96 @@ function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
   questionVotes[questionIndex] = questionVotes[questionIndex] === vote ? undefined : vote
 }
 
-function buildApprovedQuestionRecords(): ApprovedQuestionRecord[] {
-  return questionSections.value.flatMap((section) =>
-    section.questions
-      .map((question, idx) => ({
-        index: section.startNumber + idx,
-        section: section.title,
-        title: question.title,
-        description: question.description,
-      }))
-      .filter((question) => approvedQuestions[question.index] === true),
-  )
+function getMeetingSettings(): MeetingSettings {
+  return {
+    noticeDate: form.noticeDate,
+    votingStartDate: form.votingStartDate,
+    votingEndDate: form.votingEndDate,
+  }
 }
 
-function applyApprovedQuestionRecords(records: ApprovedQuestionRecord[]): void {
+function applyMeetingSettings(settings: MeetingSettings): void {
+  form.noticeDate = settings.noticeDate
+  form.votingStartDate = settings.votingStartDate
+  form.votingEndDate = settings.votingEndDate
+}
+
+async function loadMeetingSettingsFromProject(): Promise<void> {
+  try {
+    const response = await fetch('/api/meeting-settings')
+
+    if (!response.ok) {
+      return
+    }
+
+    const payload = await response.json() as { settings?: MeetingSettings | null }
+    if (payload.settings) {
+      applyMeetingSettings(payload.settings)
+    }
+  } catch {
+    // Default form dates remain available if the dev API is unavailable.
+  } finally {
+    meetingSettingsLoaded.value = true
+  }
+}
+
+async function saveMeetingSettingsToProject(): Promise<void> {
+  meetingSaveStatus.value = 'Сохраняю в проект...'
+
+  try {
+    const response = await fetch('/api/meeting-settings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(getMeetingSettings()),
+    })
+
+    if (!response.ok) {
+      const payload = await response.json() as { error?: string }
+      throw new Error(payload.error || 'Не удалось сохранить параметры собрания.')
+    }
+
+    meetingSaveStatus.value = 'Параметры сохранены в проект'
+    window.setTimeout(() => {
+      if (meetingSaveStatus.value === 'Параметры сохранены в проект') {
+        meetingSaveStatus.value = ''
+      }
+    }, 1800)
+  } catch (error) {
+    meetingSaveStatus.value = error instanceof Error
+      ? error.message
+      : 'Не удалось сохранить параметры собрания.'
+  }
+}
+
+function scheduleMeetingSettingsSave(): void {
+  if (!canManageMeeting.value || !meetingSettingsLoaded.value) {
+    return
+  }
+
+  if (meetingSaveTimer) {
+    window.clearTimeout(meetingSaveTimer)
+  }
+
+  meetingSaveTimer = window.setTimeout(() => {
+    void saveMeetingSettingsToProject()
+  }, 350)
+}
+
+function buildApprovedQuestionTitles(): string[] {
+  return questions.value
+    .filter((question) => approvedQuestions[question.title] === true)
+    .map((question) => question.title)
+}
+
+function applyApprovedQuestionTitles(titles: string[]): void {
   Object.keys(approvedQuestions).forEach((key) => {
-    delete approvedQuestions[Number(key)]
+    delete approvedQuestions[key]
   })
 
-  records.forEach((question) => {
-    approvedQuestions[question.index] = true
+  titles.forEach((title) => {
+    approvedQuestions[title] = true
   })
 }
 
@@ -309,9 +382,9 @@ async function loadApprovedQuestionsFromProject(): Promise<void> {
       return
     }
 
-    const payload = await response.json() as { questions?: ApprovedQuestionRecord[] }
+    const payload = await response.json() as { questions?: string[] }
     if (Array.isArray(payload.questions)) {
-      applyApprovedQuestionRecords(payload.questions)
+      applyApprovedQuestionTitles(payload.questions)
       saveApprovedQuestions()
     }
   } catch {
@@ -329,7 +402,7 @@ async function saveApprovedQuestionsToProject(): Promise<void> {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        questions: buildApprovedQuestionRecords(),
+        questions: buildApprovedQuestionTitles(),
       }),
     })
 
@@ -351,7 +424,7 @@ async function saveApprovedQuestionsToProject(): Promise<void> {
   }
 }
 
-function getApprovedQuestions(): Record<number, boolean> {
+function getApprovedQuestions(): Record<string, boolean> {
   const savedValue = window.localStorage.getItem(getApprovedQuestionKey())
 
   if (!savedValue) {
@@ -360,10 +433,9 @@ function getApprovedQuestions(): Record<number, boolean> {
 
   try {
     const parsedValue = JSON.parse(savedValue) as Record<string, unknown>
-    return Object.entries(parsedValue).reduce<Record<number, boolean>>((acc, [key, value]) => {
-      const index = Number(key)
-      if (Number.isInteger(index) && value === true) {
-        acc[index] = true
+    return Object.entries(parsedValue).reduce<Record<string, boolean>>((acc, [key, value]) => {
+      if (value === true) {
+        acc[key] = true
       }
 
       return acc
@@ -381,11 +453,11 @@ function getApprovedQuestionKey(): string {
   return approvedQuestionKey
 }
 
-function toggleApprovedQuestion(questionIndex: number): void {
-  if (approvedQuestions[questionIndex]) {
-    delete approvedQuestions[questionIndex]
+function toggleApprovedQuestion(questionTitle: string): void {
+  if (approvedQuestions[questionTitle]) {
+    delete approvedQuestions[questionTitle]
   } else {
-    approvedQuestions[questionIndex] = true
+    approvedQuestions[questionTitle] = true
   }
 
   saveApprovedQuestions()
@@ -411,6 +483,19 @@ watch(profileCompleted, (completed) => {
     void loadApprovedQuestionsFromProject()
   }
 }, { immediate: true })
+
+watch(profileCompleted, (completed) => {
+  if (completed) {
+    void loadMeetingSettingsFromProject()
+  }
+}, { immediate: true })
+
+watch(
+  () => [form.noticeDate, form.votingStartDate, form.votingEndDate],
+  () => {
+    scheduleMeetingSettingsSave()
+  },
+)
 
 watch(
   canManageMeeting,
@@ -441,6 +526,7 @@ watch(
       :duration-warning="durationWarning"
       :notice-warning="noticeWarning"
       :gis-identity-warning="gisIdentityWarning"
+      :meeting-save-status="meetingSaveStatus"
       @update:current-document="setCurrentDocument"
       @edit-profile="editProfile"
       @print="printPage"
@@ -452,7 +538,6 @@ watch(
           <select
             v-model="form.houseAddress"
             class="header-select"
-            :disabled="!canManageMeeting"
           >
             <option
               v-for="address in houseAddressOptions"

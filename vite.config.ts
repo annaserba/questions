@@ -12,18 +12,18 @@ interface AnalyzeQuestionPayload {
   explanation?: string
 }
 
-interface ApprovedQuestionRecord {
-  index: number
-  section: string
-  title: string
-  description: string
+interface ApprovedQuestionsPayload {
+  questions?: string[]
 }
 
-interface ApprovedQuestionsPayload {
-  questions?: ApprovedQuestionRecord[]
+interface MeetingSettings {
+  noticeDate: string
+  votingStartDate: string
+  votingEndDate: string
 }
 
 const approvedQuestionsFile = resolve(process.cwd(), 'src/data/approved-questions.json')
+const meetingSettingsFile = resolve(process.cwd(), 'src/data/meeting-settings.json')
 
 function readJsonBody<T>(req: import('node:http').IncomingMessage): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -55,31 +55,35 @@ function sendJson(
   res.end(JSON.stringify(payload))
 }
 
-function isApprovedQuestionRecord(value: unknown): value is ApprovedQuestionRecord {
-  if (!value || typeof value !== 'object') {
-    return false
+function normalizeApprovedQuestionTitle(value: unknown): string | null {
+  if (typeof value === 'string') {
+    return value.trim() || null
   }
 
-  const question = value as Partial<ApprovedQuestionRecord>
-  return Number.isInteger(question.index) &&
-    typeof question.section === 'string' &&
-    typeof question.title === 'string' &&
-    typeof question.description === 'string'
+  if (value && typeof value === 'object') {
+    const title = (value as { title?: unknown }).title
+    return typeof title === 'string' && title.trim() ? title.trim() : null
+  }
+
+  return null
 }
 
-async function readApprovedQuestionsStore(): Promise<ApprovedQuestionRecord[]> {
+async function readApprovedQuestionsStore(): Promise<string[]> {
   try {
     const rawValue = await readFile(approvedQuestionsFile, 'utf-8')
     const parsedValue = JSON.parse(rawValue) as unknown
 
     if (Array.isArray(parsedValue)) {
-      return parsedValue.filter(isApprovedQuestionRecord)
+      return parsedValue
+        .map(normalizeApprovedQuestionTitle)
+        .filter((title): title is string => title !== null)
     }
 
     if (parsedValue && typeof parsedValue === 'object') {
       return Object.values(parsedValue)
         .flatMap((questions) => Array.isArray(questions) ? questions : [])
-        .filter(isApprovedQuestionRecord)
+        .map(normalizeApprovedQuestionTitle)
+        .filter((title): title is string => title !== null)
     }
 
     return []
@@ -92,9 +96,43 @@ async function readApprovedQuestionsStore(): Promise<ApprovedQuestionRecord[]> {
   }
 }
 
-async function writeApprovedQuestionsStore(store: ApprovedQuestionRecord[]): Promise<void> {
+async function writeApprovedQuestionsStore(store: string[]): Promise<void> {
   await mkdir(dirname(approvedQuestionsFile), { recursive: true })
   await writeFile(approvedQuestionsFile, `${JSON.stringify(store, null, 2)}\n`, 'utf-8')
+}
+
+function isIsoDate(value: unknown): value is string {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+}
+
+function isMeetingSettings(value: unknown): value is MeetingSettings {
+  if (!value || typeof value !== 'object') {
+    return false
+  }
+
+  const settings = value as Partial<MeetingSettings>
+  return isIsoDate(settings.noticeDate) &&
+    isIsoDate(settings.votingStartDate) &&
+    isIsoDate(settings.votingEndDate)
+}
+
+async function readMeetingSettings(): Promise<MeetingSettings | null> {
+  try {
+    const rawValue = await readFile(meetingSettingsFile, 'utf-8')
+    const parsedValue = JSON.parse(rawValue) as unknown
+    return isMeetingSettings(parsedValue) ? parsedValue : null
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
+      return null
+    }
+
+    throw error
+  }
+}
+
+async function writeMeetingSettings(settings: MeetingSettings): Promise<void> {
+  await mkdir(dirname(meetingSettingsFile), { recursive: true })
+  await writeFile(meetingSettingsFile, `${JSON.stringify(settings, null, 2)}\n`, 'utf-8')
 }
 
 function deepSeekAnalyzerPlugin(env: Record<string, string>): Plugin {
@@ -197,12 +235,12 @@ function approvedQuestionsPlugin(): Plugin {
           if (req.method === 'POST') {
             const payload = await readJsonBody<ApprovedQuestionsPayload>(req)
 
-            if (!Array.isArray(payload.questions) || !payload.questions.every(isApprovedQuestionRecord)) {
+            if (!Array.isArray(payload.questions) || !payload.questions.every((title) => typeof title === 'string')) {
               sendJson(res, 400, { error: 'Передайте список согласованных вопросов.' })
               return
             }
 
-            const store = [...payload.questions].sort((a, b) => a.index - b.index)
+            const store = payload.questions.map((title) => title.trim()).filter(Boolean)
             await writeApprovedQuestionsStore(store)
             sendJson(res, 200, { ok: true, questions: store })
             return
@@ -219,10 +257,45 @@ function approvedQuestionsPlugin(): Plugin {
   }
 }
 
+function meetingSettingsPlugin(): Plugin {
+  return {
+    name: 'meeting-settings-store',
+    configureServer(server) {
+      server.middlewares.use('/api/meeting-settings', async (req, res) => {
+        try {
+          if (req.method === 'GET') {
+            sendJson(res, 200, { settings: await readMeetingSettings() })
+            return
+          }
+
+          if (req.method === 'POST') {
+            const payload = await readJsonBody<Partial<MeetingSettings>>(req)
+
+            if (!isMeetingSettings(payload)) {
+              sendJson(res, 400, { error: 'Передайте корректные даты собрания.' })
+              return
+            }
+
+            await writeMeetingSettings(payload)
+            sendJson(res, 200, { ok: true, settings: payload })
+            return
+          }
+
+          sendJson(res, 405, { error: 'Метод не поддерживается.' })
+        } catch (error) {
+          sendJson(res, 500, {
+            error: error instanceof Error ? error.message : 'Ошибка сохранения параметров собрания.',
+          })
+        }
+      })
+    },
+  }
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    plugins: [vue(), deepSeekAnalyzerPlugin(env), approvedQuestionsPlugin()],
+    plugins: [vue(), deepSeekAnalyzerPlugin(env), approvedQuestionsPlugin(), meetingSettingsPlugin()],
   }
 })
