@@ -26,6 +26,7 @@ import type {
   VoterProfile,
   VoteChoice,
 } from './types'
+import approvedQuestionsData from './data/approved-questions.json'
 
 const materials = [
   { src: maketImg, label: 'Схема установки' },
@@ -377,45 +378,22 @@ function applyApprovedQuestionTitles(titles: string[]): void {
 }
 
 async function loadApprovedQuestionsFromProject(): Promise<void> {
-  try {
-    const response = await fetch('/api/approved-questions')
-
-    if (!response.ok) {
-      return
-    }
-
-    const payload = await response.json() as { questions?: string[] }
-    if (Array.isArray(payload.questions)) {
-      applyApprovedQuestionTitles(payload.questions)
-      saveApprovedQuestions()
-    }
-  } catch {
-    // Local storage remains the fallback when the dev API is unavailable.
+  if (Array.isArray(approvedQuestionsData)) {
+    applyApprovedQuestionTitles(approvedQuestionsData)
+    saveApprovedQuestions()
   }
 }
 
 async function saveApprovedQuestionsToProject(): Promise<void> {
-  approvedSaveStatus.value = 'Сохраняю в проект...'
-
+  approvedSaveStatus.value = 'Сохраняю...'
   try {
-    const response = await fetch('/api/approved-questions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        questions: buildApprovedQuestionTitles(),
-      }),
-    })
-
-    if (!response.ok) {
-      const payload = await response.json() as { error?: string }
-      throw new Error(payload.error || 'Не удалось сохранить согласованные вопросы.')
-    }
-
-    approvedSaveStatus.value = 'Сохранено в проект'
+    window.localStorage.setItem(
+      '__approved_questions_source',
+      JSON.stringify(buildApprovedQuestionTitles()),
+    )
+    approvedSaveStatus.value = 'Сохранено'
     window.setTimeout(() => {
-      if (approvedSaveStatus.value === 'Сохранено в проект') {
+      if (approvedSaveStatus.value === 'Сохранено') {
         approvedSaveStatus.value = ''
       }
     }, 1800)
