@@ -28,6 +28,8 @@ import type {
 } from './types'
 import approvedQuestionsData from './data/approved-questions.json'
 
+const approvedQuestionsByHouse: Record<string, string[]> = approvedQuestionsData
+
 const materials = [
   { src: maketImg, label: 'Схема установки' },
   { src: photo1, label: 'Коммерческое предложение, стр. 1' },
@@ -378,8 +380,9 @@ function applyApprovedQuestionTitles(titles: string[]): void {
 }
 
 async function loadApprovedQuestionsFromProject(): Promise<void> {
-  if (Array.isArray(approvedQuestionsData)) {
-    applyApprovedQuestionTitles(approvedQuestionsData)
+  const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
+  if (Array.isArray(houseQuestions)) {
+    applyApprovedQuestionTitles(houseQuestions)
     saveApprovedQuestions()
   }
 }
