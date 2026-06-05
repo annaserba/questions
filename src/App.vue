@@ -5,9 +5,9 @@ import ControlPanel from './components/ControlPanel.vue'
 import MeetingNotice from './components/MeetingNotice.vue'
 import QuestionChecklist from './components/QuestionChecklist.vue'
 import VoterStartScreen from './components/VoterStartScreen.vue'
-import maketImg from './images/maket.png'
-import komPred1Img from './images/kom_pred1.png'
-import komPred2Img from './images/kom_pred2.png'
+import photo1 from './images/photo1.jpg'
+import photo2 from './images/photo2.jpg'
+import photo3 from './images/photo3.jpg'
 import {
   addDays,
   addMonths,
@@ -27,9 +27,9 @@ import type {
 } from './types'
 
 const materials = [
-  { src: maketImg, label: 'Предполагаемый проект' },
-  { src: komPred1Img, label: 'Коммерческое предложение, стр. 1' },
-  { src: komPred2Img, label: 'Коммерческое предложение, стр. 2' },
+  { src: photo1, label: 'Схема установки' },
+  { src: photo2, label: 'Коммерческое предложение, стр. 1' },
+  { src: photo3, label: 'Коммерческое предложение, стр. 2' },
 ]
 
 const lightboxIndex = ref<number | null>(null)
