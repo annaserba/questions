@@ -30,7 +30,6 @@ const isManagerIdentity = computed(() =>
 
 const canSubmit = computed(() =>
   draft.houseAddress.trim().length > 0 &&
-  draft.ownerName.trim().length > 0 &&
   (draft.wantsOnlineVote === 'yes' || draft.wantsOnlineVote === 'no') &&
   (!isManagerIdentity.value || (managerPassword.length > 0 && draft.password.length > 0)),
 )
@@ -103,7 +102,7 @@ function submitProfile() {
             v-model="draft.ownerName"
             type="text"
             autocomplete="name"
-            required
+            placeholder="Необязательно"
           />
         </label>
 
