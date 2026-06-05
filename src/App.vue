@@ -5,6 +5,7 @@ import ControlPanel from './components/ControlPanel.vue'
 import MeetingNotice from './components/MeetingNotice.vue'
 import QuestionChecklist from './components/QuestionChecklist.vue'
 import VoterStartScreen from './components/VoterStartScreen.vue'
+import maketImg from './images/maket.png'
 import photo1 from './images/photo1.jpg'
 import photo2 from './images/photo2.jpg'
 import photo3 from './images/photo3.jpg'
@@ -27,6 +28,7 @@ import type {
 } from './types'
 
 const materials = [
+  { src: maketImg, label: 'Схема установки' },
   { src: photo1, label: 'Коммерческое предложение, стр. 1' },
   { src: photo2, label: 'Коммерческое предложение, стр. 2' },
   { src: photo3, label: 'Коммерческое предложение, стр. 3' },
