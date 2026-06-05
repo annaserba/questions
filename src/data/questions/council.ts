@@ -3,7 +3,7 @@ import type { BulletinQuestion } from '../../types'
 export function councilQuestions(chairman: string): BulletinQuestion[] {
   return [
     {
-      title: 'Об избрании председателя совета многоквартирного дома',
+      title: `Избрать ${chairman} председателем совета дома`,
       description:
         'Избрать председателем совета многоквартирного дома ' + chairman + '.',
       explanation:
@@ -11,7 +11,7 @@ export function councilQuestions(chairman: string): BulletinQuestion[] {
       section: 'Совет дома',
     },
     {
-      title: 'О полномочиях совета многоквартирного дома',
+      title: 'Дать совету дома право принимать работы и согласовывать срочные расходы',
       description:
         'Наделить совет многоквартирного дома полномочиями: на приёмку выполненных работ и подписание актов приёмки; на согласование экстренных работ стоимостью до 150 000 рублей без созыва общего собрания собственников.',
       explanation:
@@ -19,7 +19,7 @@ export function councilQuestions(chairman: string): BulletinQuestion[] {
       section: 'Совет дома',
     },
     {
-      title: 'О полномочиях председателя совета многоквартирного дома',
+      title: 'Дать председателю право подписывать договоры и представлять собственников',
       description:
         'Наделить председателя совета многоквартирного дома ' +
           chairman +

@@ -6,7 +6,7 @@ export function managementQuestions(
 ): BulletinQuestion[] {
   return [
     {
-      title: 'Об отказе от действующего договора управления',
+      title: `Расторгнуть договор управления с ${previousManagementCompany}`,
       description:
         'Отказаться в одностороннем порядке от исполнения договора управления с действующей управляющей организацией ' +
           previousManagementCompany +
@@ -16,7 +16,7 @@ export function managementQuestions(
       section: 'Управление домом',
     },
     {
-      title: 'О выборе управляющей организации',
+      title: `Выбрать управляющей организацией ${managementCompany}`,
       description:
         'О выборе управляющей организации ' + managementCompany + ' для управления многоквартирным домом.',
       explanation:
@@ -24,7 +24,7 @@ export function managementQuestions(
       section: 'Управление домом',
     },
     {
-      title: 'Об утверждении договора управления',
+      title: `Утвердить договор управления с ${managementCompany}`,
       description:
         'Утверждение условий и заключение с ' +
           managementCompany +
@@ -34,7 +34,7 @@ export function managementQuestions(
       section: 'Управление домом',
     },
     {
-      title: 'О полномочиях председателя Совета МКД',
+      title: 'Поручить председателю Совета МКД подписать договор управления',
       description:
         'О возложении на председателя Совета многоквартирного дома полномочий на заключение от имени и в интересах собственников помещений договора управления многоквартирным домом с ' +
           managementCompany +

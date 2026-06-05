@@ -3,7 +3,7 @@ import type { BulletinQuestion } from '../../types'
 export function financeQuestions(managementCompany: string): BulletinQuestion[] {
   return [
     {
-      title: 'Об утверждении тарифа на содержание и текущий ремонт',
+      title: 'Утвердить тариф на содержание и текущий ремонт дома',
       description:
         'Утвердить размер платы за содержание и текущий ремонт общего имущества многоквартирного дома в соответствии с предложением ' +
           managementCompany +
@@ -13,7 +13,7 @@ export function financeQuestions(managementCompany: string): BulletinQuestion[] 
       section: 'Финансы и тарифы',
     },
     {
-      title: 'Об использовании доходов от аренды общего имущества',
+      title: 'Направлять доходы от аренды общего имущества на содержание и ремонт',
       description:
         'Принять решение о направлении доходов от аренды общего имущества многоквартирного дома (подвальные помещения, фасад, размещение рекламы) на содержание и текущий ремонт общего имущества.',
       explanation:

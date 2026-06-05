@@ -86,6 +86,9 @@ defineEmits<{
       </div>
 
       <div class="question-sections">
+        <p v-if="questionSections.length === 0" class="empty-agenda">
+          Нет согласованных вопросов. Отметьте вопросы в чеклисте.
+        </p>
         <section
           v-for="section in questionSections"
           :key="section.title"
@@ -203,6 +206,15 @@ defineEmits<{
 .question-section {
   display: grid;
   gap: 10px;
+}
+
+.empty-agenda {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
+  background: #fbfdff;
+  color: var(--gos-muted);
 }
 
 .question-section + .question-section {

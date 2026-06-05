@@ -44,6 +44,9 @@ defineProps<{
 
       <div class="agenda">
         <h3>Повестка дня</h3>
+        <p v-if="questionSections.length === 0" class="empty-agenda">
+          Нет согласованных вопросов. Отметьте вопросы в чеклисте.
+        </p>
         <section
           v-for="section in questionSections"
           :key="section.title"
@@ -202,6 +205,11 @@ defineProps<{
 
 .agenda p {
   margin: 6px 0 0;
+}
+
+.empty-agenda {
+  margin: 0;
+  color: var(--gos-muted);
 }
 
 @media (max-width: 980px) {

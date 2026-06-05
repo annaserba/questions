@@ -29,3 +29,15 @@ export interface BulletinQuestionSection {
   startNumber: number
   questions: BulletinQuestion[]
 }
+
+export type DocumentView = 'bulletin' | 'notice' | 'checklist'
+
+export type OnlineVotePreference = 'yes' | 'no'
+
+export interface VoterProfile {
+  houseAddress: string
+  ownerName: string
+  apartment: string
+  wantsOnlineVote: OnlineVotePreference
+  managerUnlocked: boolean
+}

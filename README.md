@@ -15,15 +15,27 @@
   - сбору средств на систему открытия ворот;
   - установке домофона на калитки во внутренний двор от `Севдомофон`;
 - печатная версия бюллетеня.
-- разбиение на компоненты `ControlPanel`, `BulletinSheet` и `BulletinQuestion`.
+- отдельный URL `/checklist` с чеклистом вопросов и списком согласованных пунктов.
+- анализ вопросов через DeepSeek при наличии ключа `DEEPSEEK_API_KEY`.
+- разбиение на компоненты `ControlPanel`, `BulletinSheet`, `QuestionChecklist` и `BulletinQuestion`.
 - типизация данных бюллетеня через `TypeScript`.
 
 ## Запуск
 
 ```bash
 bun install
+export DEEPSEEK_API_KEY=ваш_ключ
 bun run dev
 ```
+
+Или создайте локальный файл `.env.local`:
+
+```bash
+DEEPSEEK_API_KEY=ваш_ключ
+DEEPSEEK_MODEL=deepseek-chat
+```
+
+Модель DeepSeek можно переопределить через `DEEPSEEK_MODEL`; по умолчанию используется `deepseek-chat`.
 
 ## Сборка
 

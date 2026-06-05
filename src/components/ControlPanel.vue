@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import type { BulletinForm } from "../types";
-
-type DocumentView = "bulletin" | "notice";
+import type { BulletinForm, DocumentView } from "../types";
 
 defineProps<{
   form: BulletinForm;
   houseAddressOptions: readonly string[];
   currentDocument: DocumentView;
+  canManageMeeting: boolean;
   latestNoticeDate: string;
   maxVotingEndDate: string;
   durationWarning: string;
@@ -17,6 +16,7 @@ defineProps<{
 
 defineEmits<{
   print: [];
+  "edit-profile": [];
   "update:current-document": [value: DocumentView];
 }>();
 
@@ -44,6 +44,9 @@ const menuOpen = ref(false);
       <button class="info-button" type="button" @click="infoOpen = true">
         О голосовании
       </button>
+      <button class="info-button" type="button" @click="$emit('edit-profile')">
+        Изменить данные
+      </button>
 
       <section class="panel-block">
       <div class="block-head">
@@ -64,6 +67,14 @@ const menuOpen = ref(false);
           @click="$emit('update:current-document', 'notice')"
         >
           Уведомление
+        </button>
+        <button
+          v-if="canManageMeeting"
+          :class="['switch-button', { active: currentDocument === 'checklist' }]"
+          type="button"
+          @click="$emit('update:current-document', 'checklist')"
+        >
+          Чеклист
         </button>
       </div>
     </section>
@@ -143,27 +154,12 @@ const menuOpen = ref(false);
       </div>
     </Teleport>
 
-    <section class="panel-block">
+    <section v-if="canManageMeeting" class="panel-block">
       <div class="block-head">
         <h2>Параметры собрания</h2>
       </div>
 
       <div class="grid">
-        <label>
-          <span>Новая управляющая компания</span>
-          <input v-model="form.managementCompany" type="text" />
-        </label>
-
-        <label>
-          <span>Действующая управляющая компания</span>
-          <input v-model="form.previousManagementCompany" type="text" />
-        </label>
-
-        <label>
-          <span>Форма собрания</span>
-          <input v-model="form.meetingType" type="text" />
-        </label>
-
         <label>
           <span>Дата уведомления</span>
           <input
@@ -373,7 +369,7 @@ const menuOpen = ref(false);
 
 .document-switch {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
   gap: 10px;
 }
 

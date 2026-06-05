@@ -16,7 +16,7 @@ export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
   const chairman = houseChairman[form.houseAddress] || '_______________'
 
   return [
-    ...gisQuestions(),
+    ...gisQuestions(chairman),
     ...managementQuestions(managementCompany, previousManagementCompany),
     ...utilitiesQuestions(managementCompany),
     ...videoQuestions(managementCompany),

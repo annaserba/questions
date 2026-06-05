@@ -3,6 +3,8 @@ import { computed, reactive, ref, watch } from 'vue'
 import BulletinSheet from './components/BulletinSheet.vue'
 import ControlPanel from './components/ControlPanel.vue'
 import MeetingNotice from './components/MeetingNotice.vue'
+import QuestionChecklist from './components/QuestionChecklist.vue'
+import VoterStartScreen from './components/VoterStartScreen.vue'
 import maketImg from './images/maket.png'
 import komPred1Img from './images/kom_pred1.png'
 import komPred2Img from './images/kom_pred2.png'
@@ -18,10 +20,10 @@ import {
   saveOwnerFormToCookie,
 } from './data/bulletin'
 import type {
+  DocumentView,
+  VoterProfile,
   VoteChoice,
 } from './types'
-
-type DocumentView = 'bulletin' | 'notice'
 
 const materials = [
   { src: maketImg, label: 'Предполагаемый проект' },
@@ -62,11 +64,48 @@ const form = reactive({
   ...createDefaultForm(),
   ...getOwnerFormFromCookie(),
 })
-const currentDocument = ref<DocumentView>('bulletin')
+const voterProfileKey = 'voting_voter_profile'
+const storedProfile = getStoredVoterProfile()
+const voterProfile = ref<VoterProfile | null>(storedProfile)
+const profileCompleted = ref(voterProfile.value !== null)
+const managerUnlocked = ref(voterProfile.value?.managerUnlocked === true)
+
+if (storedProfile) {
+  applyVoterProfile(storedProfile)
+}
+
+const documentPath: Record<DocumentView, string> = {
+  bulletin: '/',
+  notice: '/notice',
+  checklist: '/checklist',
+}
+
+function getDocumentFromPath(): DocumentView {
+  if (window.location.pathname === '/notice') return 'notice'
+  if (window.location.pathname === '/checklist') return 'checklist'
+  return 'bulletin'
+}
+
+const currentDocument = ref<DocumentView>(getDocumentFromPath())
 const questionVotes = reactive<Record<number, VoteChoice | undefined>>({})
+const approvedQuestionKeyPrefix = 'voting_approved_questions'
+const approvedQuestions = reactive<Record<number, boolean>>(getApprovedQuestions())
+const canManageMeeting = computed(() => managerUnlocked.value && isManagerIdentity())
+const startProfile = computed<VoterProfile>(() => ({
+  houseAddress: form.houseAddress,
+  ownerName: form.ownerName,
+  apartment: form.apartment,
+  wantsOnlineVote: voterProfile.value?.wantsOnlineVote || 'yes',
+  managerUnlocked: managerUnlocked.value,
+}))
 
 const questions = computed(() => buildQuestions(form))
 const questionSections = computed(() => buildQuestionSections(questions.value))
+const approvedQuestionSections = computed(() =>
+  buildQuestionSections(
+    questions.value.filter((_question, idx) => approvedQuestions[idx + 1] === true),
+  ),
+)
 const latestNoticeDate = computed(() => addDays(form.votingStartDate, -10))
 const maxVotingEndDate = computed(() => addMonths(form.votingStartDate, 2))
 const durationWarning = computed(() =>
@@ -157,30 +196,185 @@ function printPage(): void {
   window.print()
 }
 
+function setCurrentDocument(document: DocumentView): void {
+  if (document === 'checklist' && !canManageMeeting.value) {
+    return
+  }
+
+  currentDocument.value = document
+  window.history.pushState({}, '', documentPath[document])
+}
+
+function normalizeProfileValue(value: string): string {
+  return value.trim().toLocaleLowerCase('ru-RU').replace(/\s+/g, ' ')
+}
+
+function isManagerIdentity(): boolean {
+  return normalizeProfileValue(form.houseAddress) === normalizeProfileValue('пр-т. Октябрьской революции, 48/1') &&
+    normalizeProfileValue(form.ownerName) === normalizeProfileValue('Серба Анна Владимировна') &&
+    form.apartment.trim() === '198'
+}
+
+function getStoredVoterProfile(): VoterProfile | null {
+  const savedValue = window.localStorage.getItem(voterProfileKey)
+
+  if (!savedValue) {
+    return null
+  }
+
+  try {
+    const parsedValue = JSON.parse(savedValue) as Partial<VoterProfile>
+    if (
+      typeof parsedValue.houseAddress === 'string' &&
+      typeof parsedValue.ownerName === 'string' &&
+      typeof parsedValue.apartment === 'string' &&
+      (parsedValue.wantsOnlineVote === 'yes' || parsedValue.wantsOnlineVote === 'no') &&
+      typeof parsedValue.managerUnlocked === 'boolean'
+    ) {
+      return {
+        houseAddress: parsedValue.houseAddress,
+        ownerName: parsedValue.ownerName,
+        apartment: parsedValue.apartment,
+        wantsOnlineVote: parsedValue.wantsOnlineVote,
+        managerUnlocked: parsedValue.managerUnlocked,
+      }
+    }
+  } catch {
+    return null
+  }
+
+  return null
+}
+
+function applyVoterProfile(profile: VoterProfile): void {
+  form.houseAddress = profile.houseAddress
+  form.ownerName = profile.ownerName
+  form.apartment = profile.apartment
+}
+
+function saveVoterProfile(profile: VoterProfile): void {
+  window.localStorage.setItem(voterProfileKey, JSON.stringify(profile))
+}
+
+function handleProfileSubmit(profile: VoterProfile): void {
+  applyVoterProfile(profile)
+  managerUnlocked.value = profile.managerUnlocked
+  voterProfile.value = profile
+  saveVoterProfile(profile)
+  profileCompleted.value = true
+
+  if (!canManageMeeting.value && currentDocument.value === 'checklist') {
+    setCurrentDocument('bulletin')
+  }
+}
+
+function editProfile(): void {
+  profileCompleted.value = false
+}
+
 function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
   questionVotes[questionIndex] = questionVotes[questionIndex] === vote ? undefined : vote
 }
+
+function getApprovedQuestions(): Record<number, boolean> {
+  const savedValue = window.localStorage.getItem(getApprovedQuestionKey())
+
+  if (!savedValue) {
+    return {}
+  }
+
+  try {
+    const parsedValue = JSON.parse(savedValue) as Record<string, unknown>
+    return Object.entries(parsedValue).reduce<Record<number, boolean>>((acc, [key, value]) => {
+      const index = Number(key)
+      if (Number.isInteger(index) && value === true) {
+        acc[index] = true
+      }
+
+      return acc
+    }, {})
+  } catch {
+    return {}
+  }
+}
+
+function saveApprovedQuestions(): void {
+  window.localStorage.setItem(getApprovedQuestionKey(), JSON.stringify(approvedQuestions))
+}
+
+function getApprovedQuestionKey(): string {
+  return `${approvedQuestionKeyPrefix}:${form.houseAddress}`
+}
+
+function toggleApprovedQuestion(questionIndex: number): void {
+  if (approvedQuestions[questionIndex]) {
+    delete approvedQuestions[questionIndex]
+  } else {
+    approvedQuestions[questionIndex] = true
+  }
+
+  saveApprovedQuestions()
+}
+
+window.addEventListener('popstate', () => {
+  const document = getDocumentFromPath()
+  currentDocument.value = document === 'checklist' && !canManageMeeting.value
+    ? 'bulletin'
+    : document
+})
+
+watch(
+  () => form.houseAddress,
+  () => {
+    Object.keys(approvedQuestions).forEach((key) => {
+      delete approvedQuestions[Number(key)]
+    })
+    Object.assign(approvedQuestions, getApprovedQuestions())
+  },
+)
+
+watch(
+  canManageMeeting,
+  (canManage) => {
+    if (!canManage && currentDocument.value === 'checklist') {
+      setCurrentDocument('bulletin')
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
-  <div class="page-shell">
+  <VoterStartScreen
+    v-if="!profileCompleted"
+    :house-address-options="houseAddressOptions"
+    :initial-profile="startProfile"
+    @submit="handleProfileSubmit"
+  />
+  <div v-else class="page-shell">
     <ControlPanel
       :form="form"
       :house-address-options="houseAddressOptions"
       :current-document="currentDocument"
+      :can-manage-meeting="canManageMeeting"
       :latest-notice-date="latestNoticeDate"
       :max-voting-end-date="maxVotingEndDate"
       :duration-warning="durationWarning"
       :notice-warning="noticeWarning"
       :gis-identity-warning="gisIdentityWarning"
-      @update:current-document="currentDocument = $event"
+      @update:current-document="setCurrentDocument"
+      @edit-profile="editProfile"
       @print="printPage"
     />
     <div class="documents">
       <header class="page-header">
         <label class="header-label">
           <span>Адрес дома</span>
-          <select v-model="form.houseAddress" class="header-select">
+          <select
+            v-model="form.houseAddress"
+            class="header-select"
+            :disabled="!canManageMeeting"
+          >
             <option
               v-for="address in houseAddressOptions"
               :key="address"
@@ -197,13 +391,20 @@ function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
       <MeetingNotice
         v-if="currentDocument === 'notice'"
         :form="form"
-        :question-sections="questionSections"
+        :question-sections="approvedQuestionSections"
         :formatted-dates="formattedDates"
+      />
+      <QuestionChecklist
+        v-else-if="currentDocument === 'checklist' && canManageMeeting"
+        :house-address="form.houseAddress"
+        :question-sections="questionSections"
+        :approved-questions="approvedQuestions"
+        @toggle-approved="toggleApprovedQuestion"
       />
       <BulletinSheet
         v-else
         :form="form"
-        :question-sections="questionSections"
+        :question-sections="approvedQuestionSections"
         :formatted-dates="formattedDates"
         :question-votes="questionVotes"
         @select-vote="handleVoteSelection"
@@ -333,6 +534,12 @@ function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
   outline: none;
   border-color: var(--gos-blue, #0d4cd3);
   box-shadow: 0 0 0 3px rgba(13, 76, 211, 0.12);
+}
+
+.header-select:disabled {
+  cursor: default;
+  color: var(--gos-ink, #0b1e3c);
+  opacity: 1;
 }
 
 .header-select option {
