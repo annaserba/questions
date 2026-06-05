@@ -2,7 +2,7 @@
 import { computed, reactive, ref, watch } from 'vue'
 import type { OnlineVotePreference, VoterProfile } from '../types'
 
-const managerPassword = '82558255'
+const managerPassword = import.meta.env.VITE_MANAGER_PASSWORD || ''
 
 const props = defineProps<{
   houseAddressOptions: readonly string[]
@@ -32,7 +32,7 @@ const canSubmit = computed(() =>
   draft.houseAddress.trim().length > 0 &&
   draft.ownerName.trim().length > 0 &&
   (draft.wantsOnlineVote === 'yes' || draft.wantsOnlineVote === 'no') &&
-  (!isManagerIdentity.value || draft.password.length > 0),
+  (!isManagerIdentity.value || (managerPassword.length > 0 && draft.password.length > 0)),
 )
 
 watch(isManagerIdentity, () => {
@@ -54,6 +54,11 @@ function submitProfile() {
   }
 
   const managerUnlocked = isManagerIdentity.value && draft.password === managerPassword
+
+  if (isManagerIdentity.value && !managerPassword) {
+    passwordError.value = 'Пароль администратора не настроен'
+    return
+  }
 
   if (isManagerIdentity.value && !managerUnlocked) {
     passwordError.value = 'Неверный пароль'
@@ -122,6 +127,7 @@ function submitProfile() {
             required
           />
           <small v-if="passwordError">{{ passwordError }}</small>
+          <small v-else-if="!managerPassword">Пароль администратора не настроен</small>
         </label>
 
         <fieldset>

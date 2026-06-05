@@ -33,6 +33,7 @@ bun run dev
 ```bash
 DEEPSEEK_API_KEY=ваш_ключ
 DEEPSEEK_MODEL=deepseek-chat
+VITE_MANAGER_PASSWORD=82558255
 ```
 
 Модель DeepSeek можно переопределить через `DEEPSEEK_MODEL`; по умолчанию используется `deepseek-chat`.
