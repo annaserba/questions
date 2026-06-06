@@ -34,8 +34,6 @@ defineEmits<{
       <div class="meta-list">
         <p><strong>Форма проведения:</strong> {{ form.meetingType }}</p>
         <p><strong>Дата уведомления:</strong> {{ formattedDates.noticeDate }}</p>
-        <p><strong>Действующая управляющая компания:</strong> {{ form.previousManagementCompany }}</p>
-        <p><strong>Новая управляющая компания:</strong> {{ form.managementCompany }}</p>
       </div>
 
       <div class="owner-block">

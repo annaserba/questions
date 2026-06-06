@@ -30,8 +30,6 @@ defineProps<{
         <p><strong>Дата уведомления:</strong> {{ formattedDates.noticeDate }}</p>
         <p><strong>Дата начала голосования:</strong> {{ formattedDates.votingStartDate }}</p>
         <p><strong>Дата окончания голосования:</strong> {{ formattedDates.votingEndDate }}</p>
-        <p><strong>Действующая управляющая компания:</strong> {{ form.previousManagementCompany }}</p>
-        <p><strong>Новая управляющая компания:</strong> {{ form.managementCompany }}</p>
       </div>
 
       <div class="notice-body">
