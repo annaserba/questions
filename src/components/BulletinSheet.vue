@@ -430,7 +430,7 @@ defineEmits<{
     border-radius: 0;
     background: #fff;
     box-shadow: none;
-    font-size: 7.6pt;
+    font-size: 8.2pt;
     line-height: 1.02;
   }
 
@@ -438,7 +438,7 @@ defineEmits<{
     margin-bottom: 0;
     color: #000;
     font-family: "Times New Roman", serif;
-    font-size: 8.8pt;
+    font-size: 9.4pt;
     letter-spacing: 0;
   }
 
@@ -448,7 +448,7 @@ defineEmits<{
     color: #000;
     font-family: "Times New Roman", serif;
     display: inline;
-    font-size: 7.4pt;
+    font-size: 8pt;
     line-height: 1;
   }
 
@@ -478,7 +478,7 @@ defineEmits<{
     padding: 0;
     border: 0;
     font-family: "Times New Roman", serif;
-    font-size: 6.8pt;
+    font-size: 7.4pt;
     line-height: 1;
   }
 
@@ -505,7 +505,7 @@ defineEmits<{
   }
 
   .owner-block-head strong {
-    font-size: 8pt;
+    font-size: 8.4pt;
   }
 
   .owner-grid {
@@ -513,7 +513,7 @@ defineEmits<{
   }
 
   .owner-field span {
-    font-size: 6.8pt;
+    font-size: 7.4pt;
     color: #000;
   }
 
@@ -552,11 +552,11 @@ defineEmits<{
 
   .question-list {
     padding-left: 0;
-    font-size: 7.8pt;
+    font-size: 8.4pt;
   }
 
   .section-title {
-    font-size: 7.3pt;
+    font-size: 7.9pt;
   }
 
   .question-section {

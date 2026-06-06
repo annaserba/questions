@@ -252,14 +252,14 @@ const expanded = ref(false)
   .question-item h3 {
     margin: 0;
     border-bottom: 0;
-    font-size: 7pt;
+    font-size: 7.6pt;
     line-height: 1.05;
   }
 
   .question-description {
     margin: 0;
     color: #000;
-    font-size: 6.7pt;
+    font-size: 7.3pt;
     line-height: 1.05;
   }
 
