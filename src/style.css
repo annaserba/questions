@@ -119,6 +119,20 @@ textarea {
     font-size: 10pt !important;
   }
 
+  .large-print .apartment-grid {
+    grid-template-columns: auto auto 1fr !important;
+    flex-wrap: wrap !important;
+  }
+
+  .large-print .apartment-grid .owner-field-row {
+    display: contents;
+  }
+
+  .large-print .apartment-grid .owner-field input {
+    min-width: 12mm !important;
+    max-width: 40mm !important;
+  }
+
   .large-print .owner-field input,
   .large-print .owner-field textarea {
     font-size: 10pt !important;
