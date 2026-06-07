@@ -75,6 +75,7 @@ const expanded = ref(false)
 }
 
 .question-item h3 {
+  display: inline;
   margin: 0 0 6px;
   font-size: 1.12rem;
   color: var(--gos-ink);
