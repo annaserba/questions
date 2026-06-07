@@ -3,7 +3,7 @@ import { computed, reactive, ref } from 'vue'
 import type { OnlineVotePreference, VoterProfile } from '../types'
 
 const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || ''
-const isAdminUrl = window.location.search.includes('admin')
+const showAdminAuth = window.location.search.includes('admin')
 
 const props = defineProps<{
   houseAddressOptions: readonly string[]
@@ -22,12 +22,11 @@ const draft = reactive({
   adminPassword: '',
 })
 const passwordError = ref('')
-const showAdminAuth = computed(() => isAdminUrl)
 
 const canSubmit = computed(() =>
   draft.houseAddress.trim().length > 0 &&
   (draft.wantsOnlineVote === 'yes' || draft.wantsOnlineVote === 'no') &&
-  (!showAdminAuth.value || draft.adminPassword.length > 0),
+  (!showAdminAuth || draft.adminPassword.length > 0),
 )
 
 function setOnlinePreference(value: OnlineVotePreference) {
@@ -41,7 +40,7 @@ function submitProfile() {
 
   let managerUnlocked = false
 
-  if (showAdminAuth.value) {
+  if (showAdminAuth) {
     if (!adminPassword) {
       passwordError.value = 'Пароль администратора не настроен'
       return
@@ -58,7 +57,7 @@ function submitProfile() {
   emit('submit', {
     houseAddress: draft.houseAddress,
     ownerName: draft.ownerName.trim(),
-    apartment: showAdminAuth.value ? '' : draft.apartment.trim(),
+    apartment: showAdminAuth ? '' : draft.apartment.trim(),
     wantsOnlineVote: draft.wantsOnlineVote,
     managerUnlocked,
   })
