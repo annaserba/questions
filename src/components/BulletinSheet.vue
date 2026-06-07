@@ -84,42 +84,6 @@ defineEmits<{
 
       <div class="owner-block">
         <div class="owner-block-head">
-          <strong>{{ form.propertyType === 'нежилое' ? 'Сведения о помещении' : 'Сведения о квартире' }}</strong>
-          <select v-model="form.propertyType" class="property-type-select">
-            <option value="жилое">Жилое</option>
-            <option value="нежилое">Нежилое</option>
-          </select>
-        </div>
-
-        <div class="owner-grid">
-          <div class="owner-field-row">
-            <label class="owner-field">
-              <span>Квартира / помещение</span>
-              <input v-model="form.apartment" type="text" />
-            </label>
-
-            <label class="owner-field">
-              <span>Площадь</span>
-              <input v-model="form.area" type="text" inputmode="decimal" />
-            </label>
-          </div>
-
-          <div class="owner-field-row">
-            <label class="owner-field">
-              <span>Доля в праве собственности</span>
-              <input v-model="form.share" type="text" placeholder="1/2" />
-            </label>
-
-            <label class="owner-field">
-              <span>Документ о праве собственности</span>
-              <input v-model="form.ownershipDocument" type="text" />
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="owner-block">
-        <div class="owner-block-head">
           <strong>Сведения о представителе</strong>
           <label class="representative-checkbox">
             <input v-model="form.isRepresentative" type="checkbox" />
@@ -153,6 +117,42 @@ defineEmits<{
           </div>
 
           <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
+        </div>
+      </div>
+
+      <div class="owner-block">
+        <div class="owner-block-head">
+          <strong>{{ form.propertyType === 'нежилое' ? 'Сведения о помещении' : 'Сведения о квартире' }}</strong>
+          <select v-model="form.propertyType" class="property-type-select">
+            <option value="жилое">Жилое</option>
+            <option value="нежилое">Нежилое</option>
+          </select>
+        </div>
+
+        <div class="owner-grid">
+          <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Квартира / помещение</span>
+              <input v-model="form.apartment" type="text" />
+            </label>
+
+            <label class="owner-field">
+              <span>Площадь</span>
+              <input v-model="form.area" type="text" inputmode="decimal" />
+            </label>
+          </div>
+
+          <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Доля в праве собственности</span>
+              <input v-model="form.share" type="text" placeholder="1/2" />
+            </label>
+
+            <label class="owner-field">
+              <span>Документ о праве собственности</span>
+              <input v-model="form.ownershipDocument" type="text" />
+            </label>
+          </div>
         </div>
       </div>
 
