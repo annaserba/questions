@@ -133,4 +133,8 @@ textarea {
     width: 4mm !important;
     height: 4mm !important;
   }
+
+  .large-print .vote-button.active .vote-indicator::after {
+    font-size: 10pt !important;
+  }
 }
