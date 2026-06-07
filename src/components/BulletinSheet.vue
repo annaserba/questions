@@ -657,7 +657,8 @@ defineEmits<{
     padding: 0;
     font-size: 6.8pt;
     width: 100%;
-    min-width: 8mm;
+    min-width: 6mm;
+    max-width: 30mm;
   }
 
   .property-type-select {
