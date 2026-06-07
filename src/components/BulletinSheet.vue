@@ -71,7 +71,7 @@ defineEmits<{
 
           <div class="owner-field-row">
             <label class="owner-field">
-              <span>Номер паспорта (или СНИЛС)</span>
+              <span>Номер паспорта</span>
               <input
                 v-model="form.passportNumber"
                 type="text"
@@ -80,7 +80,7 @@ defineEmits<{
             </label>
 
             <label class="owner-field">
-              <span>СНИЛС (или паспорт)</span>
+              <span>СНИЛС</span>
               <input
                 v-model="form.snils"
                 type="text"
@@ -88,6 +88,8 @@ defineEmits<{
               />
             </label>
           </div>
+
+          <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
 
         </div>
       </div>
@@ -269,6 +271,12 @@ defineEmits<{
 .owner-field {
   display: grid;
   gap: 6px;
+}
+
+.owner-hint {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--gos-muted);
 }
 
 .owner-field-full {
