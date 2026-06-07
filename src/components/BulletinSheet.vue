@@ -551,6 +551,7 @@ defineEmits<{
   .question-list {
     padding-left: 0;
     font-size: 8.4pt;
+    list-style-position: inside;
   }
 
   .section-title {

@@ -229,23 +229,23 @@ const expanded = ref(false)
   }
 
   .question-item {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
+    display: list-item;
     break-inside: avoid;
     border: 1px solid #bfbfbf;
     padding: 0;
     margin-bottom: 0;
     font-family: "Times New Roman", serif;
+    list-style-position: inside;
   }
 
   .question-item::marker {
     font-weight: 700;
+    font-size: 7.6pt;
   }
 
   .question-item h3,
   .question-description {
-    grid-column: 1;
+    display: block;
     padding: 0.45mm 0.8mm;
   }
 
@@ -264,8 +264,6 @@ const expanded = ref(false)
   }
 
   .vote-options {
-    grid-column: 1;
-    grid-row: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
