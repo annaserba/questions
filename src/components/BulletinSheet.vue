@@ -629,9 +629,9 @@ defineEmits<{
   }
 
   .apartment-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px 6px;
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    gap: 2px 4px;
     align-items: baseline;
   }
 
@@ -640,7 +640,7 @@ defineEmits<{
   }
 
   .apartment-grid .owner-field {
-    display: inline-flex;
+    display: flex;
     align-items: baseline;
     gap: 2px;
     font-size: 6.8pt;
@@ -656,8 +656,8 @@ defineEmits<{
     border-bottom: 1px solid #000;
     padding: 0;
     font-size: 6.8pt;
-    min-width: 0;
-    width: auto;
+    width: 100%;
+    min-width: 8mm;
   }
 
   .property-type-select {
