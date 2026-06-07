@@ -657,8 +657,12 @@ defineEmits<{
     padding: 0;
     font-size: 6.4pt;
     width: 100%;
-    min-width: 5mm;
-    max-width: 25mm;
+    min-width: 4mm;
+    max-width: 18mm;
+  }
+
+  .apartment-grid .owner-field:first-of-type input {
+    max-width: 8mm;
   }
 
   .property-type-select {
