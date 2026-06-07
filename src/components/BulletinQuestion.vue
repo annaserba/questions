@@ -290,6 +290,11 @@ const expanded = ref(false)
     border-right: 0;
   }
 
+  .vote-button.active {
+    background: #fff;
+    color: #000;
+  }
+
   .vote-indicator {
     width: 2.3mm;
     height: 2.3mm;
