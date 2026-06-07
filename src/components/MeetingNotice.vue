@@ -278,7 +278,7 @@ defineProps<{
     border-radius: 0;
     background: #fff;
     box-shadow: none;
-    font-size: 8.2pt;
+    font-size: 9pt;
     line-height: 1.02;
   }
 
@@ -286,7 +286,7 @@ defineProps<{
     margin-bottom: 0;
     color: #000;
     font-family: "Times New Roman", serif;
-    font-size: 9.4pt;
+    font-size: 10pt;
     letter-spacing: 0;
   }
 
@@ -294,7 +294,7 @@ defineProps<{
     margin: 0;
     color: #000;
     font-family: "Times New Roman", serif;
-    font-size: 9.4pt;
+    font-size: 10pt;
     line-height: 1.02;
     text-transform: uppercase;
   }
@@ -305,7 +305,7 @@ defineProps<{
     color: #000;
     font-family: "Times New Roman", serif;
     display: inline;
-    font-size: 8pt;
+    font-size: 8.6pt;
     line-height: 1;
   }
 
@@ -331,7 +331,7 @@ defineProps<{
     flex-wrap: wrap;
     gap: 0 4mm;
     font-family: "Times New Roman", serif;
-    font-size: 7.4pt;
+    font-size: 8pt;
     line-height: 1;
   }
 
@@ -341,7 +341,7 @@ defineProps<{
 
   .notice-body {
     font-family: "Times New Roman", serif;
-    font-size: 8.2pt;
+    font-size: 9pt;
     line-height: 1.02;
   }
 
@@ -359,7 +359,7 @@ defineProps<{
   .agenda h3 {
     margin: 0;
     padding: 0;
-    font-size: 8.2pt;
+    font-size: 9pt;
     color: #000;
   }
 
@@ -383,17 +383,23 @@ defineProps<{
     background: transparent;
     color: #000;
     font-family: "Times New Roman", serif;
-    font-size: 7.9pt;
+    font-size: 8.5pt;
   }
 
   .agenda-list {
     padding-left: 0;
     font-family: "Times New Roman", serif;
-    font-size: 8.4pt;
+    font-size: 9pt;
+    list-style-position: inside;
+  }
   }
 
   .agenda-list li + li {
     margin-top: 1px;
+  }
+
+  .agenda-list strong {
+    font-size: 9pt;
   }
 
   .agenda p {
