@@ -620,6 +620,10 @@ defineEmits<{
     color: transparent;
   }
 
+  .property-type-select {
+    display: none;
+  }
+
   .representative-checkbox {
     display: flex;
     align-items: center;
