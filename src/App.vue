@@ -210,21 +210,32 @@ watch(
 watch(
   () => form.apartment,
   (newApartment) => {
+    form.ownershipDocument = ''
+    form.area = ''
+
     const houseData = apartmentsByHouse[form.houseAddress]
     if (!houseData || !newApartment.trim()) return
 
     const apt = houseData[newApartment.trim()]
     if (!apt) return
 
-    if (apt.cadastral && !form.ownershipDocument.trim()) {
+    if (apt.cadastral) {
       form.ownershipDocument = apt.cadastral
     }
-    if (apt.area && !form.area.trim()) {
+    if (apt.area) {
       form.area = apt.area
     }
     if (apt.name && !form.ownerName.trim()) {
       form.ownerName = apt.name
     }
+  },
+)
+
+watch(
+  () => form.houseAddress,
+  () => {
+    form.ownershipDocument = ''
+    form.area = ''
   },
 )
 
