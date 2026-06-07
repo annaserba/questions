@@ -672,7 +672,6 @@ watch(
           Печать
         </button>
         <button
-          v-if="canManageMeeting"
           class="header-action"
           type="button"
           @click="selectAllApprovedQuestions"
@@ -680,7 +679,6 @@ watch(
           Выбрать все
         </button>
         <button
-          v-if="canManageMeeting"
           class="header-action"
           type="button"
           @click="deselectAllApprovedQuestions"
