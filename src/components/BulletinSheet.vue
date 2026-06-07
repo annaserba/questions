@@ -54,27 +54,29 @@ defineEmits<{
             </label>
           </div>
 
-          <label class="owner-field">
-            <span>Квартира / помещение</span>
-            <input v-model="form.apartment" type="text" />
-          </label>
-
           <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Квартира / помещение</span>
+              <input v-model="form.apartment" type="text" />
+            </label>
+
             <label class="owner-field">
               <span>Площадь</span>
               <input v-model="form.area" type="text" inputmode="decimal" />
             </label>
+          </div>
 
+          <div class="owner-field-row">
             <label class="owner-field">
               <span>Доля в праве собственности</span>
               <input v-model="form.share" type="text" placeholder="1/2" />
             </label>
-          </div>
 
-          <label class="owner-field owner-field-full">
-            <span>Документ о праве собственности</span>
-            <input v-model="form.ownershipDocument" type="text" />
-          </label>
+            <label class="owner-field">
+              <span>Документ о праве собственности</span>
+              <input v-model="form.ownershipDocument" type="text" />
+            </label>
+          </div>
 
           <div class="owner-field-row">
             <label class="owner-field">
