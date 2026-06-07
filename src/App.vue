@@ -584,6 +584,13 @@ function deselectAllApprovedQuestions(): void {
   void saveApprovedQuestionsToProject()
 }
 
+function voteForAll(): void {
+  for (const question of questions.value) {
+    const idx = questions.value.indexOf(question)
+    questionVotes[idx] = 'for'
+  }
+}
+
 window.addEventListener('popstate', () => {
   const document = getDocumentFromPath()
   currentDocument.value = document === 'checklist' && !canManageMeeting.value
@@ -684,6 +691,13 @@ watch(
           @click="deselectAllApprovedQuestions"
         >
           Снять все
+        </button>
+        <button
+          class="header-action"
+          type="button"
+          @click="voteForAll"
+        >
+          Голосовать ЗА везде
         </button>
       </header>
       <MeetingNotice
