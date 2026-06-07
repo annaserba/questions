@@ -302,6 +302,7 @@ const expanded = ref(false)
   }
 
   .vote-indicator {
+    position: relative;
     width: 2.3mm;
     height: 2.3mm;
     border: 1px solid #000;
@@ -309,6 +310,16 @@ const expanded = ref(false)
     flex: 0 0 auto;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  .vote-button.active .vote-indicator::after {
+    content: "✓";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    font-size: 5pt;
+    line-height: 1;
+    color: #000;
   }
 
   .vote-label {
