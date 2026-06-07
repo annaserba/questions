@@ -639,16 +639,16 @@ defineEmits<{
     bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8mm;
-    padding: 2mm 0 4mm;
+    gap: 4mm;
+    padding: 1mm 0 2mm;
     border-top: 1px solid #000;
     background: #fff;
-    font-size: 7pt;
+    font-size: 6pt;
   }
 
   .print-signature div {
     display: grid;
-    gap: 1mm;
+    gap: 0.5mm;
   }
 
   .print-signature span,
