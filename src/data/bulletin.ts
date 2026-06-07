@@ -107,7 +107,7 @@ export function createDefaultForm(): BulletinForm {
     ownershipDocument: '',
     passportNumber: '',
     snils: '',
-    share: '',
+    share: '1/1',
     extraNotes: '',
   }
 }
@@ -158,7 +158,7 @@ export function saveOwnerFormToCookie(data: OwnerCookieData): void {
     ownershipDocument: '',
     passportNumber: '',
     snils: '',
-    share: '',
+    share: '1/1',
     extraNotes: '',
   })
 

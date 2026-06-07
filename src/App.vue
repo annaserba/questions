@@ -216,7 +216,7 @@ watch(
     if (!houseData || !newApartment || !newApartment.trim()) {
       form.ownershipDocument = ''
       form.area = ''
-      form.share = ''
+      form.share = '1/1'
       return
     }
 
@@ -224,13 +224,13 @@ watch(
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
-      form.share = ''
+      form.share = '1/1'
       return
     }
 
     form.ownershipDocument = apt.cadastral || ''
     form.area = apt.area || ''
-    form.share = apt.share || ''
+    form.share = apt.share || '1/1'
     if (apt.name && (managerUnlocked.value || !form.ownerName.trim())) {
       form.ownerName = apt.name
     }
@@ -247,7 +247,7 @@ watch(
     if (!houseData || !aptNumber) {
       form.ownershipDocument = ''
       form.area = ''
-      form.share = ''
+      form.share = '1/1'
       return
     }
 
@@ -255,13 +255,13 @@ watch(
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
-      form.share = ''
+      form.share = '1/1'
       return
     }
 
     form.ownershipDocument = apt.cadastral || ''
     form.area = apt.area || ''
-    form.share = apt.share || ''
+    form.share = apt.share || '1/1'
     if (apt.name && (managerUnlocked.value || !form.ownerName.trim())) {
       form.ownerName = apt.name
     }

@@ -52,15 +52,17 @@ defineEmits<{
             <input v-model="form.apartment" type="text" />
           </label>
 
-          <label class="owner-field">
-            <span>Площадь</span>
-            <input v-model="form.area" type="text" inputmode="decimal" />
-          </label>
+          <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Площадь</span>
+              <input v-model="form.area" type="text" inputmode="decimal" />
+            </label>
 
-          <label class="owner-field">
-            <span>Доля в праве собственности</span>
-            <input v-model="form.share" type="text" />
-          </label>
+            <label class="owner-field">
+              <span>Доля в праве собственности</span>
+              <input v-model="form.share" type="text" placeholder="1/2" />
+            </label>
+          </div>
 
           <label class="owner-field owner-field-full">
             <span>Документ о праве собственности</span>
@@ -251,6 +253,12 @@ defineEmits<{
 }
 
 .owner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+.owner-field-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px 18px;
@@ -512,6 +520,12 @@ defineEmits<{
   }
 
   .owner-grid {
+    gap: 1px 6px;
+  }
+
+  .owner-field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px 6px;
   }
 
