@@ -223,7 +223,8 @@ watch(
       return
     }
 
-    const apt = houseData[newApartment.trim()]
+    const key = newApartment.trim()
+    const apt = houseData[key] || houseData['офис' + key]
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
@@ -251,7 +252,7 @@ watch(
       return
     }
 
-    const apt = houseData[aptNumber]
+    const apt = houseData[aptNumber] || houseData['офис' + aptNumber]
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
