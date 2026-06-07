@@ -137,4 +137,20 @@ textarea {
   .large-print .vote-button.active .vote-indicator::after {
     font-size: 10pt !important;
   }
+
+  .large-print .sign-row span,
+  .large-print .sign-row p,
+  .large-print .sign-row b {
+    font-size: 12pt !important;
+  }
+
+  .large-print .sign-row b {
+    min-height: 8mm !important;
+  }
+
+  .large-print .print-signature span,
+  .large-print .print-signature p,
+  .large-print .print-signature b {
+    font-size: 12pt !important;
+  }
 }
