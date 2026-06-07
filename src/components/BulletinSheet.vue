@@ -198,12 +198,14 @@ defineEmits<{
         <div>
           <span>Подпись собственника</span>
           <b></b>
-          <span>Подпись представителя</span>
-          <b class="rep-signature"></b>
+          <span>Расшифровка подписи собственника</span>
+          <p class="print-owner-name">{{ form.ownerName || '______________________________' }}</p>
         </div>
         <div>
-          <span>Расшифровка подписи</span>
-          <p>{{ form.isRepresentative ? (form.representativeName || '______________________________') : (form.ownerName || '______________________________') }}</p>
+          <span>Подпись представителя</span>
+          <b></b>
+          <span>Расшифровка подписи представителя</span>
+          <p class="print-rep-name">{{ form.representativeName || '______________________________' }}</p>
         </div>
       </div>
     </section>
@@ -805,10 +807,6 @@ defineEmits<{
     display: block;
     min-height: 6mm;
     border-bottom: 1px solid #000;
-  }
-
-  .rep-signature {
-    margin-top: 3mm;
   }
 }
 </style>
