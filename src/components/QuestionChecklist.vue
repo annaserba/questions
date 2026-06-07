@@ -18,6 +18,8 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'toggle-approved': [questionTitle: string]
+  'select-all': []
+  'deselect-all': []
 }>()
 
 const analyses = reactive<Record<number, QuestionAnalysis>>({})
@@ -173,6 +175,18 @@ async function copyApprovedList() {
         <div class="approved-panel-head">
           <h3>Согласованные вопросы</h3>
           <div class="approved-actions">
+            <button
+              type="button"
+              @click="$emit('select-all')"
+            >
+              Выбрать все
+            </button>
+            <button
+              type="button"
+              @click="$emit('deselect-all')"
+            >
+              Снять все
+            </button>
             <button
               type="button"
               :disabled="approvedList.length === 0 || approvedAnalysis.status === 'loading'"

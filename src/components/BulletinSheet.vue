@@ -130,7 +130,7 @@ defineEmits<{
           </select>
         </div>
 
-        <div class="owner-grid">
+        <div class="owner-grid apartment-grid">
           <div class="owner-field-row">
             <label class="owner-field">
               <span>Квартира / помещение</span>
@@ -626,6 +626,29 @@ defineEmits<{
   .owner-block select {
     color: #000;
     border-color: #000;
+  }
+
+  .apartment-grid > .owner-field-row {
+    display: contents;
+  }
+
+  .apartment-grid > .owner-field-row .owner-field {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+
+  .apartment-grid > .owner-field-row .owner-field span {
+    font-size: 6.8pt;
+    white-space: nowrap;
+  }
+
+  .apartment-grid > .owner-field-row .owner-field input {
+    border: 0;
+    border-bottom: 1px solid #000;
+    padding: 0;
+    font-size: 6.8pt;
+    min-width: 0;
   }
 
   .property-type-select {

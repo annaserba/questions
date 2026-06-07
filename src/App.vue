@@ -568,6 +568,22 @@ function toggleApprovedQuestion(questionTitle: string): void {
   void saveApprovedQuestionsToProject()
 }
 
+function selectAllApprovedQuestions(): void {
+  for (const question of questions.value) {
+    approvedQuestions[question.title] = true
+  }
+  saveApprovedQuestions()
+  void saveApprovedQuestionsToProject()
+}
+
+function deselectAllApprovedQuestions(): void {
+  for (const question of questions.value) {
+    delete approvedQuestions[question.title]
+  }
+  saveApprovedQuestions()
+  void saveApprovedQuestionsToProject()
+}
+
 window.addEventListener('popstate', () => {
   const document = getDocumentFromPath()
   currentDocument.value = document === 'checklist' && !canManageMeeting.value
@@ -669,6 +685,8 @@ watch(
         :approved-questions="approvedQuestions"
         :save-status="approvedSaveStatus"
         @toggle-approved="toggleApprovedQuestion"
+        @select-all="selectAllApprovedQuestions"
+        @deselect-all="deselectAllApprovedQuestions"
       />
       <BulletinSheet
         v-else
