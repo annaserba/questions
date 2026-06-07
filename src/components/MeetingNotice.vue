@@ -410,6 +410,4 @@ defineProps<{
     break-before: avoid-page;
     page-break-before: avoid;
   }
-
-}
 </style>
