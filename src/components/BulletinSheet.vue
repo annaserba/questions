@@ -782,7 +782,7 @@ defineEmits<{
     grid-template-columns: 1fr 1fr;
     gap: 1mm;
     padding: 2mm 0 1mm;
-    border-top: 1px solid #000;
+    border-top: 0;
     background: #fff;
     font-size: 7.6pt;
   }
