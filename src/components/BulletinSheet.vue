@@ -133,7 +133,7 @@ defineEmits<{
           </label>
 
           <label class="owner-field owner-field-full">
-            <span>Документ представителя</span>
+            <span>Номер паспорта / СНИЛС представителя</span>
             <input v-model="form.representativeDocument" type="text" />
           </label>
         </div>
