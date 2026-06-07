@@ -31,7 +31,7 @@ import apartments48_1 from './data/apartments-48-1.json'
 
 const approvedQuestionsByHouse: Record<string, string[]> = approvedQuestionsData
 
-const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; name: string; phone: string; wantsBlank: boolean }>> = {
+const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; share: string; name: string; phone: string; wantsBlank: boolean }>> = {
   'пр-т. Октябрьской революции, 48/1': apartments48_1 as any,
 }
 
@@ -155,6 +155,7 @@ watch(
     ownershipDocument: form.ownershipDocument,
     passportNumber: form.passportNumber,
     snils: form.snils,
+    share: form.share,
     extraNotes: form.extraNotes,
   }),
   (ownerData) => {
@@ -215,6 +216,7 @@ watch(
     if (!houseData || !newApartment || !newApartment.trim()) {
       form.ownershipDocument = ''
       form.area = ''
+      form.share = ''
       return
     }
 
@@ -222,12 +224,14 @@ watch(
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
+      form.share = ''
       return
     }
 
     form.ownershipDocument = apt.cadastral || ''
     form.area = apt.area || ''
-    if (apt.name && !form.ownerName.trim()) {
+    form.share = apt.share || ''
+    if (apt.name && (managerUnlocked.value || !form.ownerName.trim())) {
       form.ownerName = apt.name
     }
   },
@@ -243,6 +247,7 @@ watch(
     if (!houseData || !aptNumber) {
       form.ownershipDocument = ''
       form.area = ''
+      form.share = ''
       return
     }
 
@@ -250,12 +255,14 @@ watch(
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
+      form.share = ''
       return
     }
 
     form.ownershipDocument = apt.cadastral || ''
     form.area = apt.area || ''
-    if (apt.name && !form.ownerName.trim()) {
+    form.share = apt.share || ''
+    if (apt.name && (managerUnlocked.value || !form.ownerName.trim())) {
       form.ownerName = apt.name
     }
   },

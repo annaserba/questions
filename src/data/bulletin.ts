@@ -22,6 +22,7 @@ const ownerCookieFields = [
   'ownershipDocument',
   'passportNumber',
   'snils',
+  'share',
   'extraNotes',
 ] as const
 
@@ -106,6 +107,7 @@ export function createDefaultForm(): BulletinForm {
     ownershipDocument: '',
     passportNumber: '',
     snils: '',
+    share: '',
     extraNotes: '',
   }
 }
@@ -156,6 +158,7 @@ export function saveOwnerFormToCookie(data: OwnerCookieData): void {
     ownershipDocument: '',
     passportNumber: '',
     snils: '',
+    share: '',
     extraNotes: '',
   })
 

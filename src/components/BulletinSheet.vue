@@ -57,6 +57,11 @@ defineEmits<{
             <input v-model="form.area" type="text" inputmode="decimal" />
           </label>
 
+          <label class="owner-field">
+            <span>Доля в праве собственности</span>
+            <input v-model="form.share" type="text" />
+          </label>
+
           <label class="owner-field owner-field-full">
             <span>Документ о праве собственности</span>
             <input v-model="form.ownershipDocument" type="text" />

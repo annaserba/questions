@@ -10,6 +10,7 @@ export interface BulletinForm {
   apartment: string
   area: string
   ownershipDocument: string
+  share: string
   passportNumber: string
   snils: string
   extraNotes: string
