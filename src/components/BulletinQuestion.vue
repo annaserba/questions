@@ -275,6 +275,10 @@ const expanded = ref(false)
   }
 
   .vote-button {
+    display: inline-flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
     min-height: 4.2mm;
     padding: 0.35mm 0.5mm;
     border: 0;
@@ -301,11 +305,14 @@ const expanded = ref(false)
     border: 1px solid #000;
     border-radius: 0;
     flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .vote-label {
     overflow-wrap: normal;
     white-space: nowrap;
+    vertical-align: middle;
   }
 
 }
