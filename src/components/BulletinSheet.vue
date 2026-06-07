@@ -42,7 +42,7 @@ defineEmits<{
         </div>
 
         <div class="owner-grid">
-          <div class="owner-field-row">
+          <div class="owner-field-row owner-name-row">
             <label class="owner-field">
               <span>Собственник</span>
               <input v-model="form.ownerName" type="text" autocomplete="name" />
@@ -273,6 +273,10 @@ defineEmits<{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px 18px;
+}
+
+.owner-name-row {
+  grid-template-columns: 7fr 3fr;
 }
 
 .owner-field {
@@ -544,6 +548,10 @@ defineEmits<{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px 6px;
+  }
+
+  .owner-name-row {
+    grid-template-columns: 7fr 3fr;
   }
 
   .owner-field span {
