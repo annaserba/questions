@@ -28,7 +28,7 @@ const expanded = ref(false)
     >
       {{ expanded ? 'Скрыть пояснение' : 'Пояснение' }}
     </button>
-    <p v-if="expanded && question.explanation" class="explanation-text">
+    <p v-show="expanded && question.explanation" class="explanation-text">
       {{ question.explanation }}
     </p>
     <div class="vote-options">
