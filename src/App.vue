@@ -214,21 +214,16 @@ watch(
     form.area = ''
 
     const houseData = apartmentsByHouse[form.houseAddress]
-    if (!houseData || !newApartment.trim()) return
+    if (!houseData || !newApartment || !newApartment.trim()) return
 
     const apt = houseData[newApartment.trim()]
     if (!apt) return
 
-    if (apt.cadastral) {
-      form.ownershipDocument = apt.cadastral
-    }
-    if (apt.area) {
-      form.area = apt.area
-    }
-    if (apt.name && !form.ownerName.trim()) {
-      form.ownerName = apt.name
-    }
+    if (apt.cadastral) form.ownershipDocument = apt.cadastral
+    if (apt.area) form.area = apt.area
+    if (apt.name && !form.ownerName.trim()) form.ownerName = apt.name
   },
+  { flush: 'sync' },
 )
 
 watch(
