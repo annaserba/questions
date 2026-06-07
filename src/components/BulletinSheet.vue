@@ -56,6 +56,36 @@ defineEmits<{
 
           <div class="owner-field-row">
             <label class="owner-field">
+              <span>Номер паспорта</span>
+              <input
+                v-model="form.passportNumber"
+                type="text"
+                spellcheck="false"
+              />
+            </label>
+
+            <label class="owner-field">
+              <span>СНИЛС</span>
+              <input
+                v-model="form.snils"
+                type="text"
+                spellcheck="false"
+              />
+            </label>
+          </div>
+
+          <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
+        </div>
+      </div>
+
+      <div class="owner-block">
+        <div class="owner-block-head">
+          <strong>Сведения о квартире</strong>
+        </div>
+
+        <div class="owner-grid">
+          <div class="owner-field-row">
+            <label class="owner-field">
               <span>Квартира / помещение</span>
               <input v-model="form.apartment" type="text" />
             </label>
@@ -77,29 +107,6 @@ defineEmits<{
               <input v-model="form.ownershipDocument" type="text" />
             </label>
           </div>
-
-          <div class="owner-field-row">
-            <label class="owner-field">
-              <span>Номер паспорта</span>
-              <input
-                v-model="form.passportNumber"
-                type="text"
-                spellcheck="false"
-              />
-            </label>
-
-            <label class="owner-field">
-              <span>СНИЛС</span>
-              <input
-                v-model="form.snils"
-                type="text"
-                spellcheck="false"
-              />
-            </label>
-          </div>
-
-          <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
-
         </div>
       </div>
 
