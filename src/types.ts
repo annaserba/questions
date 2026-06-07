@@ -15,6 +15,9 @@ export interface BulletinForm {
   snils: string
   phone: string
   propertyType: 'жилое' | 'нежилое'
+  isRepresentative: boolean
+  representativeName: string
+  representativeDocument: string
   extraNotes: string
 }
 

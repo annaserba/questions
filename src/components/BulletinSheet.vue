@@ -118,6 +118,27 @@ defineEmits<{
         </div>
       </div>
 
+      <div class="owner-block">
+        <div class="owner-block-head">
+          <label class="representative-checkbox">
+            <input v-model="form.isRepresentative" type="checkbox" />
+            <strong>Голосует представитель</strong>
+          </label>
+        </div>
+
+        <div v-if="form.isRepresentative" class="owner-grid">
+          <label class="owner-field owner-field-full">
+            <span>ФИО представителя</span>
+            <input v-model="form.representativeName" type="text" autocomplete="name" />
+          </label>
+
+          <label class="owner-field owner-field-full">
+            <span>Документ представителя</span>
+            <input v-model="form.representativeDocument" type="text" />
+          </label>
+        </div>
+      </div>
+
       <div class="question-sections">
         <p v-if="questionSections.length === 0" class="empty-agenda">
           Нет согласованных вопросов. Отметьте вопросы в чеклисте.
@@ -280,6 +301,27 @@ defineEmits<{
   background: #fbfdff;
   color: var(--gos-ink);
   font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.representative-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.representative-checkbox input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.representative-checkbox strong {
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gos-blue);
   cursor: pointer;
 }
 
@@ -565,6 +607,22 @@ defineEmits<{
 
   .owner-block input::placeholder {
     color: transparent;
+  }
+
+  .representative-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .representative-checkbox input[type='checkbox'] {
+    width: 12px;
+    height: 12px;
+  }
+
+  .representative-checkbox strong {
+    font-size: 7.9pt;
+    color: #000;
   }
 
   .owner-block-head strong {

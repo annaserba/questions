@@ -24,6 +24,9 @@ const ownerCookieFields = [
   'snils',
   'phone',
   'propertyType',
+  'isRepresentative',
+  'representativeName',
+  'representativeDocument',
   'share',
   'extraNotes',
 ] as const
@@ -111,6 +114,9 @@ export function createDefaultForm(): BulletinForm {
     snils: '',
     phone: '',
     propertyType: 'жилое',
+    isRepresentative: false,
+    representativeName: '',
+    representativeDocument: '',
     share: '1/1',
     extraNotes: '',
   }
@@ -169,11 +175,16 @@ export function saveOwnerFormToCookie(data: OwnerCookieData): void {
     snils: '',
     phone: '',
     propertyType: 'жилое',
+    isRepresentative: false,
+    representativeName: '',
+    representativeDocument: '',
     share: '1/1',
     extraNotes: '',
   })
 
-  const isEmpty = ownerCookieFields.every((field) => !normalizedData[field].trim())
+  const isEmpty = ownerCookieFields.every((field) =>
+    typeof normalizedData[field] === 'boolean' ? !normalizedData[field] : !normalizedData[field].trim()
+  )
 
   if (isEmpty) {
     document.cookie = `${ownerCookieName}=; max-age=0; path=/; samesite=lax`
