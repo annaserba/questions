@@ -248,6 +248,7 @@ const expanded = ref(false)
   .question-description {
     display: block;
     padding: 0.45mm 0.8mm;
+    margin: 0;
   }
 
   .question-item h3 {
@@ -269,24 +270,24 @@ const expanded = ref(false)
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    margin-top: 0;
+    margin: 0;
     border-top: 1px solid #bfbfbf;
     border-left: 0;
   }
 
   .vote-button {
     display: inline-flex;
-    gap: 4px;
+    gap: 2px;
     justify-content: center;
     align-items: center;
-    min-height: 4.2mm;
-    padding: 0.35mm 0.5mm;
+    min-height: 3.5mm;
+    padding: 0.2mm 0.3mm;
     border: 0;
     border-right: 1px solid #bfbfbf;
     border-radius: 0;
     background: #fff;
     color: #000;
-    font-size: 6.1pt;
+    font-size: 6pt;
     box-shadow: none;
   }
 
