@@ -538,9 +538,6 @@ defineEmits<{
 
   .bulletin-sheet {
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
 
   .bulletin-card {
@@ -552,9 +549,6 @@ defineEmits<{
     box-shadow: none;
     font-size: 8.2pt;
     line-height: 1.02;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
   }
 
   .document-mark {
@@ -592,10 +586,6 @@ defineEmits<{
   .question-sections,
   .sign-row {
     margin-top: 2px;
-  }
-
-  .question-sections {
-    flex: 1;
   }
 
   .meta-list {
@@ -788,12 +778,12 @@ defineEmits<{
   }
 
   .print-signature {
-    margin-top: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1mm;
-    padding: 6mm 0 8mm;
-    border-top: 0;
+    margin-top: 6mm;
+    padding: 2mm 0 4mm;
+    border-top: 1px solid #000;
     background: transparent;
     font-size: 7.6pt;
   }
