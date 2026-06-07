@@ -31,7 +31,7 @@ import apartments48_1 from './data/apartments-48-1.json'
 
 const approvedQuestionsByHouse: Record<string, string[]> = approvedQuestionsData
 
-const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; share: string; name: string; phone: string; wantsBlank: boolean }>> = {
+const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; share: string; name?: string; phone: string; wantsBlank: boolean }>> = {
   'пр-т. Октябрьской революции, 48/1': apartments48_1 as any,
 }
 
