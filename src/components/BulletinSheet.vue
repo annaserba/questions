@@ -727,7 +727,7 @@ defineEmits<{
     padding: 0.5mm 0 1mm;
     border-top: 1px solid #000;
     background: #fff;
-    font-size: 5pt;
+    font-size: 7.6pt;
   }
 
   .print-signature div {
