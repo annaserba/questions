@@ -17,7 +17,9 @@ export interface BulletinForm {
   propertyType: 'жилое' | 'нежилое'
   isRepresentative: boolean
   representativeName: string
-  representativeDocument: string
+  representativePhone: string
+  representativePassport: string
+  representativeSnils: string
   extraNotes: string
 }
 

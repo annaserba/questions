@@ -26,7 +26,9 @@ const ownerCookieFields = [
   'propertyType',
   'isRepresentative',
   'representativeName',
-  'representativeDocument',
+  'representativePhone',
+  'representativePassport',
+  'representativeSnils',
   'share',
   'extraNotes',
 ] as const
@@ -116,7 +118,9 @@ export function createDefaultForm(): BulletinForm {
     propertyType: 'жилое',
     isRepresentative: false,
     representativeName: '',
-    representativeDocument: '',
+    representativePhone: '',
+    representativePassport: '',
+    representativeSnils: '',
     share: '1/1',
     extraNotes: '',
   }
@@ -177,7 +181,9 @@ export function saveOwnerFormToCookie(data: OwnerCookieData): void {
     propertyType: 'жилое',
     isRepresentative: false,
     representativeName: '',
-    representativeDocument: '',
+    representativePhone: '',
+    representativePassport: '',
+    representativeSnils: '',
     share: '1/1',
     extraNotes: '',
   })

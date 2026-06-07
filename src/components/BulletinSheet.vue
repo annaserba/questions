@@ -120,9 +120,10 @@ defineEmits<{
 
       <div class="owner-block">
         <div class="owner-block-head">
+          <strong>Сведения о представителе</strong>
           <label class="representative-checkbox">
             <input v-model="form.isRepresentative" type="checkbox" />
-            <strong>Голосует представитель</strong>
+            <span>Голосует представитель</span>
           </label>
         </div>
 
@@ -134,10 +135,24 @@ defineEmits<{
             </label>
 
             <label class="owner-field">
-              <span>Номер паспорта / СНИЛС представителя</span>
-              <input v-model="form.representativeDocument" type="text" />
+              <span>Номер телефона</span>
+              <input v-model="form.representativePhone" type="text" inputmode="tel" placeholder="+7" />
             </label>
           </div>
+
+          <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Номер паспорта</span>
+              <input v-model="form.representativePassport" type="text" inputmode="numeric" placeholder="0000 000000" spellcheck="false" />
+            </label>
+
+            <label class="owner-field">
+              <span>СНИЛС</span>
+              <input v-model="form.representativeSnils" type="text" inputmode="numeric" placeholder="000-000-000 00" spellcheck="false" />
+            </label>
+          </div>
+
+          <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
         </div>
       </div>
 
@@ -311,19 +326,13 @@ defineEmits<{
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  font-size: 0.83rem;
+  color: var(--gos-muted);
 }
 
 .representative-checkbox input[type='checkbox'] {
   width: 18px;
   height: 18px;
-  cursor: pointer;
-}
-
-.representative-checkbox strong {
-  font-size: 0.92rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gos-blue);
   cursor: pointer;
 }
 
@@ -615,16 +624,13 @@ defineEmits<{
     display: flex;
     align-items: center;
     gap: 4px;
+    font-size: 6.8pt;
+    color: #000;
   }
 
   .representative-checkbox input[type='checkbox'] {
     width: 12px;
     height: 12px;
-  }
-
-  .representative-checkbox strong {
-    font-size: 7.9pt;
-    color: #000;
   }
 
   .owner-block-head strong {
