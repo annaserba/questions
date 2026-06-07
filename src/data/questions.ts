@@ -17,9 +17,9 @@ export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
   return [
     ...gisQuestions(chairman),
     ...managementQuestions(managementCompany, previousManagementCompany),
+    ...utilitiesQuestions(),
     ...councilQuestions(chairman),
     ...gatesQuestions(managementCompany),
-    ...utilitiesQuestions(),
     ...videoQuestions(),
     ...propertyQuestions(),
   ]
