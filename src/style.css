@@ -43,16 +43,14 @@ textarea {
     @bottom-left {
       content: "Подпись собственника __________________________";
       padding-top: 2mm;
-      border-top: 1px solid #000;
       font-family: "Times New Roman", serif;
       font-size: 7.6pt;
       color: #000;
     }
 
     @bottom-right {
-      content: "Расшифровка подписи " var(--print-owner-name, "__________________________");
+      content: "Расшифровка подписи " var(--print-signature-name, "__________________________");
       padding-top: 2mm;
-      border-top: 1px solid #000;
       font-family: "Times New Roman", serif;
       font-size: 7.6pt;
       color: #000;

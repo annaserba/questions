@@ -169,18 +169,24 @@ const formattedDates = computed(() => ({
   votingEndDate: formatRuDate(form.votingEndDate),
 }))
 
-function updatePrintOwnerName(ownerName: string): void {
-  const value = ownerName.trim() || '__________________________'
+function updatePrintSignatureName(signatureName: string): void {
+  const value = signatureName.trim() || '__________________________'
   document.documentElement.style.setProperty(
-    '--print-owner-name',
+    '--print-signature-name',
     JSON.stringify(value),
   )
 }
 
 watch(
-  () => form.ownerName,
-  (ownerName) => {
-    updatePrintOwnerName(ownerName)
+  () => [
+    form.isRepresentative,
+    form.representativeName,
+    form.ownerName,
+  ] as const,
+  ([isRepresentative, representativeName, ownerName]) => {
+    updatePrintSignatureName(
+      isRepresentative ? representativeName : ownerName,
+    )
   },
   { immediate: true },
 )
