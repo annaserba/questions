@@ -123,4 +123,14 @@ textarea {
   .large-print .owner-field textarea {
     font-size: 10pt !important;
   }
+
+  .large-print .vote-button {
+    font-size: 10pt !important;
+    min-height: 6mm !important;
+  }
+
+  .large-print .vote-indicator {
+    width: 4mm !important;
+    height: 4mm !important;
+  }
 }
