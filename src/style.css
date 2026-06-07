@@ -170,7 +170,6 @@ textarea {
 }
 
 @media print {
-  .print-explanations .explanation-toggle,
   .print-explanations .explanation-text {
     display: block !important;
   }
