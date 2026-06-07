@@ -271,7 +271,7 @@ defineEmits<{
 
 .owner-field-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 14px 18px;
 }
 
@@ -542,7 +542,7 @@ defineEmits<{
 
   .owner-field-row {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1px 6px;
   }
 
