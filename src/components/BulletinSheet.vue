@@ -69,23 +69,25 @@ defineEmits<{
             <input v-model="form.ownershipDocument" type="text" />
           </label>
 
-          <label class="owner-field">
-            <span>Номер паспорта</span>
-            <input
-              v-model="form.passportNumber"
-              type="text"
-              spellcheck="false"
-            />
-          </label>
+          <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Номер паспорта (или СНИЛС)</span>
+              <input
+                v-model="form.passportNumber"
+                type="text"
+                spellcheck="false"
+              />
+            </label>
 
-          <label class="owner-field">
-            <span>СНИЛС</span>
-            <input
-              v-model="form.snils"
-              type="text"
-              spellcheck="false"
-            />
-          </label>
+            <label class="owner-field">
+              <span>СНИЛС (или паспорт)</span>
+              <input
+                v-model="form.snils"
+                type="text"
+                spellcheck="false"
+              />
+            </label>
+          </div>
 
         </div>
       </div>
