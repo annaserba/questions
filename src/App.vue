@@ -279,7 +279,8 @@ function setCurrentDocument(document: DocumentView): void {
   }
 
   currentDocument.value = document
-  window.history.pushState({}, '', documentPath[document])
+  const adminParam = window.location.search.includes('admin') ? '?admin' : ''
+  window.history.pushState({}, '', documentPath[document] + adminParam)
 }
 
 function normalizeProfileValue(value: string): string {
@@ -287,7 +288,7 @@ function normalizeProfileValue(value: string): string {
 }
 
 function isManagerIdentity(): boolean {
-  return window.location.search.includes('admin')
+  return window.location.search.includes('admin') || managerUnlocked.value
 }
 
 function getStoredVoterProfile(): VoterProfile | null {
