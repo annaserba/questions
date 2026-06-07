@@ -623,6 +623,7 @@ function voteForAll(): void {
   questions.value.forEach((_, idx) => {
     questionVotes[idx] = 'for'
   })
+  saveVotesToStorage()
 }
 
 window.addEventListener('popstate', () => {
