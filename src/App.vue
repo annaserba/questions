@@ -237,9 +237,29 @@ watch(
 watch(
   () => form.houseAddress,
   () => {
-    form.ownershipDocument = ''
-    form.area = ''
+    const houseData = apartmentsByHouse[form.houseAddress]
+    const aptNumber = form.apartment.trim()
+
+    if (!houseData || !aptNumber) {
+      form.ownershipDocument = ''
+      form.area = ''
+      return
+    }
+
+    const apt = houseData[aptNumber]
+    if (!apt) {
+      form.ownershipDocument = ''
+      form.area = ''
+      return
+    }
+
+    form.ownershipDocument = apt.cadastral || ''
+    form.area = apt.area || ''
+    if (apt.name && !form.ownerName.trim()) {
+      form.ownerName = apt.name
+    }
   },
+  { flush: 'sync' },
 )
 
 function printPage(): void {
