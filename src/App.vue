@@ -215,8 +215,8 @@ watch(
 )
 
 watch(
-  () => form.apartment,
-  (newApartment) => {
+  () => [form.apartment, form.propertyType] as const,
+  ([newApartment]) => {
     const houseData = apartmentsByHouse[form.houseAddress]
 
     if (!houseData || !newApartment || !newApartment.trim()) {
