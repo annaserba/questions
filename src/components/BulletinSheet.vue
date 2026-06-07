@@ -621,6 +621,13 @@ defineEmits<{
     color: transparent;
   }
 
+  .owner-block input,
+  .owner-block textarea,
+  .owner-block select {
+    color: #000;
+    border-color: #000;
+  }
+
   .property-type-select {
     display: none;
   }

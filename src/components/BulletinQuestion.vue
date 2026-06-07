@@ -293,7 +293,9 @@ const expanded = ref(false)
   .vote-indicator {
     width: 2.3mm;
     height: 2.3mm;
+    border: 1px solid #000;
     border-radius: 0;
+    flex: 0 0 auto;
   }
 
   .vote-label {
