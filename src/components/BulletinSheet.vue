@@ -196,11 +196,11 @@ defineEmits<{
 
       <div class="print-signature">
         <div>
-          <span>{{ form.isRepresentative ? 'Подпись представителя' : 'Подпись собственника' }}</span>
+          <span>Подпись</span>
           <b></b>
         </div>
         <div>
-          <span>{{ form.isRepresentative ? 'Расшифровка подписи представителя' : 'Расшифровка подписи собственника' }}</span>
+          <span>Расшифровка подписи</span>
           <p>{{ form.isRepresentative ? (form.representativeName || '______________________________') : (form.ownerName || '______________________________') }}</p>
         </div>
       </div>
