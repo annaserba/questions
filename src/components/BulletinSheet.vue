@@ -42,10 +42,17 @@ defineEmits<{
         </div>
 
         <div class="owner-grid">
-          <label class="owner-field owner-field-full">
-            <span>Собственник</span>
-            <input v-model="form.ownerName" type="text" autocomplete="name" />
-          </label>
+          <div class="owner-field-row">
+            <label class="owner-field">
+              <span>Собственник</span>
+              <input v-model="form.ownerName" type="text" autocomplete="name" />
+            </label>
+
+            <label class="owner-field">
+              <span>Номер телефона</span>
+              <input v-model="form.phone" type="tel" />
+            </label>
+          </div>
 
           <label class="owner-field">
             <span>Квартира / помещение</span>
@@ -90,14 +97,6 @@ defineEmits<{
           </div>
 
           <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
-
-          <label class="owner-field">
-            <span>Номер телефона</span>
-            <input
-              v-model="form.phone"
-              type="tel"
-            />
-          </label>
 
         </div>
       </div>
