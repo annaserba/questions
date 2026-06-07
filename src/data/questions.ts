@@ -18,11 +18,11 @@ export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
   return [
     ...gisQuestions(chairman),
     ...managementQuestions(managementCompany, previousManagementCompany),
+    ...councilQuestions(chairman),
     ...gatesQuestions(managementCompany),
     ...financeQuestions(),
     ...utilitiesQuestions(),
     ...videoQuestions(),
-    ...councilQuestions(chairman),
     ...propertyQuestions(),
   ]
 }
