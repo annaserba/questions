@@ -661,7 +661,15 @@ defineEmits<{
     max-width: 18mm;
   }
 
-  .apartment-grid .owner-field:first-of-type input {
+  .apartment-grid .owner-field-row:first-child .owner-field:first-child input {
+    max-width: 8mm;
+  }
+
+  .apartment-grid .owner-field-row:first-child .owner-field:last-child input {
+    max-width: 10mm;
+  }
+
+  .apartment-grid .owner-field-row:last-child .owner-field:first-child input {
     max-width: 8mm;
   }
 
