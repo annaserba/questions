@@ -13,6 +13,7 @@ export interface BulletinForm {
   share: string
   passportNumber: string
   snils: string
+  phone: string
   extraNotes: string
 }
 

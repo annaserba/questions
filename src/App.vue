@@ -155,6 +155,7 @@ watch(
     ownershipDocument: form.ownershipDocument,
     passportNumber: form.passportNumber,
     snils: form.snils,
+    phone: form.phone,
     share: form.share,
     extraNotes: form.extraNotes,
   }),

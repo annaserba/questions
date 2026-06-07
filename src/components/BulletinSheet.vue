@@ -91,6 +91,14 @@ defineEmits<{
 
           <p class="owner-hint">Можно указать один из документов: паспорт или СНИЛС</p>
 
+          <label class="owner-field">
+            <span>Номер телефона</span>
+            <input
+              v-model="form.phone"
+              type="tel"
+            />
+          </label>
+
         </div>
       </div>
 
@@ -264,7 +272,7 @@ defineEmits<{
 
 .owner-field-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 2fr 1fr;
   gap: 14px 18px;
 }
 
@@ -535,7 +543,7 @@ defineEmits<{
 
   .owner-field-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 2fr 1fr;
     gap: 1px 6px;
   }
 
