@@ -628,27 +628,36 @@ defineEmits<{
     border-color: #000;
   }
 
-  .apartment-grid > .owner-field-row {
+  .apartment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 6px;
+    align-items: baseline;
+  }
+
+  .apartment-grid .owner-field-row {
     display: contents;
   }
 
-  .apartment-grid > .owner-field-row .owner-field {
+  .apartment-grid .owner-field {
     display: inline-flex;
     align-items: baseline;
     gap: 2px;
+    font-size: 6.8pt;
   }
 
-  .apartment-grid > .owner-field-row .owner-field span {
+  .apartment-grid .owner-field span {
     font-size: 6.8pt;
     white-space: nowrap;
   }
 
-  .apartment-grid > .owner-field-row .owner-field input {
+  .apartment-grid .owner-field input {
     border: 0;
     border-bottom: 1px solid #000;
     padding: 0;
     font-size: 6.8pt;
     min-width: 0;
+    width: auto;
   }
 
   .property-type-select {
