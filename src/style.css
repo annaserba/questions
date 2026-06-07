@@ -87,7 +87,29 @@ textarea {
     font-size: 16pt !important;
   }
 
+  .large-print .document-subtitle,
+  .large-print .document-address,
+  .large-print .meta-list,
+  .large-print .notice-meta,
+  .large-print .owner-field span,
+  .large-print .owner-block-head strong {
+    font-size: 12pt !important;
+  }
+
+  .large-print .notice-body {
+    font-size: 14pt !important;
+  }
+
   .large-print .print-signature {
+    font-size: 12pt !important;
+  }
+
+  .large-print .agenda h3,
+  .large-print .section-title {
+    font-size: 13pt !important;
+  }
+
+  .large-print .agenda h4 {
     font-size: 12pt !important;
   }
 }
