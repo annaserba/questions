@@ -185,23 +185,23 @@ defineEmits<{
 
       <div class="sign-row">
         <div>
-          <span>Подпись собственника</span>
+          <span>{{ form.isRepresentative ? 'Подпись представителя' : 'Подпись собственника' }}</span>
           <b></b>
         </div>
         <div>
           <span>Расшифровка подписи</span>
-          <p class="signature-name">{{ form.ownerName || '______________________________' }}</p>
+          <p class="signature-name">{{ form.isRepresentative ? (form.representativeName || '______________________________') : (form.ownerName || '______________________________') }}</p>
         </div>
       </div>
 
       <div class="print-signature">
         <div>
-          <span>Подпись собственника</span>
+          <span>{{ form.isRepresentative ? 'Подпись представителя' : 'Подпись собственника' }}</span>
           <b></b>
         </div>
         <div>
           <span>Расшифровка подписи</span>
-          <p>{{ form.ownerName || '______________________________' }}</p>
+          <p>{{ form.isRepresentative ? (form.representativeName || '______________________________') : (form.ownerName || '______________________________') }}</p>
         </div>
       </div>
     </section>
