@@ -643,11 +643,11 @@ defineEmits<{
     display: flex;
     align-items: baseline;
     gap: 1px;
-    font-size: 6.4pt;
+    font-size: 6.8pt;
   }
 
   .apartment-grid .owner-field span {
-    font-size: 6.4pt;
+    font-size: 6.8pt;
     white-space: nowrap;
   }
 
@@ -655,7 +655,7 @@ defineEmits<{
     border: 0;
     border-bottom: 1px solid #000;
     padding: 0;
-    font-size: 6.4pt;
+    font-size: 6.8pt;
     width: 100%;
     min-width: 4mm;
     max-width: 18mm;
