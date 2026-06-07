@@ -621,7 +621,7 @@ function deselectAllApprovedQuestions(): void {
 
 function voteForAll(): void {
   questions.value.forEach((_, idx) => {
-    questionVotes[idx] = 'for'
+    questionVotes[idx + 1] = 'for'
   })
   saveVotesToStorage()
 }
