@@ -27,8 +27,13 @@ import type {
   VoteChoice,
 } from './types'
 import approvedQuestionsData from './data/approved-questions.json'
+import apartments48_1 from './data/apartments-48-1.json'
 
 const approvedQuestionsByHouse: Record<string, string[]> = approvedQuestionsData
+
+const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; name: string; phone: string; wantsBlank: boolean }>> = {
+  'пр-т. Октябрьской революции, 48/1': apartments48_1 as any,
+}
 
 const materials = [
   { src: maketImg, label: 'Схема установки' },
@@ -198,6 +203,27 @@ watch(
     const maxEndDate = addMonths(form.votingStartDate, 2)
     if (newVotingEndDate > maxEndDate) {
       form.votingEndDate = maxEndDate
+    }
+  },
+)
+
+watch(
+  () => form.apartment,
+  (newApartment) => {
+    const houseData = apartmentsByHouse[form.houseAddress]
+    if (!houseData || !newApartment.trim()) return
+
+    const apt = houseData[newApartment.trim()]
+    if (!apt) return
+
+    if (apt.cadastral && !form.ownershipDocument.trim()) {
+      form.ownershipDocument = apt.cadastral
+    }
+    if (apt.area && !form.area.trim()) {
+      form.area = apt.area
+    }
+    if (apt.name && !form.ownerName.trim()) {
+      form.ownerName = apt.name
     }
   },
 )

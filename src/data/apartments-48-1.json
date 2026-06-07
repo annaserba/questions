@@ -1,0 +1,1834 @@
+{
+  "1": {
+    "cadastral": "91:02:001013:7108",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "7978-898-34-17",
+    "wantsBlank": false
+  },
+  "2": {
+    "cadastral": "91:02:001013:7109",
+    "floor": "1",
+    "area": "42",
+    "name": "Царков Сергей Александрович",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "3": {
+    "cadastral": "91:02:001013:7110",
+    "floor": "1",
+    "area": "59",
+    "name": "Царков Сергей Александрович",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "4": {
+    "cadastral": "91:02:001013:7111",
+    "floor": "1",
+    "area": "41.3",
+    "name": "ООО \"Опт индустрия\"",
+    "phone": "7978-721-11-49",
+    "wantsBlank": true
+  },
+  "5": {
+    "cadastral": "91:02:001013:7112",
+    "floor": "1",
+    "area": "61.8",
+    "name": "Чижов Алексей Николаевич",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "6": {
+    "cadastral": "91:02:001013:7113",
+    "floor": "1",
+    "area": "97.6",
+    "name": "Козыкина",
+    "phone": "9182495932",
+    "wantsBlank": false
+  },
+  "7": {
+    "cadastral": "91:02:001013:7114-91/001/2020-3\nот 17.09.2020",
+    "floor": "1",
+    "area": "59.1",
+    "name": "Лещенко",
+    "phone": "7978 56 82891",
+    "wantsBlank": true
+  },
+  "8": {
+    "cadastral": "91:02:001013:7115",
+    "floor": "1",
+    "area": "51.9",
+    "name": "",
+    "phone": "7978-844-55-98",
+    "wantsBlank": true
+  },
+  "9": {
+    "cadastral": "91:02:001013:7116",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "10": {
+    "cadastral": "91:02:001013:7117",
+    "floor": "2",
+    "area": "41.9",
+    "name": "Хорошилова Любовь Иванова",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "11": {
+    "cadastral": "91:02:001013:7118",
+    "floor": "2",
+    "area": "58.5",
+    "name": "",
+    "phone": "9789177815, 7978-615-87-97",
+    "wantsBlank": true
+  },
+  "12": {
+    "cadastral": "91:02:001013:7119",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "7918-581-75-36",
+    "wantsBlank": false
+  },
+  "13": {
+    "cadastral": "91:02:001013:7120",
+    "floor": "2",
+    "area": "61.2",
+    "name": "",
+    "phone": "8978-179-13-71",
+    "wantsBlank": true
+  },
+  "14": {
+    "cadastral": "91:02:001013:7121",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "15": {
+    "cadastral": "91:02:001013:7122",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "79787097421",
+    "wantsBlank": false
+  },
+  "16": {
+    "cadastral": "91:02:001013:7123",
+    "floor": "2",
+    "area": "",
+    "name": "Мамонова Ольга Болисовна",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "17": {
+    "cadastral": "91:02:001013:7124",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "79787500462",
+    "wantsBlank": false
+  },
+  "18": {
+    "cadastral": "91:02:001013:7125",
+    "floor": "3",
+    "area": "",
+    "name": "без паспорта",
+    "phone": "8978-749-38-89",
+    "wantsBlank": false
+  },
+  "19": {
+    "cadastral": "91:02:001013:7126",
+    "floor": "3",
+    "area": "58.7",
+    "name": "",
+    "phone": "79113061631",
+    "wantsBlank": true
+  },
+  "20": {
+    "cadastral": "91:02:001013:7127",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "79781134312, 7978-051-72-24",
+    "wantsBlank": true
+  },
+  "21": {
+    "cadastral": "91:02:001013:7128",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "79787420875",
+    "wantsBlank": true
+  },
+  "22": {
+    "cadastral": "91:02:001013:7129",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "23": {
+    "cadastral": "91:02:001013:7130",
+    "floor": "3",
+    "area": "58.7",
+    "name": "",
+    "phone": "8953-308-17-27",
+    "wantsBlank": true
+  },
+  "24": {
+    "cadastral": "91:02:001013:7131",
+    "floor": "3",
+    "area": "",
+    "name": "Инна Манковская + 205",
+    "phone": "79049884583",
+    "wantsBlank": false
+  },
+  "25": {
+    "cadastral": "91:02:001013:7132",
+    "floor": "4",
+    "area": "31.8",
+    "name": "",
+    "phone": "8978-831-50-91",
+    "wantsBlank": true
+  },
+  "26": {
+    "cadastral": "91:02:001013:7133",
+    "floor": "4",
+    "area": "41.2",
+    "name": "Оксана офис 32 (парихмахерская около 1ого подъезда)",
+    "phone": "8978-795-99-92",
+    "wantsBlank": true
+  },
+  "27": {
+    "cadastral": "91:02:001013:7134",
+    "floor": "4",
+    "area": "58.6",
+    "name": "Злобин",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "28": {
+    "cadastral": "91:02:001013:7135",
+    "floor": "4",
+    "area": "41",
+    "name": "",
+    "phone": "7978-070-09-11",
+    "wantsBlank": true
+  },
+  "29": {
+    "cadastral": "91:02:001013:7136",
+    "floor": "4",
+    "area": "61.2",
+    "name": "Виктор Головенский",
+    "phone": "7978 898 3417",
+    "wantsBlank": true
+  },
+  "30": {
+    "cadastral": "91:02:001013:7137",
+    "floor": "4",
+    "area": "97.2",
+    "name": "",
+    "phone": "7989-293-67-14",
+    "wantsBlank": true
+  },
+  "31": {
+    "cadastral": "91:02:001013:7138",
+    "floor": "4",
+    "area": "58.9",
+    "name": "",
+    "phone": "8919-889-54-46",
+    "wantsBlank": false
+  },
+  "32": {
+    "cadastral": "91:02:001013:7139",
+    "floor": "4",
+    "area": "51.4",
+    "name": "",
+    "phone": "7978-712-55-45",
+    "wantsBlank": false
+  },
+  "33": {
+    "cadastral": "91:02:001013:7140",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "7983451366",
+    "wantsBlank": false
+  },
+  "34": {
+    "cadastral": "91:02:001013:7141",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "=+79787152636, 7978-872-27-17",
+    "wantsBlank": false
+  },
+  "35": {
+    "cadastral": "91:02:001013:7142",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "36": {
+    "cadastral": "91:02:001013:7143",
+    "floor": "5",
+    "area": "41.4",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "37": {
+    "cadastral": "91:02:001013:7144",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "=+79788664720, 7978-866-47-20, 7978-091-54-59",
+    "wantsBlank": false
+  },
+  "38": {
+    "cadastral": "91:02:001013:7145",
+    "floor": "5",
+    "area": "97.4",
+    "name": "Ирина Сергеенкова",
+    "phone": "7978-749-04-33",
+    "wantsBlank": false
+  },
+  "39": {
+    "cadastral": "91:02:001013:7146",
+    "floor": "5",
+    "area": "59.2",
+    "name": "",
+    "phone": "7978-801-23-72",
+    "wantsBlank": true
+  },
+  "40": {
+    "cadastral": "91:02:001013:7147",
+    "floor": "5",
+    "area": "51.2",
+    "name": "",
+    "phone": "7978-759-59-31",
+    "wantsBlank": true
+  },
+  "41": {
+    "cadastral": "91:02:001013:7148",
+    "floor": "6",
+    "area": "",
+    "name": "без паспорта",
+    "phone": "8978-282-42-61",
+    "wantsBlank": false
+  },
+  "42": {
+    "cadastral": "91:02:001013:7149",
+    "floor": "6",
+    "area": "41.2",
+    "name": "",
+    "phone": "79787672545",
+    "wantsBlank": true
+  },
+  "43": {
+    "cadastral": "91:02:001013:7150",
+    "floor": "6",
+    "area": "58.7",
+    "name": "",
+    "phone": "7978-832-24-04",
+    "wantsBlank": true
+  },
+  "44": {
+    "cadastral": "91:02:001013:7151",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "7978-809-91-71",
+    "wantsBlank": false
+  },
+  "45": {
+    "cadastral": "91:02:001013:7152",
+    "floor": "6",
+    "area": "61.3",
+    "name": "Курпшена, видимо у нас есть бланк и электронно",
+    "phone": "7978-091-54-59",
+    "wantsBlank": false
+  },
+  "46": {
+    "cadastral": "91:02:001013:7153",
+    "floor": "6",
+    "area": "96.9",
+    "name": "",
+    "phone": "8978-704-67-17",
+    "wantsBlank": true
+  },
+  "47": {
+    "cadastral": "91:02:001013:7154",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "7978-795-67-42",
+    "wantsBlank": true
+  },
+  "48": {
+    "cadastral": "91:02:001013:7155",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "79780001897",
+    "wantsBlank": false
+  },
+  "49": {
+    "cadastral": "91:02:001013:7156",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "50": {
+    "cadastral": "91:02:001013:7157",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "79788218253",
+    "wantsBlank": false
+  },
+  "51": {
+    "cadastral": "91:02:001013:7158",
+    "floor": "7",
+    "area": "58.5",
+    "name": "",
+    "phone": "79780073508, 79780381038",
+    "wantsBlank": false
+  },
+  "52": {
+    "cadastral": "91:02:001013:7159",
+    "floor": "7",
+    "area": "40.6",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "53": {
+    "cadastral": "91:02:001013:7160",
+    "floor": "7",
+    "area": "61",
+    "name": "",
+    "phone": "7914-024-84-93, 7914-024-84-91",
+    "wantsBlank": false
+  },
+  "54": {
+    "cadastral": "91:02:001013:7161",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "7978-796-59-30",
+    "wantsBlank": true
+  },
+  "55": {
+    "cadastral": "91:02:001013:7162-92/002/2023-3\nот 16.06.2023",
+    "floor": "7",
+    "area": "59.3",
+    "name": "",
+    "phone": "79878879122",
+    "wantsBlank": true
+  },
+  "56": {
+    "cadastral": "91:02:001013:7163",
+    "floor": "7",
+    "area": "50.5",
+    "name": "",
+    "phone": "79781020782",
+    "wantsBlank": true
+  },
+  "57": {
+    "cadastral": "91:02:001013:7164",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "58": {
+    "cadastral": "91:02:001013:7165",
+    "floor": "8",
+    "area": "55.4",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "59": {
+    "cadastral": "91:02:001013:7166",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "7914-262-04-20",
+    "wantsBlank": false
+  },
+  "60": {
+    "cadastral": "91:02:001013:7167",
+    "floor": "8",
+    "area": "40.7",
+    "name": "",
+    "phone": "7978739-90-35",
+    "wantsBlank": true
+  },
+  "61": {
+    "cadastral": "91:02:001013:7168",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "7978-942-95-31, 7978-880-26-51",
+    "wantsBlank": false
+  },
+  "62": {
+    "cadastral": "91:02:001013:7169",
+    "floor": "8",
+    "area": "97.3",
+    "name": "",
+    "phone": "79787902212",
+    "wantsBlank": true
+  },
+  "63": {
+    "cadastral": "91:02:001013:7170",
+    "floor": "8",
+    "area": "59.2",
+    "name": "без паспорта",
+    "phone": "8978-764-60-05",
+    "wantsBlank": true
+  },
+  "64": {
+    "cadastral": "91:02:001013:7171",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "7978-900-58-28",
+    "wantsBlank": false
+  },
+  "65": {
+    "cadastral": "91:02:001013:7172",
+    "floor": "9",
+    "area": "31.3",
+    "name": "",
+    "phone": "7978-744-90-16",
+    "wantsBlank": false
+  },
+  "66": {
+    "cadastral": "91:02:001013:7173",
+    "floor": "9",
+    "area": "41.2",
+    "name": "",
+    "phone": "7978-229-65-24",
+    "wantsBlank": false
+  },
+  "67": {
+    "cadastral": "91:02:001013:7174",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "68": {
+    "cadastral": "91:02:001013:7175",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "69": {
+    "cadastral": "91:02:001013:7176",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "7978-784-57-20",
+    "wantsBlank": false
+  },
+  "70": {
+    "cadastral": "91:02:001013:7177",
+    "floor": "9",
+    "area": "95.8",
+    "name": "",
+    "phone": "79780471685, 7978-047-16-85",
+    "wantsBlank": false
+  },
+  "71": {
+    "cadastral": "91:02:001013:7178",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "72": {
+    "cadastral": "91:02:001013:7179",
+    "floor": "9",
+    "area": "51.5",
+    "name": "",
+    "phone": "7978-876-42-90",
+    "wantsBlank": true
+  },
+  "73": {
+    "cadastral": "91:02:001013:7180",
+    "floor": "10",
+    "area": "31.4",
+    "name": "",
+    "phone": "797886627",
+    "wantsBlank": true
+  },
+  "74": {
+    "cadastral": "91:02:001013:7181",
+    "floor": "10",
+    "area": "41.3",
+    "name": "Черкесов",
+    "phone": "79788950749",
+    "wantsBlank": true
+  },
+  "75": {
+    "cadastral": "91:02:001013:7182",
+    "floor": "10",
+    "area": "",
+    "name": "Сергей",
+    "phone": "79787889958",
+    "wantsBlank": true
+  },
+  "76": {
+    "cadastral": "91:02:001013:7183",
+    "floor": "10",
+    "area": "40.7",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "77": {
+    "cadastral": "91:02:001013:7184",
+    "floor": "10",
+    "area": "60.7",
+    "name": "Ирина Сергеенкова",
+    "phone": "7978-749-04-20",
+    "wantsBlank": true
+  },
+  "78": {
+    "cadastral": "91:02:001013:7185",
+    "floor": "10",
+    "area": "97",
+    "name": "",
+    "phone": "7978-730-15-24",
+    "wantsBlank": false
+  },
+  "79": {
+    "cadastral": "91:02:001013:7186",
+    "floor": "10",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "80": {
+    "cadastral": "91:02:001013:7187",
+    "floor": "10",
+    "area": "51.2",
+    "name": "",
+    "phone": "79781467629",
+    "wantsBlank": true
+  },
+  "81": {
+    "cadastral": "91:02:001013:7189",
+    "floor": "1",
+    "area": "37.5",
+    "name": "",
+    "phone": "79781467629",
+    "wantsBlank": true
+  },
+  "82": {
+    "cadastral": "91:02:001013:7190",
+    "floor": "1",
+    "area": "",
+    "name": "нет паспорта",
+    "phone": "7978-842-51-59",
+    "wantsBlank": false
+  },
+  "83": {
+    "cadastral": "91:02:001013:7191",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "79787493193",
+    "wantsBlank": false
+  },
+  "84": {
+    "cadastral": "91:02:001013:7192",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "7978-749-41-93",
+    "wantsBlank": false
+  },
+  "85": {
+    "cadastral": "91:02:001013:7193",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "79787494192",
+    "wantsBlank": false
+  },
+  "86": {
+    "cadastral": "91:02:001013:7194",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "79104179111",
+    "wantsBlank": false
+  },
+  "87": {
+    "cadastral": "91:02:001013:7195",
+    "floor": "1",
+    "area": "38.4",
+    "name": "",
+    "phone": "7978-535-97-08",
+    "wantsBlank": true
+  },
+  "88": {
+    "cadastral": "91:02:001013:7196",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "7916-530-68-57",
+    "wantsBlank": false
+  },
+  "89": {
+    "cadastral": "91:02:001013:7197",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "8978-032-34-07",
+    "wantsBlank": false
+  },
+  "90": {
+    "cadastral": "91:02:001013:7198",
+    "floor": "2",
+    "area": "38.2",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "91": {
+    "cadastral": "91:02:001013:7199",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "8978-760-92-66",
+    "wantsBlank": false
+  },
+  "92": {
+    "cadastral": "91:02:001013:7200",
+    "floor": "2",
+    "area": "57.9",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "93": {
+    "cadastral": "91:02:001013:7201",
+    "floor": "2",
+    "area": "58",
+    "name": "Кореяк",
+    "phone": "8978-748-65-21",
+    "wantsBlank": true
+  },
+  "94": {
+    "cadastral": "91:02:001013:7202",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "95": {
+    "cadastral": "91:02:001013:7203",
+    "floor": "2",
+    "area": "38.4",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "96": {
+    "cadastral": "91:02:001013:7204",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "8988-414-71-50",
+    "wantsBlank": false
+  },
+  "97": {
+    "cadastral": "91:02:001013:7205",
+    "floor": "3",
+    "area": "36.8",
+    "name": "",
+    "phone": "8978-562-58-01",
+    "wantsBlank": true
+  },
+  "98": {
+    "cadastral": "91:02:001013:7206",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "99": {
+    "cadastral": "91:02:001013:7207",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "7978-822-84-96",
+    "wantsBlank": false
+  },
+  "100": {
+    "cadastral": "91:02:001013:7208",
+    "floor": "3",
+    "area": "56.1",
+    "name": "Елена Богданова",
+    "phone": "7 978 817 5764",
+    "wantsBlank": true
+  },
+  "101": {
+    "cadastral": "91:02:001013:7209",
+    "floor": "3",
+    "area": "55.9",
+    "name": "",
+    "phone": "7978-817-57-64",
+    "wantsBlank": true
+  },
+  "102": {
+    "cadastral": "91:02:001013:7210",
+    "floor": "3",
+    "area": "36",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "103": {
+    "cadastral": "91:02:001013:7211",
+    "floor": "3",
+    "area": "",
+    "name": "",
+    "phone": "8978-765-58-05",
+    "wantsBlank": false
+  },
+  "104": {
+    "cadastral": "91:02:001013:7212",
+    "floor": "3",
+    "area": "39.7",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "105": {
+    "cadastral": "91:02:001013:7213",
+    "floor": "4",
+    "area": "37.2",
+    "name": "",
+    "phone": "7978-704-02-04",
+    "wantsBlank": true
+  },
+  "106": {
+    "cadastral": "91:02:001013:7214",
+    "floor": "4",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "107": {
+    "cadastral": "91:02:001013:7215",
+    "floor": "4",
+    "area": "53.7",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "108": {
+    "cadastral": "91:02:001013:7216",
+    "floor": "4",
+    "area": "55.6",
+    "name": "",
+    "phone": "7984-136-27-33",
+    "wantsBlank": true
+  },
+  "109": {
+    "cadastral": "91:02:001013:7217",
+    "floor": "4",
+    "area": "55.7",
+    "name": "",
+    "phone": "7978-739-04-44",
+    "wantsBlank": true
+  },
+  "110": {
+    "cadastral": "91:02:001013:7218",
+    "floor": "4",
+    "area": "",
+    "name": "",
+    "phone": "7978-890-73-15",
+    "wantsBlank": false
+  },
+  "111": {
+    "cadastral": "91:02:001013:7219",
+    "floor": "4",
+    "area": "38",
+    "name": "",
+    "phone": "797873048-95, 7978-275-01-50",
+    "wantsBlank": true
+  },
+  "112": {
+    "cadastral": "91:02:001013:7220",
+    "floor": "4",
+    "area": "39.8",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "113": {
+    "cadastral": "91:02:001013:7221",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "8978-545-89-15",
+    "wantsBlank": false
+  },
+  "114": {
+    "cadastral": "91:02:001013:7222",
+    "floor": "5",
+    "area": "",
+    "name": "возможно противники без номера квартиры",
+    "phone": "7916-804-92-21",
+    "wantsBlank": false
+  },
+  "115": {
+    "cadastral": "91:02:001013:7223",
+    "floor": "5",
+    "area": "55.1",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "116": {
+    "cadastral": "91:02:001013:7224",
+    "floor": "5",
+    "area": "55.8",
+    "name": "Анна",
+    "phone": "7978-063-17-01",
+    "wantsBlank": true
+  },
+  "117": {
+    "cadastral": "91:02:001013:7225",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "7978-725-42-87",
+    "wantsBlank": false
+  },
+  "118": {
+    "cadastral": "91:02:001013:7226",
+    "floor": "5",
+    "area": "36.1",
+    "name": "",
+    "phone": "7978-570-00-87",
+    "wantsBlank": false
+  },
+  "119": {
+    "cadastral": "91:02:001013:7227",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "120": {
+    "cadastral": "91:02:001013:7228",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "8978-809-91-71",
+    "wantsBlank": false
+  },
+  "121": {
+    "cadastral": "91:02:001013:7229",
+    "floor": "6",
+    "area": "37.1",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "122": {
+    "cadastral": "91:02:001013:7230",
+    "floor": "6",
+    "area": "38.5",
+    "name": "",
+    "phone": "7911-381-53-87",
+    "wantsBlank": false
+  },
+  "123": {
+    "cadastral": "91:02:001013:7231",
+    "floor": "6",
+    "area": "53.1",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "124": {
+    "cadastral": "91:02:001013:7232",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "125": {
+    "cadastral": "91:02:001013:7233",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "126": {
+    "cadastral": "91:02:001013:7234",
+    "floor": "6",
+    "area": "36",
+    "name": "",
+    "phone": "7978-014-50-54",
+    "wantsBlank": true
+  },
+  "127": {
+    "cadastral": "91:02:001013:7235",
+    "floor": "6",
+    "area": "38.2",
+    "name": "",
+    "phone": "79787959757",
+    "wantsBlank": true
+  },
+  "128": {
+    "cadastral": "91:02:001013:7236",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "129": {
+    "cadastral": "91:02:001013:7237",
+    "floor": "7",
+    "area": "36.9",
+    "name": "Немец",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "130": {
+    "cadastral": "91:02:001013:7238",
+    "floor": "7",
+    "area": "37.9",
+    "name": "",
+    "phone": "79780199016",
+    "wantsBlank": true
+  },
+  "131": {
+    "cadastral": "91:02:001013:7239",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "132": {
+    "cadastral": "91:02:001013:7240",
+    "floor": "7",
+    "area": "55.9",
+    "name": "",
+    "phone": "7978-033-94-39",
+    "wantsBlank": false
+  },
+  "133": {
+    "cadastral": "91:02:001013:7241",
+    "floor": "7",
+    "area": "55.5",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "134": {
+    "cadastral": "91:02:001013:7242",
+    "floor": "7",
+    "area": "35.7",
+    "name": "",
+    "phone": "79788375942",
+    "wantsBlank": false
+  },
+  "135": {
+    "cadastral": "91:02:001013:7243",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "8678-861-28-10",
+    "wantsBlank": false
+  },
+  "136": {
+    "cadastral": "91:02:001013:7244",
+    "floor": "7",
+    "area": "39.8",
+    "name": "",
+    "phone": "7978-746-47-39",
+    "wantsBlank": true
+  },
+  "137": {
+    "cadastral": "91:02:001013:7245",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "138": {
+    "cadastral": "91:02:001013:7246",
+    "floor": "8",
+    "area": "38.3",
+    "name": "",
+    "phone": "7978-543-32-96",
+    "wantsBlank": false
+  },
+  "139": {
+    "cadastral": "91:02:001013:7247",
+    "floor": "8",
+    "area": "52.6",
+    "name": "Чунарев",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "140": {
+    "cadastral": "91:02:001013:7248",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "79788042660",
+    "wantsBlank": false
+  },
+  "141": {
+    "cadastral": "91:02:001013:7249",
+    "floor": "8",
+    "area": "55.4",
+    "name": "",
+    "phone": "7978-245-69-76",
+    "wantsBlank": false
+  },
+  "142": {
+    "cadastral": "91:02:001013:7250",
+    "floor": "8",
+    "area": "",
+    "name": "",
+    "phone": "8918-199-73-33",
+    "wantsBlank": false
+  },
+  "143": {
+    "cadastral": "91:02:001013:7251",
+    "floor": "8",
+    "area": "37.9",
+    "name": "",
+    "phone": "7978-748-87-93",
+    "wantsBlank": true
+  },
+  "144": {
+    "cadastral": "91:02:001013:7252",
+    "floor": "8",
+    "area": "39.9",
+    "name": "",
+    "phone": "79787409068",
+    "wantsBlank": true
+  },
+  "145": {
+    "cadastral": "91:02:001013:7253",
+    "floor": "9",
+    "area": "36.8",
+    "name": "",
+    "phone": "7 931 213 1737",
+    "wantsBlank": false
+  },
+  "146": {
+    "cadastral": "91:02:001013:7254",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "79090110265",
+    "wantsBlank": false
+  },
+  "147": {
+    "cadastral": "91:02:001013:7255",
+    "floor": "9",
+    "area": "52.9",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "148": {
+    "cadastral": "91:02:001013:7256",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "149": {
+    "cadastral": "91:02:001013:7257",
+    "floor": "9",
+    "area": "55.5",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "150": {
+    "cadastral": "91:02:001013:7258",
+    "floor": "9",
+    "area": "35.8",
+    "name": "",
+    "phone": "7978-7447721",
+    "wantsBlank": true
+  },
+  "151": {
+    "cadastral": "91:02:001013:7259",
+    "floor": "9",
+    "area": "37.7",
+    "name": "Пигарева",
+    "phone": "79788317842",
+    "wantsBlank": true
+  },
+  "152": {
+    "cadastral": "91:02:001013:7260",
+    "floor": "9",
+    "area": "39.9",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "153": {
+    "cadastral": "91:02:001013:7261",
+    "floor": "10",
+    "area": "36.7",
+    "name": "",
+    "phone": "7978-263-62-58",
+    "wantsBlank": false
+  },
+  "154": {
+    "cadastral": "91:02:001013:7262",
+    "floor": "10",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "155": {
+    "cadastral": "91:02:001013:7263",
+    "floor": "10",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "156": {
+    "cadastral": "91:02:001013:7264",
+    "floor": "10",
+    "area": "55.5",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "157": {
+    "cadastral": "91:02:001013:7265",
+    "floor": "10",
+    "area": "55.4",
+    "name": "",
+    "phone": "7978-909-18-78",
+    "wantsBlank": true
+  },
+  "158": {
+    "cadastral": "91:02:001013:7266",
+    "floor": "10",
+    "area": "35.6",
+    "name": "",
+    "phone": "7978-057-31-07",
+    "wantsBlank": true
+  },
+  "159": {
+    "cadastral": "91:02:001013:7267",
+    "floor": "10",
+    "area": "37.6",
+    "name": "",
+    "phone": "7914-607-80-76",
+    "wantsBlank": true
+  },
+  "160": {
+    "cadastral": "91:02:001013:7268",
+    "floor": "10",
+    "area": "39.9",
+    "name": "",
+    "phone": "79115530321",
+    "wantsBlank": false
+  },
+  "161": {
+    "cadastral": "91:02:001013:7268",
+    "floor": "1",
+    "area": "40.1",
+    "name": "",
+    "phone": "=+79002023500, 7917-425-00-52",
+    "wantsBlank": true
+  },
+  "162": {
+    "cadastral": "91:02:001013:7269",
+    "floor": "1",
+    "area": "38.2",
+    "name": "Пигарева Любовь",
+    "phone": "8978-165-34-46",
+    "wantsBlank": true
+  },
+  "163": {
+    "cadastral": "91:02:001013:7270",
+    "floor": "1",
+    "area": "36.6",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "164": {
+    "cadastral": "91:02:001013:7271",
+    "floor": "1",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "165": {
+    "cadastral": "91:02:001013:7272",
+    "floor": "1",
+    "area": "58.1",
+    "name": "Пигарева",
+    "phone": "79787093496",
+    "wantsBlank": true
+  },
+  "166": {
+    "cadastral": "91:02:001013:7273",
+    "floor": "1",
+    "area": "55.2",
+    "name": "Пигарева",
+    "phone": "7918-050-21-03",
+    "wantsBlank": true
+  },
+  "167": {
+    "cadastral": "91:02:001013:7274",
+    "floor": "2",
+    "area": "39.8",
+    "name": "",
+    "phone": "7978-725-48-67",
+    "wantsBlank": true
+  },
+  "168": {
+    "cadastral": "91:02:001013:7275",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "169": {
+    "cadastral": "91:02:001013:7276",
+    "floor": "2",
+    "area": "36.4",
+    "name": "",
+    "phone": "7978-761-45-42",
+    "wantsBlank": true
+  },
+  "170": {
+    "cadastral": "91:02:001013:7277",
+    "floor": "2",
+    "area": "58",
+    "name": "",
+    "phone": "7978-044-54-37",
+    "wantsBlank": false
+  },
+  "171": {
+    "cadastral": "91:02:001013:7278",
+    "floor": "2",
+    "area": "",
+    "name": "Журавлёв Сергей Иванович Живут на маячной друзья",
+    "phone": "79124159332",
+    "wantsBlank": false
+  },
+  "172": {
+    "cadastral": "91:02:001013:7279",
+    "floor": "2",
+    "area": "85",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "173": {
+    "cadastral": "91:02:001013:7280",
+    "floor": "2",
+    "area": "",
+    "name": "",
+    "phone": "7918-159-57-56",
+    "wantsBlank": false
+  },
+  "174": {
+    "cadastral": "91:02:001013:7281",
+    "floor": "3",
+    "area": "",
+    "name": "Наталья Ивановна",
+    "phone": "79787254867",
+    "wantsBlank": true
+  },
+  "175": {
+    "cadastral": "91:02:001013:7282",
+    "floor": "3",
+    "area": "38.4",
+    "name": "Владимир Викторович",
+    "phone": "79787156281",
+    "wantsBlank": true
+  },
+  "176": {
+    "cadastral": "91:02:001013:7283",
+    "floor": "3",
+    "area": "36.3",
+    "name": "Злобин Василий Васильевич",
+    "phone": "8978-126-85-05",
+    "wantsBlank": true
+  },
+  "177": {
+    "cadastral": "91:02:001013:7284",
+    "floor": "3",
+    "area": "55.4",
+    "name": "",
+    "phone": "7978-455-05-75",
+    "wantsBlank": false
+  },
+  "178": {
+    "cadastral": "91:02:001013:7285",
+    "floor": "3",
+    "area": "55.9",
+    "name": "Мария",
+    "phone": "7978-766-97-59",
+    "wantsBlank": true
+  },
+  "179": {
+    "cadastral": "91:02:001013:7286",
+    "floor": "3",
+    "area": "84.9",
+    "name": "",
+    "phone": "7978-682-85-82",
+    "wantsBlank": false
+  },
+  "180": {
+    "cadastral": "91:02:001013:7287",
+    "floor": "3",
+    "area": "55.3",
+    "name": "",
+    "phone": "7978-768-37-89",
+    "wantsBlank": true
+  },
+  "181": {
+    "cadastral": "91:02:001013:7288",
+    "floor": "4",
+    "area": "39.8",
+    "name": "",
+    "phone": "7978-873-76-23",
+    "wantsBlank": true
+  },
+  "182": {
+    "cadastral": "91:02:001013:7289",
+    "floor": "4",
+    "area": "",
+    "name": "",
+    "phone": "8978-037-35-08, 7978-215-81-12",
+    "wantsBlank": false
+  },
+  "183": {
+    "cadastral": "91:02:001013:7290",
+    "floor": "4",
+    "area": "",
+    "name": "",
+    "phone": "7978-776-85-98",
+    "wantsBlank": false
+  },
+  "184": {
+    "cadastral": "91:02:001013:7291",
+    "floor": "4",
+    "area": "55.8",
+    "name": "Опт +195, 197, 215",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "185": {
+    "cadastral": "91:02:001013:7292",
+    "floor": "4",
+    "area": "55",
+    "name": "",
+    "phone": "7978-748-79-53",
+    "wantsBlank": true
+  },
+  "186": {
+    "cadastral": "91:02:001013:7293",
+    "floor": "4",
+    "area": "85",
+    "name": "",
+    "phone": "79780445698",
+    "wantsBlank": false
+  },
+  "187": {
+    "cadastral": "91:02:001013:7294",
+    "floor": "4",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "188": {
+    "cadastral": "91:02:001013:7295",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "7978-796-91-08",
+    "wantsBlank": false
+  },
+  "189": {
+    "cadastral": "91:02:001013:7296",
+    "floor": "5",
+    "area": "",
+    "name": "Терентьева +217",
+    "phone": "79108235310",
+    "wantsBlank": false
+  },
+  "190": {
+    "cadastral": "91:02:001013:7297",
+    "floor": "5",
+    "area": "36.3",
+    "name": "Злобин Василий Васильевич +27, 176",
+    "phone": "79781268505",
+    "wantsBlank": true
+  },
+  "191": {
+    "cadastral": "91:02:001013:7298",
+    "floor": "5",
+    "area": "55.9",
+    "name": "",
+    "phone": "7978-818-95-55",
+    "wantsBlank": true
+  },
+  "192": {
+    "cadastral": "91:02:001013:7299",
+    "floor": "5",
+    "area": "55.8",
+    "name": "",
+    "phone": "7924-466-72-70",
+    "wantsBlank": false
+  },
+  "193": {
+    "cadastral": "91:02:001013:7300",
+    "floor": "5",
+    "area": "",
+    "name": "",
+    "phone": "79787975022, 7914-197-02-25",
+    "wantsBlank": true
+  },
+  "194": {
+    "cadastral": "91:02:001013:7301",
+    "floor": "5",
+    "area": "55.3",
+    "name": "",
+    "phone": "7914-197-02-25",
+    "wantsBlank": true
+  },
+  "195": {
+    "cadastral": "91:02:001013:7302",
+    "floor": "6",
+    "area": "40.2",
+    "name": "Опт",
+    "phone": "7916-102-66-62",
+    "wantsBlank": true
+  },
+  "196": {
+    "cadastral": "91:02:001013:7303",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "197": {
+    "cadastral": "91:02:001013:7304",
+    "floor": "6",
+    "area": "36.2",
+    "name": "Опт",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "198": {
+    "cadastral": "91:02:001013:7305",
+    "floor": "6",
+    "area": "55.8",
+    "name": "",
+    "phone": "7978-812-74-02",
+    "wantsBlank": false
+  },
+  "199": {
+    "cadastral": "91:02:001013:7306",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "200": {
+    "cadastral": "91:02:001013:7307",
+    "floor": "6",
+    "area": "85.2",
+    "name": "",
+    "phone": "7978-710-62-88",
+    "wantsBlank": false
+  },
+  "201": {
+    "cadastral": "91:02:001013:7308",
+    "floor": "6",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "202": {
+    "cadastral": "91:02:001013:7309",
+    "floor": "7",
+    "area": "39.8",
+    "name": "",
+    "phone": "7978-073-20-81",
+    "wantsBlank": true
+  },
+  "203": {
+    "cadastral": "91:02:001013:7310",
+    "floor": "7",
+    "area": "37.9",
+    "name": "Лопашинский",
+    "phone": "79789185656",
+    "wantsBlank": true
+  },
+  "204": {
+    "cadastral": "91:02:001013:7311",
+    "floor": "7",
+    "area": "35.7",
+    "name": "",
+    "phone": "79787280098, 7978-728-00-98",
+    "wantsBlank": false
+  },
+  "205": {
+    "cadastral": "91:02:001013:7312",
+    "floor": "7",
+    "area": "",
+    "name": "Инна Марковская +24 в Германии",
+    "phone": "=+7 (904) 988-45-83",
+    "wantsBlank": false
+  },
+  "206": {
+    "cadastral": "91:02:001013:7313",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "7978-045-40-71",
+    "wantsBlank": false
+  },
+  "207": {
+    "cadastral": "91:02:001013:7314",
+    "floor": "7",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "208": {
+    "cadastral": "91:02:001013:7315",
+    "floor": "7",
+    "area": "54.8",
+    "name": "",
+    "phone": "7978-587-48-57, 7978-587-48-57",
+    "wantsBlank": false
+  },
+  "209": {
+    "cadastral": "91:02:001013:7316",
+    "floor": "8",
+    "area": "",
+    "name": "Квач Надежда?",
+    "phone": "8978-722-71-39",
+    "wantsBlank": false
+  },
+  "210": {
+    "cadastral": "91:02:001013:7317",
+    "floor": "8",
+    "area": "37.9",
+    "name": "Немец",
+    "phone": "7982-534-10-00, +7 (982) 205-93-35",
+    "wantsBlank": true
+  },
+  "211": {
+    "cadastral": "91:02:001013:7318",
+    "floor": "8",
+    "area": "35.6",
+    "name": "Немец",
+    "phone": "7982-534-10-00",
+    "wantsBlank": true
+  },
+  "212": {
+    "cadastral": "91:02:001013:7319",
+    "floor": "8",
+    "area": "55.4",
+    "name": "",
+    "phone": "8924-278-50-60, 7924-278-50-60",
+    "wantsBlank": false
+  },
+  "213": {
+    "cadastral": "91:02:001013:7320",
+    "floor": "8",
+    "area": "55.6",
+    "name": "",
+    "phone": "7978-710-11-07",
+    "wantsBlank": false
+  },
+  "214": {
+    "cadastral": "91:02:001013:7321",
+    "floor": "8",
+    "area": "84.8",
+    "name": "Белышева Ольга",
+    "phone": "79787237175",
+    "wantsBlank": true
+  },
+  "215": {
+    "cadastral": "91:02:001013:7322",
+    "floor": "8",
+    "area": "54.7",
+    "name": "Опт",
+    "phone": "7978-509-82-19",
+    "wantsBlank": true
+  },
+  "216": {
+    "cadastral": "91:02:001013:7323",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "79787125305",
+    "wantsBlank": false
+  },
+  "217": {
+    "cadastral": "91:02:001013:7324",
+    "floor": "9",
+    "area": "",
+    "name": "Терентьева +189",
+    "phone": "79108235310",
+    "wantsBlank": false
+  },
+  "218": {
+    "cadastral": "91:02:001013:7325",
+    "floor": "9",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "219": {
+    "cadastral": "91:02:001013:7326",
+    "floor": "9",
+    "area": "",
+    "name": "без паспорта",
+    "phone": "79780287259",
+    "wantsBlank": false
+  },
+  "220": {
+    "cadastral": "91:02:001013:7327",
+    "floor": "9",
+    "area": "55.4",
+    "name": "",
+    "phone": "7978-042-09-72",
+    "wantsBlank": true
+  },
+  "221": {
+    "cadastral": "91:02:001013:7328",
+    "floor": "9",
+    "area": "84.7",
+    "name": "Яковлев Илья собств.",
+    "phone": "79600246060",
+    "wantsBlank": true
+  },
+  "222": {
+    "cadastral": "91:02:001013:7329",
+    "floor": "9",
+    "area": "",
+    "name": "Суркова Ольга",
+    "phone": "7978-578-97-38, 7978-578-97-39",
+    "wantsBlank": false
+  },
+  "223": {
+    "cadastral": "91:02:001013:7330",
+    "floor": "10",
+    "area": "",
+    "name": "",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "224": {
+    "cadastral": "91:02:001013:7331",
+    "floor": "10",
+    "area": "37.7",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "225": {
+    "cadastral": "91:02:001013:7332",
+    "floor": "10",
+    "area": "36.3",
+    "name": "",
+    "phone": "",
+    "wantsBlank": true
+  },
+  "226": {
+    "cadastral": "91:02:001013:7333",
+    "floor": "10",
+    "area": "55.4",
+    "name": "",
+    "phone": "7978-284-65-50",
+    "wantsBlank": false
+  },
+  "227": {
+    "cadastral": "91:02:001013:7334",
+    "floor": "10",
+    "area": "55.4",
+    "name": "",
+    "phone": "8918-249-59-32",
+    "wantsBlank": false
+  },
+  "228": {
+    "cadastral": "91:02:001013:7335",
+    "floor": "10",
+    "area": "84.3",
+    "name": "Злата",
+    "phone": "79788675300",
+    "wantsBlank": false
+  },
+  "229": {
+    "cadastral": "91:02:001013:7336",
+    "floor": "10",
+    "area": "",
+    "name": "Дарья",
+    "phone": "7978-266-80-79",
+    "wantsBlank": false
+  }
+}
