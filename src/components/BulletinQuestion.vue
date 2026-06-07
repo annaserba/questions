@@ -298,6 +298,7 @@ const expanded = ref(false)
   .vote-button.active {
     background: #fff;
     color: #000;
+    box-shadow: none;
   }
 
   .vote-indicator {
