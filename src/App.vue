@@ -737,18 +737,20 @@ watch(
             </option>
           </select>
         </label>
-        <button class="header-print" type="button" @click="printPage">
-          Печать
-        </button>
-        <button class="header-action" type="button" @click="largePrint = !largePrint">
-          {{ largePrint ? 'Обычный шрифт' : 'Крупный шрифт' }}
-        </button>
-        <label class="header-check">
-          <input v-model="printExplanations" type="checkbox" />
-          <span>С пояснениями</span>
-        </label>
+        <div class="header-actions">
+          <button class="header-print" type="button" @click="printPage">
+            Печать
+          </button>
+          <button class="header-action" type="button" @click="largePrint = !largePrint">
+            {{ largePrint ? 'Обычный шрифт' : 'Крупный шрифт' }}
+          </button>
+          <label class="header-check">
+            <input v-model="printExplanations" type="checkbox" />
+            <span>С пояснениями</span>
+          </label>
+        </div>
         <button
-          class="header-action"
+          class="header-action header-vote-all"
           type="button"
           @click="voteForAll"
         >
@@ -913,6 +915,23 @@ watch(
   width: 16px;
   height: 16px;
   cursor: pointer;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-vote-all {
+  border-color: var(--gos-blue);
+  background: var(--gos-blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.header-vote-all:hover {
+  background: #0b3fb0;
 }
 
 .header-label span {
