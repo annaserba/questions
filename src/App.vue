@@ -446,33 +446,74 @@ function applyApprovedQuestionTitles(titles: string[]): void {
 }
 
 async function loadApprovedQuestionsFromProject(): Promise<void> {
-  const saved = window.localStorage.getItem(getApprovedQuestionKey())
-  if (saved) return
+  try {
+    const response = await fetch('/api/approved-questions')
 
-  const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
-  if (Array.isArray(houseQuestions)) {
-    applyApprovedQuestionTitles(houseQuestions)
-    saveApprovedQuestions()
+    if (!response.ok) {
+      const saved = window.localStorage.getItem(getApprovedQuestionKey())
+      if (!saved) {
+        const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
+        if (Array.isArray(houseQuestions)) {
+          applyApprovedQuestionTitles(houseQuestions)
+          saveApprovedQuestions()
+        }
+      }
+      return
+    }
+
+    const payload = await response.json() as { questions?: Record<string, string[]> }
+    if (payload.questions && typeof payload.questions === 'object') {
+      const houseQuestions = payload.questions[form.houseAddress]
+      if (Array.isArray(houseQuestions)) {
+        applyApprovedQuestionTitles(houseQuestions)
+        saveApprovedQuestions()
+      }
+    }
+  } catch {
+    const saved = window.localStorage.getItem(getApprovedQuestionKey())
+    if (!saved) {
+      const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
+      if (Array.isArray(houseQuestions)) {
+        applyApprovedQuestionTitles(houseQuestions)
+        saveApprovedQuestions()
+      }
+    }
   }
 }
 
 async function saveApprovedQuestionsToProject(): Promise<void> {
-  approvedSaveStatus.value = 'Сохраняю...'
+  approvedSaveStatus.value = 'Сохраняю в проект...'
+
   try {
-    window.localStorage.setItem(
-      '__approved_questions_source',
-      JSON.stringify(buildApprovedQuestionTitles()),
-    )
-    approvedSaveStatus.value = 'Сохранено'
+    const response = await fetch('/api/approved-questions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        houseAddress: form.houseAddress,
+        questions: buildApprovedQuestionTitles(),
+      }),
+    })
+
+    if (!response.ok) {
+      const payload = await response.json() as { error?: string }
+      throw new Error(payload.error || 'Не удалось сохранить согласованные вопросы.')
+    }
+
+    saveApprovedQuestions()
+    approvedSaveStatus.value = 'Сохранено в проект'
     window.setTimeout(() => {
-      if (approvedSaveStatus.value === 'Сохранено') {
+      if (approvedSaveStatus.value === 'Сохранено в проект') {
         approvedSaveStatus.value = ''
       }
     }, 1800)
   } catch (error) {
-    approvedSaveStatus.value = error instanceof Error
-      ? error.message
-      : 'Не удалось сохранить согласованные вопросы.'
+    saveApprovedQuestions()
+    approvedSaveStatus.value = 'Сохранено локально'
+    window.setTimeout(() => {
+      if (approvedSaveStatus.value === 'Сохранено локально') {
+        approvedSaveStatus.value = ''
+      }
+    }, 1800)
   }
 }
 

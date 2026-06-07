@@ -13,6 +13,7 @@ interface AnalyzeQuestionPayload {
 }
 
 interface ApprovedQuestionsPayload {
+  houseAddress?: string
   questions?: string[]
 }
 
@@ -21,6 +22,8 @@ interface MeetingSettings {
   votingStartDate: string
   votingEndDate: string
 }
+
+type ApprovedQuestionsStore = Record<string, string[]>
 
 const approvedQuestionsFile = resolve(process.cwd(), 'src/data/approved-questions.json')
 const meetingSettingsFile = resolve(process.cwd(), 'src/data/meeting-settings.json')
@@ -55,48 +58,31 @@ function sendJson(
   res.end(JSON.stringify(payload))
 }
 
-function normalizeApprovedQuestionTitle(value: unknown): string | null {
-  if (typeof value === 'string') {
-    return value.trim() || null
-  }
-
-  if (value && typeof value === 'object') {
-    const title = (value as { title?: unknown }).title
-    return typeof title === 'string' && title.trim() ? title.trim() : null
-  }
-
-  return null
-}
-
-async function readApprovedQuestionsStore(): Promise<string[]> {
+async function readApprovedQuestionsStore(): Promise<ApprovedQuestionsStore> {
   try {
     const rawValue = await readFile(approvedQuestionsFile, 'utf-8')
     const parsedValue = JSON.parse(rawValue) as unknown
 
-    if (Array.isArray(parsedValue)) {
-      return parsedValue
-        .map(normalizeApprovedQuestionTitle)
-        .filter((title): title is string => title !== null)
+    if (parsedValue && typeof parsedValue === 'object' && !Array.isArray(parsedValue)) {
+      const store: ApprovedQuestionsStore = {}
+      for (const [key, val] of Object.entries(parsedValue as Record<string, unknown>)) {
+        if (Array.isArray(val)) {
+          store[key] = val.filter((v): v is string => typeof v === 'string' && v.trim().length > 0)
+        }
+      }
+      return store
     }
 
-    if (parsedValue && typeof parsedValue === 'object') {
-      return Object.values(parsedValue)
-        .flatMap((questions) => Array.isArray(questions) ? questions : [])
-        .map(normalizeApprovedQuestionTitle)
-        .filter((title): title is string => title !== null)
-    }
-
-    return []
+    return {}
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
-      return []
+      return {}
     }
-
     throw error
   }
 }
 
-async function writeApprovedQuestionsStore(store: string[]): Promise<void> {
+async function writeApprovedQuestionsStore(store: ApprovedQuestionsStore): Promise<void> {
   await mkdir(dirname(approvedQuestionsFile), { recursive: true })
   await writeFile(approvedQuestionsFile, `${JSON.stringify(store, null, 2)}\n`, 'utf-8')
 }
@@ -227,20 +213,21 @@ function approvedQuestionsPlugin(): Plugin {
         try {
           if (req.method === 'GET') {
             const store = await readApprovedQuestionsStore()
-
             sendJson(res, 200, { questions: store })
             return
           }
 
           if (req.method === 'POST') {
             const payload = await readJsonBody<ApprovedQuestionsPayload>(req)
+            const houseAddress = payload.houseAddress?.trim()
 
-            if (!Array.isArray(payload.questions) || !payload.questions.every((title) => typeof title === 'string')) {
-              sendJson(res, 400, { error: 'Передайте список согласованных вопросов.' })
+            if (!houseAddress || !Array.isArray(payload.questions)) {
+              sendJson(res, 400, { error: 'Передайте houseAddress и список вопросов.' })
               return
             }
 
-            const store = payload.questions.map((title) => title.trim()).filter(Boolean)
+            const store = await readApprovedQuestionsStore()
+            store[houseAddress] = payload.questions.map((title) => title.trim()).filter(Boolean)
             await writeApprovedQuestionsStore(store)
             sendJson(res, 200, { ok: true, questions: store })
             return
