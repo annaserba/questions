@@ -445,6 +445,9 @@ function applyApprovedQuestionTitles(titles: string[]): void {
 }
 
 async function loadApprovedQuestionsFromProject(): Promise<void> {
+  const saved = window.localStorage.getItem(getApprovedQuestionKey())
+  if (saved) return
+
   const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
   if (Array.isArray(houseQuestions)) {
     applyApprovedQuestionTitles(houseQuestions)
@@ -498,7 +501,7 @@ function saveApprovedQuestions(): void {
 }
 
 function getApprovedQuestionKey(): string {
-  return approvedQuestionKey
+  return approvedQuestionKey + '_' + form.houseAddress
 }
 
 function toggleApprovedQuestion(questionTitle: string): void {
