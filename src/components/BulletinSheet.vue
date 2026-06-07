@@ -50,7 +50,7 @@ defineEmits<{
 
             <label class="owner-field">
               <span>Номер телефона</span>
-              <input v-model="form.phone" type="tel" />
+              <input v-model="form.phone" type="text" inputmode="tel" placeholder="+7" />
             </label>
           </div>
 
