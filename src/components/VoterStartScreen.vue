@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, reactive, ref, watch } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import type { OnlineVotePreference, VoterProfile } from '../types'
 
-const managerPassword = import.meta.env.VITE_MANAGER_PASSWORD || ''
+const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || ''
+const isAdminUrl = window.location.search.includes('admin')
 
 const props = defineProps<{
   houseAddressOptions: readonly string[]
@@ -18,30 +19,16 @@ const draft = reactive({
   ownerName: props.initialProfile.ownerName,
   apartment: props.initialProfile.apartment,
   wantsOnlineVote: props.initialProfile.wantsOnlineVote,
-  password: '',
+  adminPassword: '',
 })
 const passwordError = ref('')
-
-const isManagerIdentity = computed(() =>
-  normalizeValue(draft.houseAddress) === normalizeValue('пр-т. Октябрьской революции, 48/1') &&
-  normalizeValue(draft.ownerName) === normalizeValue('Серба Анна Владимировна') &&
-  draft.apartment.trim() === '198',
-)
+const showAdminAuth = computed(() => isAdminUrl)
 
 const canSubmit = computed(() =>
   draft.houseAddress.trim().length > 0 &&
   (draft.wantsOnlineVote === 'yes' || draft.wantsOnlineVote === 'no') &&
-  (!isManagerIdentity.value || (managerPassword.length > 0 && draft.password.length > 0)),
+  (!showAdminAuth.value || draft.adminPassword.length > 0),
 )
-
-watch(isManagerIdentity, () => {
-  passwordError.value = ''
-  draft.password = ''
-})
-
-function normalizeValue(value: string): string {
-  return value.trim().toLocaleLowerCase('ru-RU').replace(/\s+/g, ' ')
-}
 
 function setOnlinePreference(value: OnlineVotePreference) {
   draft.wantsOnlineVote = value
@@ -52,22 +39,26 @@ function submitProfile() {
     return
   }
 
-  const managerUnlocked = isManagerIdentity.value && draft.password === managerPassword
+  let managerUnlocked = false
 
-  if (isManagerIdentity.value && !managerPassword) {
-    passwordError.value = 'Пароль администратора не настроен'
-    return
-  }
+  if (showAdminAuth.value) {
+    if (!adminPassword) {
+      passwordError.value = 'Пароль администратора не настроен'
+      return
+    }
 
-  if (isManagerIdentity.value && !managerUnlocked) {
-    passwordError.value = 'Неверный пароль'
-    return
+    if (draft.adminPassword !== adminPassword) {
+      passwordError.value = 'Неверный пароль'
+      return
+    }
+
+    managerUnlocked = true
   }
 
   emit('submit', {
     houseAddress: draft.houseAddress,
     ownerName: draft.ownerName.trim(),
-    apartment: draft.apartment.trim(),
+    apartment: showAdminAuth.value ? '' : draft.apartment.trim(),
     wantsOnlineVote: draft.wantsOnlineVote,
     managerUnlocked,
   })
@@ -116,17 +107,14 @@ function submitProfile() {
           />
         </label>
 
-        <label v-if="isManagerIdentity">
-          <span>Пароль</span>
+        <label v-if="showAdminAuth">
+          <span>Пароль администратора</span>
           <input
-            v-model="draft.password"
+            v-model="draft.adminPassword"
             type="password"
-            inputmode="numeric"
-            autocomplete="current-password"
-            required
+            autocomplete="off"
           />
           <small v-if="passwordError">{{ passwordError }}</small>
-          <small v-else-if="!managerPassword">Пароль администратора не настроен</small>
         </label>
 
         <fieldset>

@@ -246,9 +246,7 @@ function normalizeProfileValue(value: string): string {
 }
 
 function isManagerIdentity(): boolean {
-  return normalizeProfileValue(form.houseAddress) === normalizeProfileValue('пр-т. Октябрьской революции, 48/1') &&
-    normalizeProfileValue(form.ownerName) === normalizeProfileValue('Серба Анна Владимировна') &&
-    form.apartment.trim() === '198'
+  return window.location.search.includes('admin')
 }
 
 function getStoredVoterProfile(): VoterProfile | null {
