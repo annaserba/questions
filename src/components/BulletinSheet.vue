@@ -549,6 +549,10 @@ defineEmits<{
     display: none;
   }
 
+  .owner-block input::placeholder {
+    color: transparent;
+  }
+
   .owner-block-head strong {
     font-size: 8.4pt;
   }
