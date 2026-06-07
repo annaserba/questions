@@ -82,16 +82,17 @@ defineEmits<{
         </div>
       </div>
 
-      <div class="owner-block">
+      <label class="representative-checkbox representative-toggle">
+        <input v-model="form.isRepresentative" type="checkbox" />
+        <span>Голосует представитель</span>
+      </label>
+
+      <div v-if="form.isRepresentative" class="owner-block">
         <div class="owner-block-head">
           <strong>Сведения о представителе</strong>
-          <label class="representative-checkbox">
-            <input v-model="form.isRepresentative" type="checkbox" />
-            <span>Голосует представитель</span>
-          </label>
         </div>
 
-        <div v-if="form.isRepresentative" class="owner-grid">
+        <div class="owner-grid">
           <div class="owner-field-row owner-name-row">
             <label class="owner-field">
               <span>ФИО представителя</span>
@@ -630,6 +631,10 @@ defineEmits<{
     gap: 4px;
     font-size: 6.8pt;
     color: #000;
+  }
+
+  .representative-toggle {
+    display: none;
   }
 
   .representative-checkbox input[type='checkbox'] {
