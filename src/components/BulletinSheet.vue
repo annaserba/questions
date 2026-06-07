@@ -538,6 +538,8 @@ defineEmits<{
 
   .bulletin-sheet {
     padding: 0;
+    position: relative;
+    min-height: 100vh;
   }
 
   .bulletin-card {
@@ -778,7 +780,7 @@ defineEmits<{
   }
 
   .print-signature {
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
