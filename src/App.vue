@@ -232,9 +232,6 @@ watch(
     form.ownershipDocument = apt.cadastral || ''
     form.area = apt.area || ''
     form.share = apt.share || '1/1'
-    if (apt.name && (managerUnlocked.value || !form.ownerName.trim())) {
-      form.ownerName = apt.name
-    }
   },
   { flush: 'sync' },
 )
@@ -263,9 +260,6 @@ watch(
     form.ownershipDocument = apt.cadastral || ''
     form.area = apt.area || ''
     form.share = apt.share || '1/1'
-    if (apt.name && (managerUnlocked.value || !form.ownerName.trim())) {
-      form.ownerName = apt.name
-    }
   },
   { flush: 'sync' },
 )
