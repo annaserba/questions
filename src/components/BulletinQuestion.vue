@@ -317,7 +317,7 @@ const expanded = ref(false)
     position: absolute;
     top: -1px;
     left: 0;
-    font-size: 5pt;
+    font-size: 7pt;
     line-height: 1;
     color: #000;
   }
