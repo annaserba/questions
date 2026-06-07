@@ -198,6 +198,7 @@ defineEmits<{
         <div>
           <span>Подпись</span>
           <b></b>
+          <span>Расшифровка подписи</span>
           <p>{{ form.isRepresentative ? (form.representativeName || '______________________________') : (form.ownerName || '______________________________') }}</p>
         </div>
       </div>
