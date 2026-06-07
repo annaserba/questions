@@ -800,7 +800,7 @@ defineEmits<{
 
   .print-signature b {
     display: block;
-    min-height: 4mm;
+    min-height: 6mm;
     border-bottom: 1px solid #000;
   }
 }
