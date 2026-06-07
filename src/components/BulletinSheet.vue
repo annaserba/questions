@@ -532,6 +532,10 @@ defineEmits<{
 }
 
 @media print {
+  @page {
+    margin-bottom: 0;
+  }
+
   .bulletin-sheet {
     padding: 0;
   }
