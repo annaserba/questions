@@ -719,16 +719,16 @@ defineEmits<{
     bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4mm;
-    padding: 1mm 0 2mm;
+    gap: 2mm;
+    padding: 0.5mm 0 1mm;
     border-top: 1px solid #000;
     background: #fff;
-    font-size: 6pt;
+    font-size: 5pt;
   }
 
   .print-signature div {
     display: grid;
-    gap: 0.5mm;
+    gap: 0.3mm;
   }
 
   .print-signature span,
