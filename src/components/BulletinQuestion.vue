@@ -251,6 +251,7 @@ const expanded = ref(false)
   }
 
   .question-item h3 {
+    display: inline;
     margin: 0;
     border-bottom: 0;
     font-size: 7.6pt;
