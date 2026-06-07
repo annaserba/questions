@@ -127,15 +127,17 @@ defineEmits<{
         </div>
 
         <div v-if="form.isRepresentative" class="owner-grid">
-          <label class="owner-field owner-field-full">
-            <span>ФИО представителя</span>
-            <input v-model="form.representativeName" type="text" autocomplete="name" />
-          </label>
+          <div class="owner-field-row owner-name-row">
+            <label class="owner-field">
+              <span>ФИО представителя</span>
+              <input v-model="form.representativeName" type="text" autocomplete="name" />
+            </label>
 
-          <label class="owner-field owner-field-full">
-            <span>Номер паспорта / СНИЛС представителя</span>
-            <input v-model="form.representativeDocument" type="text" />
-          </label>
+            <label class="owner-field">
+              <span>Номер паспорта / СНИЛС представителя</span>
+              <input v-model="form.representativeDocument" type="text" />
+            </label>
+          </div>
         </div>
       </div>
 
