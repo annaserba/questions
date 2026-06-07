@@ -585,10 +585,9 @@ function deselectAllApprovedQuestions(): void {
 }
 
 function voteForAll(): void {
-  for (const question of questions.value) {
-    const idx = questions.value.indexOf(question)
+  questions.value.forEach((_, idx) => {
     questionVotes[idx] = 'for'
-  }
+  })
 }
 
 window.addEventListener('popstate', () => {
