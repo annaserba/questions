@@ -39,6 +39,25 @@ textarea {
 @media print {
   @page {
     margin: 6mm 6mm 20mm;
+
+    @bottom-left {
+      content: "Подпись собственника __________________________";
+      padding-top: 2mm;
+      border-top: 1px solid #000;
+      font-family: "Times New Roman", serif;
+      font-size: 7.6pt;
+      color: #000;
+    }
+
+    @bottom-right {
+      content: "Расшифровка подписи " var(--print-owner-name, "__________________________");
+      padding-top: 2mm;
+      border-top: 1px solid #000;
+      font-family: "Times New Roman", serif;
+      font-size: 7.6pt;
+      color: #000;
+      text-align: right;
+    }
   }
 
   body {

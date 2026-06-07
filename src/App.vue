@@ -101,8 +101,26 @@ function getDocumentFromPath(): DocumentView {
 }
 
 const currentDocument = ref<DocumentView>(getDocumentFromPath())
-const questionVotes = reactive<Record<number, VoteChoice | undefined>>({})
+const questionVotes = reactive<Record<number, VoteChoice | undefined>>(loadVotesFromStorage())
 const approvedQuestionKey = 'voting_approved_questions'
+const votesStorageKey = 'voting_question_votes'
+
+function loadVotesFromStorage(): Record<number, VoteChoice | undefined> {
+  try {
+    const raw = window.localStorage.getItem(votesStorageKey + '_' + form.houseAddress)
+    if (!raw) return {}
+    return JSON.parse(raw) as Record<number, VoteChoice | undefined>
+  } catch {
+    return {}
+  }
+}
+
+function saveVotesToStorage(): void {
+  window.localStorage.setItem(
+    votesStorageKey + '_' + form.houseAddress,
+    JSON.stringify(questionVotes)
+  )
+}
 const approvedQuestions = reactive<Record<string, boolean>>(getApprovedQuestions())
 const approvedSaveStatus = ref('')
 const meetingSaveStatus = ref('')
@@ -150,6 +168,22 @@ const formattedDates = computed(() => ({
   votingStartDate: formatRuDate(form.votingStartDate),
   votingEndDate: formatRuDate(form.votingEndDate),
 }))
+
+function updatePrintOwnerName(ownerName: string): void {
+  const value = ownerName.trim() || '__________________________'
+  document.documentElement.style.setProperty(
+    '--print-owner-name',
+    JSON.stringify(value),
+  )
+}
+
+watch(
+  () => form.ownerName,
+  (ownerName) => {
+    updatePrintOwnerName(ownerName)
+  },
+  { immediate: true },
+)
 
 watch(
   () => ({
@@ -361,6 +395,7 @@ function editProfile(): void {
 
 function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
   questionVotes[questionIndex] = questionVotes[questionIndex] === vote ? undefined : vote
+  saveVotesToStorage()
 }
 
 function getMeetingSettings(): MeetingSettings {
@@ -601,6 +636,9 @@ watch(
   () => form.houseAddress,
   () => {
     void loadApprovedQuestionsFromProject()
+    const saved = loadVotesFromStorage()
+    Object.keys(questionVotes).forEach(k => delete questionVotes[Number(k)])
+    Object.assign(questionVotes, saved)
   },
 )
 

@@ -532,10 +532,6 @@ defineEmits<{
 }
 
 @media print {
-  @page {
-    margin-bottom: 0;
-  }
-
   .bulletin-sheet {
     padding: 0;
   }
@@ -778,31 +774,7 @@ defineEmits<{
   }
 
   .print-signature {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1mm;
-    margin-top: 6mm;
-    padding: 2mm 0 4mm;
-    border-top: 1px solid #000;
-    background: transparent;
-    font-size: 7.6pt;
-  }
-
-  .print-signature div {
-    display: grid;
-    gap: 0.3mm;
-  }
-
-  .print-signature span,
-  .print-signature p {
-    color: #000;
-    margin: 0;
-  }
-
-  .print-signature b {
-    display: block;
-    min-height: 6mm;
-    border-bottom: 1px solid #000;
+    display: none;
   }
 }
 </style>
