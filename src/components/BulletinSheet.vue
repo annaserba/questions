@@ -631,7 +631,7 @@ defineEmits<{
   .apartment-grid {
     display: grid;
     grid-template-columns: auto auto auto 1fr;
-    gap: 2px 4px;
+    gap: 0 3px;
     align-items: baseline;
   }
 
@@ -642,12 +642,12 @@ defineEmits<{
   .apartment-grid .owner-field {
     display: flex;
     align-items: baseline;
-    gap: 2px;
-    font-size: 6.8pt;
+    gap: 1px;
+    font-size: 6.4pt;
   }
 
   .apartment-grid .owner-field span {
-    font-size: 6.8pt;
+    font-size: 6.4pt;
     white-space: nowrap;
   }
 
@@ -655,10 +655,10 @@ defineEmits<{
     border: 0;
     border-bottom: 1px solid #000;
     padding: 0;
-    font-size: 6.8pt;
+    font-size: 6.4pt;
     width: 100%;
-    min-width: 6mm;
-    max-width: 30mm;
+    min-width: 5mm;
+    max-width: 25mm;
   }
 
   .property-type-select {
