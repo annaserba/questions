@@ -112,4 +112,15 @@ textarea {
   .large-print .agenda h4 {
     font-size: 12pt !important;
   }
+
+  .large-print .apartment-grid .owner-field,
+  .large-print .apartment-grid .owner-field span,
+  .large-print .apartment-grid .owner-field input {
+    font-size: 10pt !important;
+  }
+
+  .large-print .owner-field input,
+  .large-print .owner-field textarea {
+    font-size: 10pt !important;
+  }
 }
