@@ -680,20 +680,6 @@ watch(
         <button
           class="header-action"
           type="button"
-          @click="selectAllApprovedQuestions"
-        >
-          Выбрать все
-        </button>
-        <button
-          class="header-action"
-          type="button"
-          @click="deselectAllApprovedQuestions"
-        >
-          Снять все
-        </button>
-        <button
-          class="header-action"
-          type="button"
           @click="voteForAll"
         >
           Голосовать ЗА везде
