@@ -18,6 +18,7 @@ const draft = reactive({
   houseAddress: props.initialProfile.houseAddress,
   ownerName: props.initialProfile.ownerName,
   apartment: props.initialProfile.apartment,
+  propertyType: props.initialProfile.propertyType || 'жилое',
   wantsOnlineVote: props.initialProfile.wantsOnlineVote,
   adminPassword: '',
 })
@@ -58,6 +59,7 @@ function submitProfile() {
     houseAddress: draft.houseAddress,
     ownerName: draft.ownerName.trim(),
     apartment: showAdminAuth ? '' : draft.apartment.trim(),
+    propertyType: draft.propertyType as 'жилое' | 'нежилое',
     wantsOnlineVote: draft.wantsOnlineVote,
     managerUnlocked,
   })
@@ -104,6 +106,14 @@ function submitProfile() {
             inputmode="numeric"
             placeholder="Необязательно"
           />
+        </label>
+
+        <label>
+          <span>Тип помещения</span>
+          <select v-model="draft.propertyType">
+            <option value="жилое">Жилое</option>
+            <option value="нежилое">Нежилое</option>
+          </select>
         </label>
 
         <label v-if="showAdminAuth">

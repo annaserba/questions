@@ -85,6 +85,7 @@ const managerUnlocked = ref(voterProfile.value?.managerUnlocked === true)
 
 if (storedProfile) {
   applyVoterProfile(storedProfile)
+  form.propertyType = storedProfile.propertyType || 'жилое'
 }
 
 const documentPath: Record<DocumentView, string> = {
@@ -112,6 +113,7 @@ const startProfile = computed<VoterProfile>(() => ({
   houseAddress: form.houseAddress,
   ownerName: form.ownerName,
   apartment: form.apartment,
+  propertyType: form.propertyType as 'жилое' | 'нежилое',
   wantsOnlineVote: voterProfile.value?.wantsOnlineVote || 'yes',
   managerUnlocked: managerUnlocked.value,
 }))
@@ -158,6 +160,7 @@ watch(
     passportNumber: form.passportNumber,
     snils: form.snils,
     phone: form.phone,
+    propertyType: form.propertyType,
     share: form.share,
     extraNotes: form.extraNotes,
   }),
@@ -224,7 +227,9 @@ watch(
     }
 
     const key = newApartment.trim()
-    const apt = houseData[key] || houseData['офис' + key]
+    const officeKey = 'офис' + key
+    const lookupKey = form.propertyType === 'нежилое' ? officeKey : key
+    const apt = houseData[lookupKey] || (form.propertyType === 'жилое' ? houseData[officeKey] : houseData[key])
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
@@ -252,7 +257,8 @@ watch(
       return
     }
 
-    const apt = houseData[aptNumber] || houseData['офис' + aptNumber]
+    const apt = houseData[aptNumber]
+      || houseData['офис' + aptNumber]
     if (!apt) {
       form.ownershipDocument = ''
       form.area = ''
@@ -309,6 +315,7 @@ function getStoredVoterProfile(): VoterProfile | null {
         houseAddress: parsedValue.houseAddress,
         ownerName: parsedValue.ownerName,
         apartment: parsedValue.apartment,
+        propertyType: parsedValue.propertyType === 'нежилое' ? 'нежилое' : 'жилое',
         wantsOnlineVote: parsedValue.wantsOnlineVote,
         managerUnlocked: parsedValue.managerUnlocked,
       }
@@ -324,6 +331,7 @@ function applyVoterProfile(profile: VoterProfile): void {
   form.houseAddress = profile.houseAddress
   form.ownerName = profile.ownerName
   form.apartment = profile.apartment
+  form.propertyType = profile.propertyType || 'жилое'
 }
 
 function saveVoterProfile(profile: VoterProfile): void {

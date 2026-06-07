@@ -84,7 +84,11 @@ defineEmits<{
 
       <div class="owner-block">
         <div class="owner-block-head">
-          <strong>Сведения о квартире</strong>
+          <strong>{{ form.propertyType === 'нежилое' ? 'Сведения о помещении' : 'Сведения о квартире' }}</strong>
+          <select v-model="form.propertyType" class="property-type-select">
+            <option value="жилое">Жилое</option>
+            <option value="нежилое">Нежилое</option>
+          </select>
         </div>
 
         <div class="owner-grid">
@@ -267,6 +271,16 @@ defineEmits<{
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--gos-blue);
+}
+
+.property-type-select {
+  padding: 4px 8px;
+  border: 1px solid #c8d7ef;
+  border-radius: 6px;
+  background: #fbfdff;
+  color: var(--gos-ink);
+  font-size: 0.82rem;
+  cursor: pointer;
 }
 
 .owner-block-head span {

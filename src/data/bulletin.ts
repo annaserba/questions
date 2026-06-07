@@ -23,6 +23,7 @@ const ownerCookieFields = [
   'passportNumber',
   'snils',
   'phone',
+  'propertyType',
   'share',
   'extraNotes',
 ] as const
@@ -109,6 +110,7 @@ export function createDefaultForm(): BulletinForm {
     passportNumber: '',
     snils: '',
     phone: '',
+    propertyType: 'жилое',
     share: '1/1',
     extraNotes: '',
   }
@@ -135,7 +137,12 @@ export function getOwnerFormFromCookie(): Partial<OwnerCookieData> {
 
     return ownerCookieFields.reduce<Partial<OwnerCookieData>>((acc, field) => {
       if (typeof parsedValue[field] === 'string') {
-        acc[field] = parsedValue[field]
+        const value = parsedValue[field] as string
+        if (field === 'propertyType') {
+          acc[field] = (value === 'нежилое' ? 'нежилое' : 'жилое') as any
+        } else {
+          acc[field] = value as any
+        }
       }
 
       return acc
@@ -151,7 +158,7 @@ export function saveOwnerFormToCookie(data: OwnerCookieData): void {
   }
 
   const normalizedData = ownerCookieFields.reduce<OwnerCookieData>((acc, field) => {
-    acc[field] = data[field]
+    (acc as any)[field] = data[field]
     return acc
   }, {
     ownerName: '',
@@ -161,6 +168,7 @@ export function saveOwnerFormToCookie(data: OwnerCookieData): void {
     passportNumber: '',
     snils: '',
     phone: '',
+    propertyType: 'жилое',
     share: '1/1',
     extraNotes: '',
   })

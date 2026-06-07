@@ -14,6 +14,7 @@ export interface BulletinForm {
   passportNumber: string
   snils: string
   phone: string
+  propertyType: 'жилое' | 'нежилое'
   extraNotes: string
 }
 
@@ -40,6 +41,7 @@ export interface VoterProfile {
   houseAddress: string
   ownerName: string
   apartment: string
+  propertyType: 'жилое' | 'нежилое'
   wantsOnlineVote: OnlineVotePreference
   managerUnlocked: boolean
 }
