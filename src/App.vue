@@ -28,10 +28,12 @@ import type {
 } from './types'
 import approvedQuestionsData from './data/approved-questions.json'
 import apartments48_1 from './data/apartments-48-1.json'
+import apartments48 from './data/apartments-48.json'
 
 const approvedQuestionsByHouse: Record<string, string[]> = approvedQuestionsData
 
 const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; share: string; name?: string; phone: string; wantsBlank: boolean }>> = {
+  'пр-т. Октябрьской революции, 48': apartments48 as any,
   'пр-т. Октябрьской революции, 48/1': apartments48_1 as any,
 }
 
