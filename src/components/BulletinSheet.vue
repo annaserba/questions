@@ -285,7 +285,7 @@ defineEmits<{
 }
 
 .owner-name-row {
-  grid-template-columns: 8fr 2fr;
+  grid-template-columns: 7fr 3fr;
 }
 
 .owner-field {
