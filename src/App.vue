@@ -82,6 +82,15 @@ const storedProfile = getStoredVoterProfile()
 const voterProfile = ref<VoterProfile | null>(storedProfile)
 const profileCompleted = ref(voterProfile.value !== null)
 const managerUnlocked = ref(voterProfile.value?.managerUnlocked === true)
+const largePrint = ref(false)
+
+watch(largePrint, (val) => {
+  if (val) {
+    document.body.classList.add('large-print')
+  } else {
+    document.body.classList.remove('large-print')
+  }
+})
 
 if (storedProfile) {
   applyVoterProfile(storedProfile)
@@ -721,6 +730,9 @@ watch(
         </label>
         <button class="header-print" type="button" @click="printPage">
           Печать
+        </button>
+        <button class="header-action" type="button" @click="largePrint = !largePrint">
+          {{ largePrint ? 'Обычный шрифт' : 'Крупный шрифт' }}
         </button>
         <button
           class="header-action"
