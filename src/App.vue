@@ -210,18 +210,26 @@ watch(
 watch(
   () => form.apartment,
   (newApartment) => {
-    form.ownershipDocument = ''
-    form.area = ''
-
     const houseData = apartmentsByHouse[form.houseAddress]
-    if (!houseData || !newApartment || !newApartment.trim()) return
+
+    if (!houseData || !newApartment || !newApartment.trim()) {
+      form.ownershipDocument = ''
+      form.area = ''
+      return
+    }
 
     const apt = houseData[newApartment.trim()]
-    if (!apt) return
+    if (!apt) {
+      form.ownershipDocument = ''
+      form.area = ''
+      return
+    }
 
-    if (apt.cadastral) form.ownershipDocument = apt.cadastral
-    if (apt.area) form.area = apt.area
-    if (apt.name && !form.ownerName.trim()) form.ownerName = apt.name
+    form.ownershipDocument = apt.cadastral || ''
+    form.area = apt.area || ''
+    if (apt.name && !form.ownerName.trim()) {
+      form.ownerName = apt.name
+    }
   },
   { flush: 'sync' },
 )
