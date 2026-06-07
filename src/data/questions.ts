@@ -7,7 +7,6 @@ import { videoQuestions } from './questions/video'
 import { gatesQuestions } from './questions/gates'
 import { councilQuestions } from './questions/council'
 import { propertyQuestions } from './questions/property'
-import { financeQuestions } from './questions/finance'
 
 export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
   const managementCompany = form.managementCompany.trim() || 'управляющая организация'
@@ -20,7 +19,6 @@ export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
     ...managementQuestions(managementCompany, previousManagementCompany),
     ...councilQuestions(chairman),
     ...gatesQuestions(managementCompany),
-    ...financeQuestions(),
     ...utilitiesQuestions(),
     ...videoQuestions(),
     ...propertyQuestions(),
