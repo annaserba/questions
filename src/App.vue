@@ -671,6 +671,22 @@ watch(
         <button class="header-print" type="button" @click="printPage">
           Печать
         </button>
+        <button
+          v-if="canManageMeeting"
+          class="header-action"
+          type="button"
+          @click="selectAllApprovedQuestions"
+        >
+          Выбрать все
+        </button>
+        <button
+          v-if="canManageMeeting"
+          class="header-action"
+          type="button"
+          @click="deselectAllApprovedQuestions"
+        >
+          Снять все
+        </button>
       </header>
       <MeetingNotice
         v-if="currentDocument === 'notice'"
@@ -795,6 +811,24 @@ watch(
 
 .header-print:hover {
   background: #0b3fb0;
+}
+
+.header-action {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border: 1px solid rgba(13, 76, 211, 0.18);
+  border-radius: 8px;
+  background: #f8faff;
+  color: var(--gos-blue);
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 140ms ease;
+}
+
+.header-action:hover {
+  background: rgba(13, 76, 211, 0.08);
 }
 
 .header-label span {
