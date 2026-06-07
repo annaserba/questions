@@ -87,7 +87,7 @@ defineEmits<{
         <span>Голосует представитель</span>
       </label>
 
-      <div v-if="form.isRepresentative" class="owner-block">
+      <div v-show="form.isRepresentative" class="owner-block representative-block">
         <div class="owner-block-head">
           <strong>Сведения о представителе</strong>
         </div>
@@ -196,8 +196,10 @@ defineEmits<{
 
       <div class="print-signature">
         <div>
-          <span>{{ form.isRepresentative ? 'Подпись представителя' : 'Подпись собственника' }}</span>
+          <span>Подпись собственника</span>
           <b></b>
+          <span>Подпись представителя</span>
+          <b class="rep-signature"></b>
         </div>
         <div>
           <span>Расшифровка подписи</span>
@@ -689,6 +691,10 @@ defineEmits<{
     display: none;
   }
 
+  .representative-block {
+    display: block !important;
+  }
+
   .representative-checkbox input[type='checkbox'] {
     width: 12px;
     height: 12px;
@@ -774,7 +780,35 @@ defineEmits<{
   }
 
   .print-signature {
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1mm;
+    margin-top: 6mm;
+    padding: 2mm 0 4mm;
+    border-top: 1px solid #000;
+    background: transparent;
+    font-size: 7.6pt;
+  }
+
+  .print-signature div {
+    display: grid;
+    gap: 0.3mm;
+  }
+
+  .print-signature span,
+  .print-signature p {
+    color: #000;
+    margin: 0;
+  }
+
+  .print-signature b {
+    display: block;
+    min-height: 6mm;
+    border-bottom: 1px solid #000;
+  }
+
+  .rep-signature {
+    margin-top: 3mm;
   }
 }
 </style>
