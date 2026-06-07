@@ -1830,5 +1830,397 @@
     "share": "",
     "phone": "",
     "wantsBlank": false
+  },
+  "офис1": {
+    "cadastral": "91:02:001013:7043",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис2": {
+    "cadastral": "91:02:001013:7044",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис3": {
+    "cadastral": "91:02:001013:7045",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис4": {
+    "cadastral": "91:02:001013:7046",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис5": {
+    "cadastral": "91:02:001013:7047",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис6": {
+    "cadastral": "91:02:001013:7048",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис7": {
+    "cadastral": "91:02:001013:7049",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис8": {
+    "cadastral": "91:02:001013:7050",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис9": {
+    "cadastral": "91:02:001013:7051",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис10": {
+    "cadastral": "91:02:001013:7052",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис11": {
+    "cadastral": "91:02:001013:7053",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис12": {
+    "cadastral": "91:02:001013:7054",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис13": {
+    "cadastral": "91:02:001013:7055",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис14": {
+    "cadastral": "91:02:001013:7056",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис15": {
+    "cadastral": "91:02:001013:7057",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис16": {
+    "cadastral": "91:02:001013:7058",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис17": {
+    "cadastral": "91:02:001013:7059",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис18": {
+    "cadastral": "91:02:001013:7060",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис19": {
+    "cadastral": "91:02:001013:7061",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис20": {
+    "cadastral": "91:02:001013:7062",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис21": {
+    "cadastral": "91:02:001013:7063",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис22": {
+    "cadastral": "91:02:001013:7064",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис23": {
+    "cadastral": "91:02:001013:7065",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис24": {
+    "cadastral": "91:02:001013:7066",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис25": {
+    "cadastral": "91:02:001013:7067",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис26": {
+    "cadastral": "91:02:001013:7068",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис27": {
+    "cadastral": "91:02:001013:7069",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис28": {
+    "cadastral": "91:02:001013:7070",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис29": {
+    "cadastral": "91:02:001013:7071",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис30": {
+    "cadastral": "91:02:001013:7072",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис31": {
+    "cadastral": "91:02:001013:7073",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис32": {
+    "cadastral": "91:02:001013:7074",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис33": {
+    "cadastral": "91:02:001013:7075",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис34": {
+    "cadastral": "91:02:001013:7076",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис35": {
+    "cadastral": "91:02:001013:7077",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис36": {
+    "cadastral": "91:02:001013:7078",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис37": {
+    "cadastral": "91:02:001013:7079",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис38": {
+    "cadastral": "91:02:001013:7080",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис39": {
+    "cadastral": "91:02:001013:7081",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис40": {
+    "cadastral": "91:02:001013:7082",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис41": {
+    "cadastral": "91:02:001013:7083",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис42": {
+    "cadastral": "91:02:001013:7084",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис43": {
+    "cadastral": "91:02:001013:7085",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис44": {
+    "cadastral": "91:02:001013:7086",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис45": {
+    "cadastral": "91:02:001013:7087",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис46": {
+    "cadastral": "91:02:001013:7088",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис47": {
+    "cadastral": "91:02:001013:7089",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис48": {
+    "cadastral": "91:02:001013:7090",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис49": {
+    "cadastral": "91:02:001013:7091",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
   }
 }

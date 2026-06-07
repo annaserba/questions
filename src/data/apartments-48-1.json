@@ -1884,5 +1884,413 @@
     "share": "",
     "phone": "7978-266-80-79",
     "wantsBlank": false
+  },
+  "офис1": {
+    "cadastral": "91:02:001013:7337",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис2": {
+    "cadastral": "91:02:001013:7338",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис3": {
+    "cadastral": "91:02:001013:7339",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис4": {
+    "cadastral": "91:02:001013:7340",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис5": {
+    "cadastral": "91:02:001013:7341",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис6": {
+    "cadastral": "91:02:001013:7342",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис7": {
+    "cadastral": "91:02:001013:7343",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис9": {
+    "cadastral": "91:02:001013:7345",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис10": {
+    "cadastral": "91:02:001013:7346",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис11": {
+    "cadastral": "91:02:001013:7347",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис12": {
+    "cadastral": "91:02:001013:7348",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис13": {
+    "cadastral": "91:02:001013:7349",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис14": {
+    "cadastral": "91:02:001013:7350",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис15": {
+    "cadastral": "91:02:001013:7351",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис16": {
+    "cadastral": "91:02:001013:7352",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис17": {
+    "cadastral": "91:02:001013:7353",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис18": {
+    "cadastral": "91:02:001013:7354",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис19": {
+    "cadastral": "91:02:001013:7355",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис20": {
+    "cadastral": "91:02:001013:7356",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис21": {
+    "cadastral": "91:02:001013:7357",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис22": {
+    "cadastral": "91:02:001013:7358",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис23": {
+    "cadastral": "91:02:001013:7359",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис24": {
+    "cadastral": "91:02:001013:7360",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис26": {
+    "cadastral": "91:02:001013:7362",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис27": {
+    "cadastral": "91:02:001013:7363",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис28": {
+    "cadastral": "91:02:001013:7364",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис29": {
+    "cadastral": "91:02:001013:7365",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис30": {
+    "cadastral": "91:02:001013:7366",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис31": {
+    "cadastral": "91:02:001013:7367",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис32": {
+    "cadastral": "91:02:001013:7368",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис33": {
+    "cadastral": "91:02:001013:7369",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис34": {
+    "cadastral": "91:02:001013:7370",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис35": {
+    "cadastral": "91:02:001013:7371",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис36": {
+    "cadastral": "91:02:001013:7372",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис37": {
+    "cadastral": "91:02:001013:7373",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис38": {
+    "cadastral": "91:02:001013:7374",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис39": {
+    "cadastral": "91:02:001013:7375",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис40": {
+    "cadastral": "91:02:001013:7376",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис41": {
+    "cadastral": "91:02:001013:7377",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис42": {
+    "cadastral": "91:02:001013:7378",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис43": {
+    "cadastral": "91:02:001013:7379",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис44": {
+    "cadastral": "91:02:001013:7380",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис45": {
+    "cadastral": "91:02:001013:7381",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис46": {
+    "cadastral": "91:02:001013:7382",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис47": {
+    "cadastral": "91:02:001013:7383",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис48": {
+    "cadastral": "91:02:001013:7384",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис49": {
+    "cadastral": "91:02:001013:7385",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис50": {
+    "cadastral": "91:02:001013:7386",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис51": {
+    "cadastral": "91:02:001013:7387",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис52": {
+    "cadastral": "91:02:001013:7388",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
+  },
+  "офис53": {
+    "cadastral": "91:02:001013:7389",
+    "floor": "офис",
+    "area": "",
+    "share": "1/1",
+    "phone": "",
+    "wantsBlank": false
   }
 }
