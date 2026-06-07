@@ -60,6 +60,8 @@ defineEmits<{
               <input
                 v-model="form.passportNumber"
                 type="text"
+                inputmode="numeric"
+                placeholder="0000 000000"
                 spellcheck="false"
               />
             </label>
@@ -69,6 +71,8 @@ defineEmits<{
               <input
                 v-model="form.snils"
                 type="text"
+                inputmode="numeric"
+                placeholder="000-000-000 00"
                 spellcheck="false"
               />
             </label>
