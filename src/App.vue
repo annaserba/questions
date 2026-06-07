@@ -83,12 +83,21 @@ const voterProfile = ref<VoterProfile | null>(storedProfile)
 const profileCompleted = ref(voterProfile.value !== null)
 const managerUnlocked = ref(voterProfile.value?.managerUnlocked === true)
 const largePrint = ref(false)
+const printExplanations = ref(false)
 
 watch(largePrint, (val) => {
   if (val) {
     document.body.classList.add('large-print')
   } else {
     document.body.classList.remove('large-print')
+  }
+})
+
+watch(printExplanations, (val) => {
+  if (val) {
+    document.body.classList.add('print-explanations')
+  } else {
+    document.body.classList.remove('print-explanations')
   }
 })
 
@@ -734,6 +743,10 @@ watch(
         <button class="header-action" type="button" @click="largePrint = !largePrint">
           {{ largePrint ? 'Обычный шрифт' : 'Крупный шрифт' }}
         </button>
+        <label class="header-check">
+          <input v-model="printExplanations" type="checkbox" />
+          <span>С пояснениями</span>
+        </label>
         <button
           class="header-action"
           type="button"
@@ -883,6 +896,23 @@ watch(
 
 .header-action:hover {
   background: rgba(13, 76, 211, 0.08);
+}
+
+.header-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: var(--gos-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.header-check input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .header-label span {
