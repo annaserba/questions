@@ -64,28 +64,30 @@ textarea {
   }
 }
 
-.large-print .bulletin-card,
-.large-print .notice-card {
-  font-size: 11pt !important;
-}
+@media print {
+  .large-print .bulletin-card,
+  .large-print .notice-card {
+    font-size: 11pt !important;
+  }
 
-.large-print .question-list,
-.large-print .agenda-list {
-  font-size: 11pt !important;
-}
+  .large-print .question-list,
+  .large-print .agenda-list {
+    font-size: 11pt !important;
+  }
 
-.large-print .question-item h3 {
-  font-size: 10pt !important;
-}
+  .large-print .question-item h3 {
+    font-size: 10pt !important;
+  }
 
-.large-print .question-description {
-  font-size: 9pt !important;
-}
+  .large-print .question-description {
+    font-size: 9pt !important;
+  }
 
-.large-print .document-mark {
-  font-size: 13pt !important;
-}
+  .large-print .document-mark {
+    font-size: 13pt !important;
+  }
 
-.large-print .print-signature {
-  font-size: 10pt !important;
+  .large-print .print-signature {
+    font-size: 10pt !important;
+  }
 }
