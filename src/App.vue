@@ -744,10 +744,9 @@ watch(
           <button class="header-action" type="button" @click="largePrint = !largePrint">
             {{ largePrint ? 'Обычный шрифт' : 'Крупный шрифт' }}
           </button>
-          <label class="header-check">
-            <input v-model="printExplanations" type="checkbox" />
-            <span>С пояснениями</span>
-          </label>
+          <button class="header-action" type="button" @click="printExplanations = !printExplanations">
+            {{ printExplanations ? 'Без пояснений' : 'С пояснениями' }}
+          </button>
         </div>
         <button
           class="header-action header-vote-all"
@@ -900,21 +899,8 @@ watch(
   background: rgba(13, 76, 211, 0.08);
 }
 
-.header-check {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-  font-size: 0.82rem;
-  color: var(--gos-muted);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.header-check input[type='checkbox'] {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
+.header-vote-all:hover {
+  background: #0b3fb0;
 }
 
 .header-actions {
