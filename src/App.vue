@@ -741,11 +741,21 @@ watch(
           <button class="header-print" type="button" @click="printPage">
             Печать
           </button>
-          <button class="header-action" type="button" @click="largePrint = !largePrint">
-            {{ largePrint ? 'Обычный шрифт' : 'Крупный шрифт' }}
+          <button
+            class="header-toggle"
+            :class="{ active: largePrint }"
+            type="button"
+            @click="largePrint = !largePrint"
+          >
+            Крупный шрифт
           </button>
-          <button class="header-action" type="button" @click="printExplanations = !printExplanations">
-            {{ printExplanations ? 'Без пояснений' : 'С пояснениями' }}
+          <button
+            class="header-toggle"
+            :class="{ active: printExplanations }"
+            type="button"
+            @click="printExplanations = !printExplanations"
+          >
+            С пояснениями
           </button>
         </div>
         <button
@@ -883,21 +893,50 @@ watch(
 
 .header-action {
   flex-shrink: 0;
-  padding: 6px 14px;
-  border: 1px solid rgba(13, 76, 211, 0.18);
+  padding: 10px 20px;
+  border: 0;
   border-radius: 8px;
-  background: #f8faff;
-  color: var(--gos-blue);
-  font-weight: 600;
-  font-size: 0.82rem;
+  background: var(--gos-blue, #0d4cd3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
   cursor: pointer;
   white-space: nowrap;
   transition: background 140ms ease;
 }
 
 .header-action:hover {
+  background: #0b3fb0;
+}
+
+.header-toggle {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  border: 1px solid rgba(13, 76, 211, 0.25);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--gos-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 140ms ease;
+}
+
+.header-toggle.active {
+  background: var(--gos-blue);
+  color: #fff;
+  border-color: var(--gos-blue);
+}
+
+.header-toggle:hover {
   background: rgba(13, 76, 211, 0.08);
 }
+
+.header-toggle.active:hover {
+  background: #0b3fb0;
+}
+
 
 .header-vote-all:hover {
   background: #0b3fb0;
@@ -907,17 +946,6 @@ watch(
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.header-vote-all {
-  border-color: var(--gos-blue);
-  background: var(--gos-blue);
-  color: #fff;
-  font-weight: 700;
-}
-
-.header-vote-all:hover {
-  background: #0b3fb0;
 }
 
 .header-label span {
