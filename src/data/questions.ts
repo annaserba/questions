@@ -1,5 +1,5 @@
 import type { BulletinForm, BulletinQuestion } from '../types'
-import { houseChairman } from './bulletin'
+import { houseChairman, houseCouncil } from './bulletin'
 import { gisQuestions } from './questions/gis'
 import { managementQuestions } from './questions/management'
 import { utilitiesQuestions } from './questions/utilities'
@@ -13,14 +13,15 @@ export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
   const previousManagementCompany =
     form.previousManagementCompany.trim() || 'действующая управляющая организация'
   const chairman = houseChairman[form.houseAddress] || '_______________'
+  const council = houseCouncil[form.houseAddress] || '_______________'
 
   return [
     ...gisQuestions(chairman),
     ...managementQuestions(managementCompany, previousManagementCompany),
     ...utilitiesQuestions(),
-    ...councilQuestions(chairman),
+    ...councilQuestions(chairman, council),
     ...gatesQuestions(managementCompany),
     ...videoQuestions(),
-    ...propertyQuestions(),
+    ...propertyQuestions(form.houseAddress),
   ]
 }

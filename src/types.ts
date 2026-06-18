@@ -28,6 +28,7 @@ export interface BulletinQuestion {
   description: string
   explanation?: string
   section: string
+  quorum?: string
 }
 
 export type VoteChoice = 'for' | 'against' | 'abstain'

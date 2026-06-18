@@ -194,14 +194,6 @@ defineEmits<{
         </div>
       </div>
 
-      <div class="print-signature">
-        <div>
-          <span>Подпись</span>
-          <b></b>
-          <span>Расшифровка подписи</span>
-          <p>{{ form.isRepresentative ? (form.representativeName || '______________________________') : (form.ownerName || '______________________________') }}</p>
-        </div>
-      </div>
     </section>
   </main>
 </template>
@@ -468,10 +460,6 @@ defineEmits<{
   font-weight: 600;
 }
 
-.print-signature {
-  display: none;
-}
-
 @media (max-width: 980px) {
   .bulletin-sheet {
     padding: 12px;
@@ -499,7 +487,10 @@ defineEmits<{
     padding: 12px 14px;
   }
 
-  .owner-block-head,
+  .owner-block-head {
+    grid-template-columns: 1fr;
+  }
+
   .sign-row {
     grid-template-columns: 1fr;
   }
@@ -514,7 +505,10 @@ defineEmits<{
     text-align: left;
   }
 
-  .owner-grid,
+  .owner-grid {
+    grid-template-columns: 1fr;
+  }
+
   .sign-row {
     grid-template-columns: 1fr;
   }
@@ -772,10 +766,6 @@ defineEmits<{
   }
 
   .sign-row {
-    display: none;
-  }
-
-  .print-signature {
     display: none;
   }
 }

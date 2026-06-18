@@ -37,6 +37,7 @@ const approvedList = computed(() =>
         section: section.title,
         title: question.title,
         description: question.description,
+        quorum: question.quorum,
         approved: props.approvedQuestions[question.title] === true,
       }))
       .filter((question) => question.approved),
@@ -213,7 +214,7 @@ async function copyApprovedList() {
             <span>{{ question.index }}</span>
             <div>
               <strong>{{ question.title }}</strong>
-              <small>{{ question.section }}</small>
+              <small>{{ question.section }}<span v-if="question.quorum" class="quorum-badge"> · кворум {{ question.quorum }}</span></small>
             </div>
           </li>
         </ol>
@@ -426,6 +427,16 @@ async function copyApprovedList() {
 
 .approved-list small {
   color: var(--gos-muted);
+}
+
+.quorum-badge {
+  font-weight: 700;
+  color: var(--gos-blue);
+}
+
+.quorum-badge:has(+ .quorum-badge),
+.quorum-badge + .quorum-badge {
+  /* placeholder for future use */
 }
 
 .checklist-sections {

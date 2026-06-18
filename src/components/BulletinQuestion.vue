@@ -241,7 +241,7 @@ const expanded = ref(false)
 
   .question-item::marker {
     font-weight: 700;
-    font-size: 7.6pt;
+    font-size: 9pt;
   }
 
   .question-item h3,

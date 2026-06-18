@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import type { BulletinForm, BulletinQuestionSection } from '../types'
 
+export interface NoticeMaterial {
+  src: string
+  label: string
+}
+
 defineProps<{
   form: BulletinForm
   formattedDates: {
@@ -9,6 +14,7 @@ defineProps<{
     votingEndDate: string
   }
   questionSections: BulletinQuestionSection[]
+  materials: NoticeMaterial[]
 }>()
 </script>
 
@@ -63,6 +69,20 @@ defineProps<{
         </section>
       </div>
 
+      <div v-if="materials.length > 0" class="notice-materials">
+        <h3>Приложения</h3>
+        <div class="materials-grid">
+          <figure
+            v-for="(mat, idx) in materials"
+            :key="idx"
+            class="mat-item"
+          >
+            <img :src="mat.src" :alt="mat.label" />
+            <figcaption>Рис. {{ idx + 1 }}. {{ mat.label }}</figcaption>
+          </figure>
+        </div>
+      </div>
+
     </article>
   </section>
 </template>
@@ -83,42 +103,44 @@ defineProps<{
 }
 
 .document-mark {
-  margin: 0;
+  margin: 0 0 4px;
   text-align: center;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--gos-blue);
 }
 
 .notice-card h2 {
-  margin: 16px 0 18px;
+  margin: 0 0 8px;
   text-align: center;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.2;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--gos-ink);
 }
 
-.document-subtitle,
-.document-address {
-  margin: 4px 0 0;
-  text-align: center;
-  line-height: 1.35;
-}
-
 .document-subtitle {
-  color: #344054;
+  margin: 0;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--gos-muted);
+  line-height: 1.4;
 }
 
 .document-address {
-  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  margin: 2px 0 12px;
+  text-align: center;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
   font-weight: 700;
   color: var(--gos-ink);
+  line-height: 1.3;
 }
 
 .address-box {
-  margin-top: 18px;
+  margin-top: 14px;
   display: grid;
   gap: 6px;
   padding: 16px 18px;
@@ -141,9 +163,8 @@ defineProps<{
 
 .notice-meta,
 .notice-body,
-.agenda,
-.notice-footer {
-  margin-top: 20px;
+.agenda {
+  margin-top: 16px;
   padding: 18px 20px;
   border: 1px solid var(--gos-line);
   border-radius: 8px;
@@ -151,43 +172,48 @@ defineProps<{
 }
 
 .notice-meta p,
-.notice-body p,
-.notice-footer p {
-  margin: 0 0 8px;
+.notice-body p {
+  margin: 0 0 6px;
+  line-height: 1.45;
 }
 
 .notice-meta p:last-child,
-.notice-body p:last-child,
-.notice-footer p:last-child {
+.notice-body p:last-child {
   margin-bottom: 0;
 }
 
+.notice-body p {
+  text-indent: 1.5em;
+}
+
 .agenda h3 {
-  margin: 0 0 14px;
-  font-size: 1rem;
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--gos-blue);
 }
 
 .agenda-section {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .agenda-section + .agenda-section {
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .agenda h4 {
   margin: 0;
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-left: 4px solid var(--gos-blue);
-  border-radius: 8px;
+  border-radius: 0 6px 6px 0;
   background: #edf5ff;
   color: var(--gos-blue-dark);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   break-after: avoid-page;
   page-break-after: avoid;
 }
@@ -208,6 +234,51 @@ defineProps<{
 .empty-agenda {
   margin: 0;
   color: var(--gos-muted);
+}
+
+.notice-materials {
+  margin-top: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.notice-materials h3 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gos-blue);
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.mat-item {
+  margin: 0;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.mat-item img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.mat-item figcaption {
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  color: var(--gos-muted);
+  text-align: center;
 }
 
 @media (max-width: 980px) {
@@ -278,61 +349,63 @@ defineProps<{
     border-radius: 0;
     background: #fff;
     box-shadow: none;
-    font-size: 9pt;
-    line-height: 1.02;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    line-height: 1.15;
+    color: #000;
   }
 
   .document-mark {
-    margin-bottom: 0;
-    color: #000;
+    margin: 0 0 4pt;
+    text-align: center;
     font-family: "Times New Roman", serif;
-    font-size: 10pt;
-    letter-spacing: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000;
   }
 
   .notice-card h2 {
-    margin: 0;
+    margin: 0 0 6pt;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
     color: #000;
+  }
+
+  .document-subtitle {
+    margin: 0;
+    text-align: center;
     font-family: "Times New Roman", serif;
     font-size: 10pt;
-    line-height: 1.02;
-    text-transform: uppercase;
-  }
-
-  .document-subtitle,
-  .document-address {
-    margin: 0;
     color: #000;
-    font-family: "Times New Roman", serif;
-    display: inline;
-    font-size: 8.6pt;
-    line-height: 1;
   }
 
-  .document-subtitle::after,
-  .document-address::after {
-    content: " ";
+  .document-address {
+    margin: 2pt 0 8pt;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #000;
   }
 
   .address-box {
     display: none;
   }
 
-  .notice-meta,
-  .notice-body {
-    margin-top: 2px;
+  .notice-meta {
+    margin: 6pt 0 4pt;
     padding: 0;
     border: 0;
     background: transparent;
-  }
-
-  .notice-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 4mm;
     font-family: "Times New Roman", serif;
-    font-size: 8pt;
-    line-height: 1;
+    font-size: 10pt;
+    line-height: 1.2;
   }
 
   .notice-meta p {
@@ -340,9 +413,14 @@ defineProps<{
   }
 
   .notice-body {
+    margin: 6pt 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
     font-family: "Times New Roman", serif;
-    font-size: 9pt;
-    line-height: 1.02;
+    font-size: 10pt;
+    line-height: 1.2;
+    text-indent: 12.5mm;
   }
 
   .notice-body p {
@@ -350,16 +428,19 @@ defineProps<{
   }
 
   .agenda {
-    margin-top: 2px;
+    margin-top: 8pt;
     padding: 0;
     border: 0;
     background: transparent;
   }
 
   .agenda h3 {
-    margin: 0;
+    margin: 0 0 6pt;
     padding: 0;
-    font-size: 9pt;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    font-weight: 700;
     color: #000;
   }
 
@@ -368,46 +449,95 @@ defineProps<{
   }
 
   .agenda-section {
-    gap: 1px;
+    gap: 1pt;
   }
 
   .agenda-section + .agenda-section {
-    margin-top: 2px;
+    margin-top: 4pt;
   }
 
   .agenda h4 {
-    padding: 0;
+    margin: 0;
+    padding: 2pt 0;
     border: 0;
     border-bottom: 1px solid #000;
     border-radius: 0;
     background: transparent;
-    color: #000;
     font-family: "Times New Roman", serif;
-    font-size: 8.5pt;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000;
+    text-transform: none;
+    letter-spacing: 0;
   }
 
   .agenda-list {
+    margin: 2pt 0 0;
     padding-left: 0;
     font-family: "Times New Roman", serif;
-    font-size: 9pt;
+    font-size: 10pt;
+    line-height: 1.15;
     list-style-position: inside;
-  }
   }
 
   .agenda-list li + li {
-    margin-top: 1px;
+    margin-top: 2pt;
   }
 
   .agenda-list strong {
-    font-size: 9pt;
+    font-size: 10pt;
   }
 
   .agenda p {
-    margin: 2px 0 0;
+    margin: 1pt 0 0;
   }
 
   .agenda-list > li:first-child {
     break-before: avoid-page;
     page-break-before: avoid;
   }
+
+  .notice-materials {
+    margin-top: 8pt;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .notice-materials h3 {
+    margin: 0 0 6pt;
+    padding: 0;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .materials-grid {
+    display: block;
+  }
+
+  .mat-item {
+    display: block;
+    margin: 0 0 4pt;
+    border: 1px solid #000;
+    border-radius: 0;
+    break-inside: avoid;
+  }
+
+  .mat-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .mat-item figcaption {
+    padding: 2pt 4pt;
+    font-family: "Times New Roman", serif;
+    font-size: 9pt;
+    color: #000;
+    text-align: center;
+  }
+}
 </style>

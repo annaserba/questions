@@ -38,24 +38,7 @@ textarea {
 
 @media print {
   @page {
-    margin: 6mm 6mm 20mm;
-
-    @bottom-left {
-      content: "Подпись собственника __________________________";
-      padding-top: 2mm;
-      font-family: "Times New Roman", serif;
-      font-size: 7.6pt;
-      color: #000;
-    }
-
-    @bottom-right {
-      content: "Расшифровка подписи " var(--print-signature-name, "__________________________");
-      padding-top: 2mm;
-      font-family: "Times New Roman", serif;
-      font-size: 7.6pt;
-      color: #000;
-      text-align: right;
-    }
+    margin: 6mm;
   }
 
   body {
@@ -65,8 +48,7 @@ textarea {
 }
 
 @media print {
-  .large-print .bulletin-card,
-  .large-print .notice-card {
+  .large-print .bulletin-card {
     font-size: 14pt !important;
   }
 
@@ -90,27 +72,13 @@ textarea {
   .large-print .document-subtitle,
   .large-print .document-address,
   .large-print .meta-list,
-  .large-print .notice-meta,
   .large-print .owner-field span,
   .large-print .owner-block-head strong {
     font-size: 12pt !important;
   }
 
-  .large-print .notice-body {
-    font-size: 14pt !important;
-  }
-
-  .large-print .print-signature {
-    font-size: 12pt !important;
-  }
-
-  .large-print .agenda h3,
   .large-print .section-title {
     font-size: 13pt !important;
-  }
-
-  .large-print .agenda h4 {
-    font-size: 12pt !important;
   }
 
   .large-print .apartment-grid .owner-field,
@@ -160,12 +128,6 @@ textarea {
 
   .large-print .sign-row b {
     min-height: 8mm !important;
-  }
-
-  .large-print .print-signature span,
-  .large-print .print-signature p,
-  .large-print .print-signature b {
-    font-size: 12pt !important;
   }
 }
 

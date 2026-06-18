@@ -9,6 +9,8 @@ import maketImg from './images/maket.png'
 import photo1 from './images/photo1.jpg'
 import photo2 from './images/photo2.jpg'
 import photo3 from './images/photo3.jpg'
+import mchsImg from './images/IMG_20260618_235449.jpg'
+import dorozhnikiImg from './images/IMG_20260618_235454.jpg'
 import {
   addDays,
   addMonths,
@@ -42,6 +44,8 @@ const materials = [
   { src: photo1, label: 'Коммерческое предложение, стр. 1' },
   { src: photo2, label: 'Коммерческое предложение, стр. 2' },
   { src: photo3, label: 'Коммерческое предложение, стр. 3' },
+  { src: mchsImg, label: 'Согласование МЧС' },
+  { src: dorozhnikiImg, label: 'Согласование дорожных служб' },
 ]
 
 const lightboxIndex = ref<number | null>(null)
@@ -156,11 +160,14 @@ const startProfile = computed<VoterProfile>(() => ({
 
 const questions = computed(() => buildQuestions(form))
 const questionSections = computed(() => buildQuestionSections(questions.value))
-const approvedQuestionSections = computed(() =>
-  buildQuestionSections(
-    questions.value.filter((question) => approvedQuestions[question.title] === true),
-  ),
-)
+const approvedQuestionSections = computed(() => {
+  const hasApproved = Object.keys(approvedQuestions).length > 0
+  return buildQuestionSections(
+    hasApproved
+      ? questions.value.filter((question) => approvedQuestions[question.title] === true)
+      : questions.value,
+  )
+})
 const latestNoticeDate = computed(() => addDays(form.votingStartDate, -10))
 const maxVotingEndDate = computed(() => addMonths(form.votingStartDate, 2))
 const durationWarning = computed(() =>
@@ -650,6 +657,29 @@ function voteForAll(): void {
   saveVotesToStorage()
 }
 
+const printFooterStyleId = 'print-footer-style'
+
+function injectPrintFooter(): void {
+  if (document.getElementById(printFooterStyleId)) return
+  const style = document.createElement('style')
+  style.id = printFooterStyleId
+  style.textContent = `@media print { @page { margin-bottom: 20mm; @bottom-left { content: "Подпись собственника __________________________"; padding-top: 2mm; font-family: "Times New Roman", serif; font-size: 7.6pt; color: #000; } @bottom-right { content: "Расшифровка подписи " var(--print-signature-name, "__________________________"); padding-top: 2mm; font-family: "Times New Roman", serif; font-size: 7.6pt; color: #000; text-align: right; } } }`
+  document.head.appendChild(style)
+}
+
+function removePrintFooter(): void {
+  const style = document.getElementById(printFooterStyleId)
+  if (style) style.remove()
+}
+
+watch(currentDocument, (doc) => {
+  if (doc === 'bulletin') {
+    injectPrintFooter()
+  } else {
+    removePrintFooter()
+  }
+}, { immediate: true })
+
 window.addEventListener('popstate', () => {
   const document = getDocumentFromPath()
   currentDocument.value = document === 'checklist' && !canManageMeeting.value
@@ -771,6 +801,7 @@ watch(
         :form="form"
         :question-sections="approvedQuestionSections"
         :formatted-dates="formattedDates"
+        :materials="materials"
       />
       <QuestionChecklist
         v-else-if="currentDocument === 'checklist' && canManageMeeting"
@@ -793,7 +824,7 @@ watch(
 
       <footer class="materials-footer" :class="{ open: materialsOpen }">
         <button class="materials-toggle" type="button" @click="materialsOpen = !materialsOpen">
-          <h3>Материалы к проекту</h3>
+          <h3>Приложения</h3>
           <span class="materials-caret">{{ materialsOpen ? '▲' : '▼' }}</span>
         </button>
         <div class="materials-body">
