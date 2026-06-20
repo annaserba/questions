@@ -36,6 +36,7 @@ defineEmits<{
         <p><strong>Дата уведомления:</strong> {{ formattedDates.noticeDate }}</p>
       </div>
 
+      <div id="owner-section">
       <div class="owner-block">
         <div class="owner-block-head">
           <strong>Сведения о собственнике</strong>
@@ -155,6 +156,7 @@ defineEmits<{
             </label>
           </div>
         </div>
+      </div>
       </div>
 
       <div class="question-sections">

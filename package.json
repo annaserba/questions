@@ -11,10 +11,14 @@
     "check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "docx": "^9.7.1",
+    "file-saver": "^2.0.5",
+    "html-to-image": "^1.11.13",
     "vue": "^3.5.13",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "^5.7.3",
