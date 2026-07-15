@@ -3,7 +3,6 @@ import { computed, reactive, ref, watch } from 'vue'
 import BulletinSheet from './components/BulletinSheet.vue'
 import ControlPanel from './components/ControlPanel.vue'
 import MeetingNotice from './components/MeetingNotice.vue'
-import QuestionChecklist from './components/QuestionChecklist.vue'
 import VoterStartScreen from './components/VoterStartScreen.vue'
 import maketImg from './images/maket.png'
 import photo1 from './images/photo1.jpg'
@@ -29,11 +28,8 @@ import type {
   VoterProfile,
   VoteChoice,
 } from './types'
-import approvedQuestionsData from './data/approved-questions.json'
 import apartments48_1 from './data/apartments-48-1.json'
 import apartments48 from './data/apartments-48.json'
-
-const approvedQuestionsByHouse: Record<string, string[]> = approvedQuestionsData
 
 const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; share: string; name?: string; phone: string; wantsBlank: boolean }>> = {
   'пр-т. Октябрьской революции, 48': apartments48 as any,
@@ -164,18 +160,15 @@ if (storedProfile) {
 const documentPath: Record<DocumentView, string> = {
   bulletin: '/',
   notice: '/notice',
-  checklist: '/checklist',
 }
 
 function getDocumentFromPath(): DocumentView {
   if (window.location.pathname === '/notice') return 'notice'
-  if (window.location.pathname === '/checklist') return 'checklist'
   return 'bulletin'
 }
 
 const currentDocument = ref<DocumentView>(getDocumentFromPath())
 const questionVotes = reactive<Record<number, VoteChoice | undefined>>(loadVotesFromStorage())
-const approvedQuestionKey = 'voting_approved_questions'
 const votesStorageKey = 'voting_question_votes'
 
 function loadVotesFromStorage(): Record<number, VoteChoice | undefined> {
@@ -194,8 +187,6 @@ function saveVotesToStorage(): void {
     JSON.stringify(questionVotes)
   )
 }
-const approvedQuestions = reactive<Record<string, boolean>>(getApprovedQuestions())
-const approvedSaveStatus = ref('')
 const meetingSaveStatus = ref('')
 const meetingSettingsLoaded = ref(false)
 let meetingSaveTimer: number | undefined
@@ -211,14 +202,6 @@ const startProfile = computed<VoterProfile>(() => ({
 
 const questions = computed(() => buildQuestions(form))
 const questionSections = computed(() => buildQuestionSections(questions.value))
-const approvedQuestionSections = computed(() => {
-  const hasApproved = Object.keys(approvedQuestions).length > 0
-  return buildQuestionSections(
-    hasApproved
-      ? questions.value.filter((question) => approvedQuestions[question.title] === true)
-      : questions.value,
-  )
-})
 const latestNoticeDate = computed(() => addDays(form.votingStartDate, -10))
 const maxVotingEndDate = computed(() => addMonths(form.votingStartDate, 2))
 const durationWarning = computed(() =>
@@ -401,17 +384,13 @@ function printPage(): void {
 async function downloadWord(): Promise<void> {
   await exportBulletinToWord({
     form,
-    questionSections: approvedQuestionSections.value,
+    questionSections: questionSections.value,
     formattedDates: formattedDates.value,
     questionVotes,
   })
 }
 
 function setCurrentDocument(document: DocumentView): void {
-  if (document === 'checklist' && !canManageMeeting.value) {
-    return
-  }
-
   currentDocument.value = document
   const adminParam = window.location.search.includes('admin') ? '?admin' : ''
   window.history.pushState({}, '', documentPath[document] + adminParam)
@@ -475,9 +454,6 @@ function handleProfileSubmit(profile: VoterProfile): void {
   saveVoterProfile(profile)
   profileCompleted.value = true
 
-  if (!canManageMeeting.value && currentDocument.value === 'checklist') {
-    setCurrentDocument('bulletin')
-  }
 }
 
 function editProfile(): void {
@@ -566,150 +542,6 @@ function scheduleMeetingSettingsSave(): void {
   }, 350)
 }
 
-function buildApprovedQuestionTitles(): string[] {
-  return questions.value
-    .filter((question) => approvedQuestions[question.title] === true)
-    .map((question) => question.title)
-}
-
-function applyApprovedQuestionTitles(titles: string[]): void {
-  Object.keys(approvedQuestions).forEach((key) => {
-    delete approvedQuestions[key]
-  })
-
-  titles.forEach((title) => {
-    approvedQuestions[title] = true
-  })
-}
-
-async function loadApprovedQuestionsFromProject(): Promise<void> {
-  try {
-    const response = await fetch('/api/approved-questions')
-
-    if (!response.ok) {
-      const saved = window.localStorage.getItem(getApprovedQuestionKey())
-      if (!saved) {
-        const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
-        if (Array.isArray(houseQuestions)) {
-          applyApprovedQuestionTitles(houseQuestions)
-          saveApprovedQuestions()
-        }
-      }
-      return
-    }
-
-    const payload = await response.json() as { questions?: Record<string, string[]> }
-    if (payload.questions && typeof payload.questions === 'object') {
-      const houseQuestions = payload.questions[form.houseAddress]
-      if (Array.isArray(houseQuestions)) {
-        applyApprovedQuestionTitles(houseQuestions)
-        saveApprovedQuestions()
-      }
-    }
-  } catch {
-    const saved = window.localStorage.getItem(getApprovedQuestionKey())
-    if (!saved) {
-      const houseQuestions = approvedQuestionsByHouse[form.houseAddress]
-      if (Array.isArray(houseQuestions)) {
-        applyApprovedQuestionTitles(houseQuestions)
-        saveApprovedQuestions()
-      }
-    }
-  }
-}
-
-async function saveApprovedQuestionsToProject(): Promise<void> {
-  approvedSaveStatus.value = 'Сохраняю в проект...'
-
-  try {
-    const response = await fetch('/api/approved-questions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        houseAddress: form.houseAddress,
-        questions: buildApprovedQuestionTitles(),
-      }),
-    })
-
-    if (!response.ok) {
-      const payload = await response.json() as { error?: string }
-      throw new Error(payload.error || 'Не удалось сохранить согласованные вопросы.')
-    }
-
-    saveApprovedQuestions()
-    approvedSaveStatus.value = 'Сохранено в проект'
-    window.setTimeout(() => {
-      if (approvedSaveStatus.value === 'Сохранено в проект') {
-        approvedSaveStatus.value = ''
-      }
-    }, 1800)
-  } catch (error) {
-    saveApprovedQuestions()
-    approvedSaveStatus.value = 'Сохранено локально'
-    window.setTimeout(() => {
-      if (approvedSaveStatus.value === 'Сохранено локально') {
-        approvedSaveStatus.value = ''
-      }
-    }, 1800)
-  }
-}
-
-function getApprovedQuestions(): Record<string, boolean> {
-  const savedValue = window.localStorage.getItem(getApprovedQuestionKey())
-
-  if (!savedValue) {
-    return {}
-  }
-
-  try {
-    const parsedValue = JSON.parse(savedValue) as Record<string, unknown>
-    return Object.entries(parsedValue).reduce<Record<string, boolean>>((acc, [key, value]) => {
-      if (value === true) {
-        acc[key] = true
-      }
-
-      return acc
-    }, {})
-  } catch {
-    return {}
-  }
-}
-
-function saveApprovedQuestions(): void {
-  window.localStorage.setItem(getApprovedQuestionKey(), JSON.stringify(approvedQuestions))
-}
-
-function getApprovedQuestionKey(): string {
-  return approvedQuestionKey + '_' + form.houseAddress
-}
-
-function toggleApprovedQuestion(questionTitle: string): void {
-  if (approvedQuestions[questionTitle]) {
-    delete approvedQuestions[questionTitle]
-  } else {
-    approvedQuestions[questionTitle] = true
-  }
-
-  saveApprovedQuestions()
-  void saveApprovedQuestionsToProject()
-}
-
-function selectAllApprovedQuestions(): void {
-  for (const question of questions.value) {
-    approvedQuestions[question.title] = true
-  }
-  saveApprovedQuestions()
-  void saveApprovedQuestionsToProject()
-}
-
-function deselectAllApprovedQuestions(): void {
-  for (const question of questions.value) {
-    delete approvedQuestions[question.title]
-  }
-  saveApprovedQuestions()
-  void saveApprovedQuestionsToProject()
-}
-
 function voteForAll(): void {
   questions.value.forEach((_, idx) => {
     questionVotes[idx + 1] = 'for'
@@ -741,27 +573,17 @@ watch(currentDocument, (doc) => {
 }, { immediate: true })
 
 window.addEventListener('popstate', () => {
-  const document = getDocumentFromPath()
-  currentDocument.value = document === 'checklist' && !canManageMeeting.value
-    ? 'bulletin'
-    : document
+  currentDocument.value = getDocumentFromPath()
 })
 
 watch(
   () => form.houseAddress,
   () => {
-    void loadApprovedQuestionsFromProject()
     const saved = loadVotesFromStorage()
     Object.keys(questionVotes).forEach(k => delete questionVotes[Number(k)])
     Object.assign(questionVotes, saved)
   },
 )
-
-watch(profileCompleted, (completed) => {
-  if (completed) {
-    void loadApprovedQuestionsFromProject()
-  }
-}, { immediate: true })
 
 watch(profileCompleted, (completed) => {
   if (completed) {
@@ -776,15 +598,6 @@ watch(
   },
 )
 
-watch(
-  canManageMeeting,
-  (canManage) => {
-    if (!canManage && currentDocument.value === 'checklist') {
-      setCurrentDocument('bulletin')
-    }
-  },
-  { immediate: true },
-)
 </script>
 
 <template>
@@ -862,24 +675,14 @@ watch(
       <MeetingNotice
         v-if="currentDocument === 'notice'"
         :form="form"
-        :question-sections="approvedQuestionSections"
+        :question-sections="questionSections"
         :formatted-dates="formattedDates"
         :materials="materials"
-      />
-      <QuestionChecklist
-        v-else-if="currentDocument === 'checklist' && canManageMeeting"
-        :house-address="form.houseAddress"
-        :question-sections="questionSections"
-        :approved-questions="approvedQuestions"
-        :save-status="approvedSaveStatus"
-        @toggle-approved="toggleApprovedQuestion"
-        @select-all="selectAllApprovedQuestions"
-        @deselect-all="deselectAllApprovedQuestions"
       />
       <BulletinSheet
         v-else
         :form="form"
-        :question-sections="approvedQuestionSections"
+        :question-sections="questionSections"
         :formatted-dates="formattedDates"
         :question-votes="questionVotes"
         @select-vote="handleVoteSelection"

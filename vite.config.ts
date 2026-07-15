@@ -12,20 +12,12 @@ interface AnalyzeQuestionPayload {
   explanation?: string
 }
 
-interface ApprovedQuestionsPayload {
-  houseAddress?: string
-  questions?: string[]
-}
-
 interface MeetingSettings {
   noticeDate: string
   votingStartDate: string
   votingEndDate: string
 }
 
-type ApprovedQuestionsStore = Record<string, string[]>
-
-const approvedQuestionsFile = resolve(process.cwd(), 'src/data/approved-questions.json')
 const meetingSettingsFile = resolve(process.cwd(), 'src/data/meeting-settings.json')
 
 function readJsonBody<T>(req: import('node:http').IncomingMessage): Promise<T> {
@@ -56,35 +48,6 @@ function sendJson(
   res.statusCode = statusCode
   res.setHeader('Content-Type', 'application/json; charset=utf-8')
   res.end(JSON.stringify(payload))
-}
-
-async function readApprovedQuestionsStore(): Promise<ApprovedQuestionsStore> {
-  try {
-    const rawValue = await readFile(approvedQuestionsFile, 'utf-8')
-    const parsedValue = JSON.parse(rawValue) as unknown
-
-    if (parsedValue && typeof parsedValue === 'object' && !Array.isArray(parsedValue)) {
-      const store: ApprovedQuestionsStore = {}
-      for (const [key, val] of Object.entries(parsedValue as Record<string, unknown>)) {
-        if (Array.isArray(val)) {
-          store[key] = val.filter((v): v is string => typeof v === 'string' && v.trim().length > 0)
-        }
-      }
-      return store
-    }
-
-    return {}
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
-      return {}
-    }
-    throw error
-  }
-}
-
-async function writeApprovedQuestionsStore(store: ApprovedQuestionsStore): Promise<void> {
-  await mkdir(dirname(approvedQuestionsFile), { recursive: true })
-  await writeFile(approvedQuestionsFile, `${JSON.stringify(store, null, 2)}\n`, 'utf-8')
 }
 
 function isIsoDate(value: unknown): value is string {
@@ -205,45 +168,6 @@ function deepSeekAnalyzerPlugin(env: Record<string, string>): Plugin {
   }
 }
 
-function approvedQuestionsPlugin(): Plugin {
-  return {
-    name: 'approved-questions-store',
-    configureServer(server) {
-      server.middlewares.use('/api/approved-questions', async (req, res) => {
-        try {
-          if (req.method === 'GET') {
-            const store = await readApprovedQuestionsStore()
-            sendJson(res, 200, { questions: store })
-            return
-          }
-
-          if (req.method === 'POST') {
-            const payload = await readJsonBody<ApprovedQuestionsPayload>(req)
-            const houseAddress = payload.houseAddress?.trim()
-
-            if (!houseAddress || !Array.isArray(payload.questions)) {
-              sendJson(res, 400, { error: 'Передайте houseAddress и список вопросов.' })
-              return
-            }
-
-            const store = await readApprovedQuestionsStore()
-            store[houseAddress] = payload.questions.map((title) => title.trim()).filter(Boolean)
-            await writeApprovedQuestionsStore(store)
-            sendJson(res, 200, { ok: true, questions: store })
-            return
-          }
-
-          sendJson(res, 405, { error: 'Метод не поддерживается.' })
-        } catch (error) {
-          sendJson(res, 500, {
-            error: error instanceof Error ? error.message : 'Ошибка сохранения согласованных вопросов.',
-          })
-        }
-      })
-    },
-  }
-}
-
 function meetingSettingsPlugin(): Plugin {
   return {
     name: 'meeting-settings-store',
@@ -283,6 +207,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    plugins: [vue(), deepSeekAnalyzerPlugin(env), approvedQuestionsPlugin(), meetingSettingsPlugin()],
+    plugins: [vue(), deepSeekAnalyzerPlugin(env), meetingSettingsPlugin()],
   }
 })

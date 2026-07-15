@@ -39,7 +39,7 @@ export interface BulletinQuestionSection {
   questions: BulletinQuestion[]
 }
 
-export type DocumentView = 'bulletin' | 'notice' | 'checklist'
+export type DocumentView = 'bulletin' | 'notice'
 
 export type OnlineVotePreference = 'yes' | 'no'
 

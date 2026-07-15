@@ -69,14 +69,6 @@ const menuOpen = ref(false);
         >
           Уведомление
         </button>
-        <button
-          v-if="canManageMeeting"
-          :class="['switch-button', { active: currentDocument === 'checklist' }]"
-          type="button"
-          @click="$emit('update:current-document', 'checklist')"
-        >
-          Чеклист
-        </button>
       </div>
     </section>
 
