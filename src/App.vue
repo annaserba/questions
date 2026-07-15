@@ -21,7 +21,6 @@ import {
   houseAddressOptions,
   saveOwnerFormToCookie,
 } from './data/bulletin'
-import { exportBulletinToWord } from './utils/exportWord'
 import type {
   DocumentView,
   MeetingSettings,
@@ -381,15 +380,6 @@ function printPage(): void {
   window.print()
 }
 
-async function downloadWord(): Promise<void> {
-  await exportBulletinToWord({
-    form,
-    questionSections: questionSections.value,
-    formattedDates: formattedDates.value,
-    questionVotes,
-  })
-}
-
 function setCurrentDocument(document: DocumentView): void {
   currentDocument.value = document
   const adminParam = window.location.search.includes('admin') ? '?admin' : ''
@@ -643,9 +633,6 @@ watch(
         <div class="header-actions">
           <button class="header-print" type="button" @click="printPage">
             Печать
-          </button>
-          <button v-if="currentDocument === 'bulletin'" class="header-print" type="button" @click="downloadWord">
-            Скачать Word
           </button>
           <button
             class="header-toggle"
