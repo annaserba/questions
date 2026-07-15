@@ -4,6 +4,8 @@ import type { BulletinForm, BulletinQuestionSection } from '../types'
 export interface NoticeMaterial {
   src: string
   label: string
+  type?: 'image' | 'file'
+  printPages?: string[]
 }
 
 defineProps<{
@@ -84,11 +86,42 @@ defineProps<{
             v-for="(mat, idx) in materials"
             :key="idx"
             class="mat-item"
+            :class="{ 'file-material': mat.type === 'file' }"
           >
-            <img :src="mat.src" :alt="mat.label" />
+            <img
+              v-if="mat.type !== 'file'"
+              :src="mat.src"
+              :alt="mat.label"
+            />
+            <a
+              v-else
+              class="mat-file-link"
+              :href="mat.src"
+              target="_blank"
+              rel="noopener"
+            >
+              Открыть PDF
+            </a>
             <figcaption>Приложение {{ idx + 1 }}. {{ mat.label }}</figcaption>
           </figure>
         </div>
+        <template
+          v-for="(mat, idx) in materials"
+          :key="`print-${idx}`"
+        >
+          <section
+            v-if="mat.type === 'file'"
+            class="print-full-attachment"
+          >
+            <img
+              v-for="(page, pageIdx) in mat.printPages || []"
+              :key="page"
+              class="pdf-print-page"
+              :src="page"
+              :alt="`${mat.label}, страница ${pageIdx + 1}`"
+            />
+          </section>
+        </template>
       </div>
 
     </article>
@@ -291,6 +324,26 @@ defineProps<{
   width: 100%;
   height: 180px;
   object-fit: cover;
+}
+
+.mat-file-link {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  padding: 20px;
+  color: var(--gos-blue);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  background: #edf5ff;
+}
+
+.mat-file-link:hover {
+  text-decoration: underline;
+}
+
+.print-full-attachment {
+  display: none;
 }
 
 .mat-item figcaption {
@@ -550,6 +603,44 @@ defineProps<{
     display: block;
   }
 
+  .file-material {
+    display: none !important;
+  }
+
+  .mat-file-link {
+    display: none !important;
+  }
+
+  .print-full-attachment {
+    display: block;
+    margin-top: 0;
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .print-full-attachment h3 {
+    margin: 0 0 6pt;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .pdf-print-page {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .pdf-print-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
   .mat-item {
     display: block;
     margin: 0 0 4pt;
@@ -562,6 +653,19 @@ defineProps<{
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .mat-file-link {
+    display: block;
+    min-height: 0;
+    padding: 4pt;
+    border-bottom: 1px solid #000;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
   }
 
   .mat-item figcaption {

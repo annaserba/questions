@@ -40,19 +40,45 @@ const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floo
   'пр-т. Октябрьской революции, 48/1': apartments48_1 as any,
 }
 
-const materials = [
-  { src: maketImg, label: 'Схема установки' },
-  { src: photo1, label: 'Коммерческое предложение, стр. 1' },
-  { src: photo2, label: 'Коммерческое предложение, стр. 2' },
-  { src: photo3, label: 'Коммерческое предложение, стр. 3' },
-  { src: mchsImg, label: 'Согласование МЧС' },
-  { src: dorozhnikiImg, label: 'Согласование дорожных служб' },
+type Material = {
+  src: string
+  label: string
+  type: 'image' | 'file'
+  printPages?: string[]
+}
+
+const materials: Material[] = [
+  { src: maketImg, label: 'Схема установки', type: 'image' },
+  { src: photo1, label: 'Коммерческое предложение, стр. 1', type: 'image' },
+  { src: photo2, label: 'Коммерческое предложение, стр. 2', type: 'image' },
+  { src: photo3, label: 'Коммерческое предложение, стр. 3', type: 'image' },
+  { src: mchsImg, label: 'Согласование МЧС', type: 'image' },
+  { src: dorozhnikiImg, label: 'Согласование дорожных служб', type: 'image' },
+  {
+    src: '/docs/management-contract-yuzhny-bereg.pdf',
+    label: 'Договор управления Южный берег',
+    type: 'file',
+    printPages: [
+      '/docs/management-contract-pages/page-1.png',
+      '/docs/management-contract-pages/page-2.png',
+      '/docs/management-contract-pages/page-3.png',
+      '/docs/management-contract-pages/page-4.png',
+      '/docs/management-contract-pages/page-5.png',
+      '/docs/management-contract-pages/page-6.png',
+      '/docs/management-contract-pages/page-7.png',
+      '/docs/management-contract-pages/page-8.png',
+    ],
+  },
 ]
 
 const lightboxIndex = ref<number | null>(null)
 const materialsOpen = ref(false)
 
 function openLightbox(index: number) {
+  if (materials[index]?.type === 'file') {
+    return
+  }
+
   lightboxIndex.value = index
 }
 
@@ -61,15 +87,39 @@ function closeLightbox() {
 }
 
 function prevImage() {
-  if (lightboxIndex.value !== null && lightboxIndex.value > 0) {
-    lightboxIndex.value--
+  if (lightboxIndex.value === null) {
+    return
+  }
+
+  for (let idx = lightboxIndex.value - 1; idx >= 0; idx--) {
+    if (materials[idx]?.type !== 'file') {
+      lightboxIndex.value = idx
+      return
+    }
   }
 }
 
 function nextImage() {
-  if (lightboxIndex.value !== null && lightboxIndex.value < materials.length - 1) {
-    lightboxIndex.value++
+  if (lightboxIndex.value === null) {
+    return
   }
+
+  for (let idx = lightboxIndex.value + 1; idx < materials.length; idx++) {
+    if (materials[idx]?.type !== 'file') {
+      lightboxIndex.value = idx
+      return
+    }
+  }
+}
+
+function hasPreviousImage(): boolean {
+  if (lightboxIndex.value === null) return false
+  return materials.slice(0, lightboxIndex.value).some((mat) => mat.type !== 'file')
+}
+
+function hasNextImage(): boolean {
+  if (lightboxIndex.value === null) return false
+  return materials.slice(lightboxIndex.value + 1).some((mat) => mat.type !== 'file')
 }
 
 function onKeydown(e: KeyboardEvent) {
@@ -842,15 +892,29 @@ watch(
         </button>
         <div class="materials-body">
           <div class="materials-slider">
-            <figure
+            <template
               v-for="(mat, idx) in materials"
               :key="idx"
-              class="mat-slide"
-              @click="openLightbox(idx)"
             >
-              <img :src="mat.src" :alt="mat.label" />
-              <figcaption>{{ mat.label }}</figcaption>
-            </figure>
+              <figure
+                v-if="mat.type !== 'file'"
+                class="mat-slide"
+                @click="openLightbox(idx)"
+              >
+                <img :src="mat.src" :alt="mat.label" />
+                <figcaption>{{ mat.label }}</figcaption>
+              </figure>
+              <a
+                v-else
+                class="mat-slide mat-file"
+                :href="mat.src"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="mat-file-icon">DOC</span>
+                <span>{{ mat.label }}</span>
+              </a>
+            </template>
           </div>
         </div>
       </footer>
@@ -866,7 +930,7 @@ watch(
       >
         <button class="lightbox-close" @click.stop="closeLightbox">&times;</button>
         <button
-          v-if="lightboxIndex > 0"
+          v-if="hasPreviousImage()"
           class="lightbox-arrow lightbox-prev"
           @click.stop="prevImage"
         >&#8249;</button>
@@ -877,7 +941,7 @@ watch(
           @click.stop
         />
         <button
-          v-if="lightboxIndex < materials.length - 1"
+          v-if="hasNextImage()"
           class="lightbox-arrow lightbox-next"
           @click.stop="nextImage"
         >&#8250;</button>
@@ -1117,6 +1181,37 @@ watch(
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.mat-file {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 153px;
+  padding: 16px 12px;
+  color: var(--gos-blue);
+  text-align: center;
+  text-decoration: none;
+  background: #edf5ff;
+}
+
+.mat-file-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 40px;
+  border: 1px solid #9bbcf5;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.mat-file span:last-child {
+  max-width: 100%;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .lightbox-overlay {
