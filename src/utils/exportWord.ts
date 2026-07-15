@@ -218,7 +218,6 @@ function buildOwnerTable(form: BulletinForm): Table[] {
     new Table({
       width: { size: 100, type: WidthType.PERCENTAGE },
       rows,
-      cantSplit: true,
     }),
   ]
 }

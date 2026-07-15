@@ -71,6 +71,14 @@ defineProps<{
 
       <div v-if="materials.length > 0" class="notice-materials">
         <h3>Приложения</h3>
+        <ol class="attachments-list">
+          <li
+            v-for="(mat, idx) in materials"
+            :key="`attachment-${idx}`"
+          >
+            Приложение {{ idx + 1 }}. {{ mat.label }}
+          </li>
+        </ol>
         <div class="materials-grid">
           <figure
             v-for="(mat, idx) in materials"
@@ -78,7 +86,7 @@ defineProps<{
             class="mat-item"
           >
             <img :src="mat.src" :alt="mat.label" />
-            <figcaption>Рис. {{ idx + 1 }}. {{ mat.label }}</figcaption>
+            <figcaption>Приложение {{ idx + 1 }}. {{ mat.label }}</figcaption>
           </figure>
         </div>
       </div>
@@ -251,6 +259,17 @@ defineProps<{
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--gos-blue);
+}
+
+.attachments-list {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: var(--gos-ink);
+  line-height: 1.45;
+}
+
+.attachments-list li + li {
+  margin-top: 4px;
 }
 
 .materials-grid {
@@ -512,6 +531,19 @@ defineProps<{
     font-size: 10pt;
     font-weight: 700;
     color: #000;
+  }
+
+  .attachments-list {
+    margin: 0 0 6pt;
+    padding-left: 0;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    line-height: 1.15;
+    list-style: none;
+  }
+
+  .attachments-list li + li {
+    margin-top: 1pt;
   }
 
   .materials-grid {
