@@ -1,20 +1,12 @@
 import type { BulletinQuestion } from '../../types'
+import propertyAgenda from './property.json'
 
-export function propertyQuestions(houseAddress: string): BulletinQuestion[] {
-  const isHouse48 = houseAddress === 'пр-т. Октябрьской революции, 48'
-  const questions: BulletinQuestion[] = []
+const questionsByHouse = new Map(Object.entries(propertyAgenda.byHouse))
 
-  if (isHouse48) {
-    questions.push({
-      title: 'Использовать внутреннюю подсобку подъезда № 2 для нужд совета дома',
-      description:
-        'Принять решение об использовании внутреннего подсобного помещения в подъезде № 2 многоквартирного дома для нужд совета дома: проведение заседаний совета, хранение документации, инвентаря и материалов, связанных с деятельностью совета многоквартирного дома. Ответственной за помещение и ключи назначить Филиппову Г. В.',
-      explanation:
-        'По ст. 36 ЖК РФ подсобные помещения в МКД относятся к общему имуществу. Для использования такого помещения под конкретные нужды требуется решение общего собрания собственников.',
-      section: 'Общее имущество и правила',
-      quorum: '>50%',
-    })
-  }
-
-  return questions
+export function propertyQuestions(houseAddress: string, managementCompany: string): BulletinQuestion[] {
+  return [...propertyAgenda.common, ...(questionsByHouse.get(houseAddress) ?? [])].map((question) => ({
+    ...question,
+    description: question.description.replace(/\{managementCompany\}/g, () => managementCompany),
+    section: propertyAgenda.section,
+  }))
 }

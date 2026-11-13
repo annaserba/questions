@@ -22,6 +22,6 @@ export function buildQuestions(form: BulletinForm): BulletinQuestion[] {
     ...councilQuestions(chairman, council),
     ...gatesQuestions(managementCompany),
     ...videoQuestions(),
-    ...propertyQuestions(form.houseAddress),
+    ...propertyQuestions(form.houseAddress, managementCompany),
   ]
 }
