@@ -14,11 +14,40 @@ interface AnalyzeQuestionPayload {
 
 interface MeetingSettings {
   noticeDate: string
+  noticeDates: Record<string, string>
   votingStartDate: string
   votingEndDate: string
+  paperDecisionReceptionProcedure: string
+  materialsReviewProcedure: string
+  paperDecisionStartDate: string
+  paperDecisionStartTime: string
+  paperDecisionEndDate: string
+  paperDecisionEndTime: string
+  paperDecisionEndDates: Record<string, string>
+  protocolStorageAddress: string
 }
 
+type VoteRegistryStatus = 'pending' | 'online' | 'paper'
+type PreviousVoteStatus = 'none' | 'online' | 'paper' | 'online_and_paper'
+
+interface VoteRegistryEntry {
+  apartment: string
+  ownerName: string
+  phone: string
+  area: string
+  cadastral: string
+  previousVote: PreviousVoteStatus
+  status: VoteRegistryStatus
+  updatedAt: string
+  note: string
+}
+
+type VoteRegistry = Record<string, Record<string, Record<string, VoteRegistryEntry[]>>>
+type VoteProgressSettings = Record<string, number>
+
 const meetingSettingsFile = resolve(process.cwd(), 'src/data/meeting-settings.json')
+const voteRegistryFile = resolve(process.cwd(), 'src/data/vote-registry.json')
+const voteProgressFile = resolve(process.cwd(), 'src/data/vote-progress.json')
 
 function readJsonBody<T>(req: import('node:http').IncomingMessage): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -54,6 +83,11 @@ function isIsoDate(value: unknown): value is string {
   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
 }
 
+function isIsoDateRecord(value: unknown): value is Record<string, string> {
+  return !!value && typeof value === 'object' &&
+    Object.values(value).every(isIsoDate)
+}
+
 function isMeetingSettings(value: unknown): value is MeetingSettings {
   if (!value || typeof value !== 'object') {
     return false
@@ -61,8 +95,17 @@ function isMeetingSettings(value: unknown): value is MeetingSettings {
 
   const settings = value as Partial<MeetingSettings>
   return isIsoDate(settings.noticeDate) &&
+    isIsoDateRecord(settings.noticeDates) &&
     isIsoDate(settings.votingStartDate) &&
-    isIsoDate(settings.votingEndDate)
+    isIsoDate(settings.votingEndDate) &&
+    typeof settings.paperDecisionReceptionProcedure === 'string' &&
+    typeof settings.materialsReviewProcedure === 'string' &&
+    isIsoDate(settings.paperDecisionStartDate) &&
+    typeof settings.paperDecisionStartTime === 'string' &&
+    isIsoDate(settings.paperDecisionEndDate) &&
+    typeof settings.paperDecisionEndTime === 'string' &&
+    isIsoDateRecord(settings.paperDecisionEndDates) &&
+    typeof settings.protocolStorageAddress === 'string'
 }
 
 async function readMeetingSettings(): Promise<MeetingSettings | null> {
@@ -82,6 +125,57 @@ async function readMeetingSettings(): Promise<MeetingSettings | null> {
 async function writeMeetingSettings(settings: MeetingSettings): Promise<void> {
   await mkdir(dirname(meetingSettingsFile), { recursive: true })
   await writeFile(meetingSettingsFile, `${JSON.stringify(settings, null, 2)}\n`, 'utf-8')
+}
+
+function isVoteRegistry(value: unknown): value is VoteRegistry {
+  if (!value || typeof value !== 'object') return false
+  return Object.values(value as Record<string, unknown>).every((entrances) =>
+    entrances && typeof entrances === 'object' && Object.values(entrances as Record<string, unknown>).every((floors) =>
+      floors && typeof floors === 'object' && Object.values(floors as Record<string, unknown>).every((entries) =>
+      Array.isArray(entries) && entries.every((entry) => {
+        if (!entry || typeof entry !== 'object') return false
+        const item = entry as Partial<VoteRegistryEntry>
+        return typeof item.apartment === 'string' &&
+          typeof item.ownerName === 'string' &&
+          typeof item.phone === 'string' &&
+          typeof item.area === 'string' &&
+          typeof item.cadastral === 'string' &&
+          ['none', 'online', 'paper', 'online_and_paper'].includes(item.previousVote || '') &&
+          ['pending', 'online', 'paper'].includes(item.status || '') &&
+          typeof item.updatedAt === 'string' && typeof item.note === 'string'
+      }),
+    ),
+    ),
+  )
+}
+
+async function readVoteRegistry(): Promise<VoteRegistry> {
+  const rawValue = await readFile(voteRegistryFile, 'utf-8')
+  const parsedValue = JSON.parse(rawValue) as unknown
+  if (!isVoteRegistry(parsedValue)) throw new Error('Некорректный формат реестра голосования.')
+  return parsedValue
+}
+
+async function writeVoteRegistry(registry: VoteRegistry): Promise<void> {
+  await writeFile(voteRegistryFile, `${JSON.stringify(registry, null, 2)}\n`, 'utf-8')
+}
+
+function isVoteProgressSettings(value: unknown): value is VoteProgressSettings {
+  return !!value && typeof value === 'object' &&
+    Object.values(value as Record<string, unknown>).every((area) =>
+      typeof area === 'number' && Number.isFinite(area) && area >= 0,
+    )
+}
+
+async function readVoteProgress(): Promise<VoteProgressSettings> {
+  const rawValue = await readFile(voteProgressFile, 'utf-8')
+  const parsedValue = JSON.parse(rawValue) as unknown
+  if (!isVoteProgressSettings(parsedValue)) throw new Error('Некорректный формат площадей для расчета.')
+  return parsedValue
+}
+
+async function writeVoteProgress(settings: VoteProgressSettings): Promise<void> {
+  await writeFile(voteProgressFile, `${JSON.stringify(settings, null, 2)}\n`, 'utf-8')
 }
 
 function deepSeekAnalyzerPlugin(env: Record<string, string>): Plugin {
@@ -203,10 +297,68 @@ function meetingSettingsPlugin(): Plugin {
   }
 }
 
+function voteRegistryPlugin(): Plugin {
+  return {
+    name: 'vote-registry-store',
+    configureServer(server) {
+      server.middlewares.use('/api/vote-registry', async (req, res) => {
+        try {
+          if (req.method === 'GET') {
+            sendJson(res, 200, { registry: await readVoteRegistry() })
+            return
+          }
+          if (req.method === 'POST') {
+            const payload = await readJsonBody<unknown>(req)
+            if (!isVoteRegistry(payload)) {
+              sendJson(res, 400, { error: 'Передайте корректный реестр голосования.' })
+              return
+            }
+            await writeVoteRegistry(payload)
+            sendJson(res, 200, { ok: true, registry: payload })
+            return
+          }
+          sendJson(res, 405, { error: 'Метод не поддерживается.' })
+        } catch (error) {
+          sendJson(res, 500, { error: error instanceof Error ? error.message : 'Ошибка сохранения реестра.' })
+        }
+      })
+    },
+  }
+}
+
+function voteProgressPlugin(): Plugin {
+  return {
+    name: 'vote-progress-store',
+    configureServer(server) {
+      server.middlewares.use('/api/vote-progress', async (req, res) => {
+        try {
+          if (req.method === 'GET') {
+            sendJson(res, 200, { settings: await readVoteProgress() })
+            return
+          }
+          if (req.method === 'POST') {
+            const payload = await readJsonBody<unknown>(req)
+            if (!isVoteProgressSettings(payload)) {
+              sendJson(res, 400, { error: 'Передайте корректные площади домов.' })
+              return
+            }
+            await writeVoteProgress(payload)
+            sendJson(res, 200, { ok: true, settings: payload })
+            return
+          }
+          sendJson(res, 405, { error: 'Метод не поддерживается.' })
+        } catch (error) {
+          sendJson(res, 500, { error: error instanceof Error ? error.message : 'Ошибка сохранения площадей.' })
+        }
+      })
+    },
+  }
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    plugins: [vue(), deepSeekAnalyzerPlugin(env), meetingSettingsPlugin()],
+    plugins: [vue(), deepSeekAnalyzerPlugin(env), meetingSettingsPlugin(), voteRegistryPlugin(), voteProgressPlugin()],
   }
 })
