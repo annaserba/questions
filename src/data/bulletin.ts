@@ -139,7 +139,7 @@ export function createDefaultForm(): BulletinForm {
 
   return {
     houseAddress,
-    managementCompany: 'ООО «Южный берег»',
+    managementCompany: 'ООО «УК Уют»',
     previousManagementCompany: 'ООО «УК Стрелецкая бухта»',
     meetingType:
       'В форме электронного голосования через Государственную информационную систему жилищно-коммунального хозяйства (ГИС ЖКХ)',

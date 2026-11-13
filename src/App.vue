@@ -58,7 +58,7 @@ const materials: Material[] = [
   { src: dorozhnikiImg, label: 'Согласование дорожных служб', type: 'image' },
   {
     src: '/docs/management-contract-yuzhny-bereg.pdf',
-    label: 'Договор управления Южный берег',
+    label: 'Договор управления УК Уют',
     type: 'file',
     printPages: [
       '/docs/management-contract-pages/page-1.png',
