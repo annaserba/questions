@@ -26,7 +26,7 @@ export function managementQuestions(
       quorum: '>50%',
     },
     {
-      title: `Утвердить договор управления с ${managementCompany}`,
+      title: `Утвердить договор управления с ${managementCompany} (см. Приложение № 7)`,
       description:
         'Утверждение условий и заключение с ' +
           managementCompany +

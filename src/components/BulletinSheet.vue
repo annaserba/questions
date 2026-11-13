@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BulletinQuestion from './BulletinQuestion.vue'
+import { getHouseInitiator } from '../data/bulletin'
 import type {
   BulletinForm,
   BulletinQuestionSection,
@@ -12,6 +13,8 @@ defineProps<{
     noticeDate: string
     votingStartDate: string
     votingEndDate: string
+    paperDecisionStartDate: string
+    paperDecisionEndDate: string
   }
   questionSections: BulletinQuestionSection[]
   questionVotes: Record<number, VoteChoice | undefined>
@@ -32,9 +35,24 @@ defineEmits<{
       <p class="document-subtitle">с {{ formattedDates.votingStartDate }} по {{ formattedDates.votingEndDate }}</p>
 
       <div class="meta-list">
+        <p><strong>Инициатор общего собрания:</strong> {{ getHouseInitiator(form.houseAddress) }}</p>
         <p><strong>Форма проведения:</strong> {{ form.meetingType }}</p>
-        <p><strong>Дата уведомления:</strong> {{ formattedDates.noticeDate }}</p>
       </div>
+
+      <section class="paper-decision-info">
+        <p><strong>Прием письменных решений:</strong> {{ form.paperDecisionReceptionProcedure }}</p>
+        <p>
+          <strong>Срок приема:</strong> с {{ formattedDates.paperDecisionStartDate }} {{ form.paperDecisionStartTime }}
+          по {{ formattedDates.paperDecisionEndDate }} {{ form.paperDecisionEndTime }}.
+        </p>
+        <p><strong>Материалы собрания:</strong> {{ form.materialsReviewProcedure }}</p>
+      </section>
+
+      <p class="personal-data-notice">
+        Предоставленные сведения обрабатываются исключительно для проведения общего
+        собрания собственников и размещения решения в ГИС ЖКХ в соответствии с
+        законодательством Российской Федерации.
+      </p>
 
       <div id="owner-section">
       <div class="owner-block">
@@ -150,8 +168,8 @@ defineEmits<{
               <input v-model="form.share" type="text" placeholder="1/2" />
             </label>
 
-            <label class="owner-field">
-              <span>Документ о праве собственности</span>
+            <label class="owner-field ownership-document-field">
+              <span>Номер и дата государственной регистрации права</span>
               <input v-model="form.ownershipDocument" type="text" />
             </label>
           </div>
@@ -258,6 +276,31 @@ defineEmits<{
 .meta-list p:last-child,
 .notes p:last-child {
   margin-bottom: 0;
+}
+
+.paper-decision-info {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
+  background: #fbfdff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.paper-decision-info p {
+  margin: 0 0 6px;
+}
+
+.paper-decision-info p:last-child {
+  margin-bottom: 0;
+}
+
+.personal-data-notice {
+  margin: 10px 0 0;
+  color: var(--gos-muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .owner-block,
@@ -537,15 +580,15 @@ defineEmits<{
     border-radius: 0;
     background: #fff;
     box-shadow: none;
-    font-size: 8.2pt;
-    line-height: 1.02;
+    font-size: 10.2pt;
+    line-height: 1.16;
   }
 
   .document-mark {
     margin-bottom: 0;
     color: #000;
     font-family: "Times New Roman", serif;
-    font-size: 9.4pt;
+    font-size: 11.6pt;
     letter-spacing: 0;
   }
 
@@ -555,8 +598,8 @@ defineEmits<{
     color: #000;
     font-family: "Times New Roman", serif;
     display: inline;
-    font-size: 8pt;
-    line-height: 1;
+    font-size: 10.4pt;
+    line-height: 1.16;
   }
 
   .document-subtitle::after,
@@ -569,6 +612,29 @@ defineEmits<{
     padding: 0;
     border: 0;
     background: transparent;
+  }
+
+  .paper-decision-info {
+    margin-top: 2pt;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-family: "Times New Roman", serif;
+    font-size: 9.8pt;
+    line-height: 1.16;
+  }
+
+  .paper-decision-info p {
+    margin: 1pt 0;
+  }
+
+  .personal-data-notice {
+    margin: 2pt 0 0;
+    color: #000;
+    font-family: "Times New Roman", serif;
+    font-size: 8.5pt;
+    line-height: 1.14;
   }
 
   .meta-list,
@@ -585,8 +651,8 @@ defineEmits<{
     padding: 0;
     border: 0;
     font-family: "Times New Roman", serif;
-    font-size: 7.4pt;
-    line-height: 1;
+    font-size: 9.8pt;
+    line-height: 1.16;
   }
 
   .meta-list p {
@@ -637,11 +703,11 @@ defineEmits<{
     display: flex;
     align-items: baseline;
     gap: 1px;
-    font-size: 6.8pt;
+    font-size: 9.4pt;
   }
 
   .apartment-grid .owner-field span {
-    font-size: 6.8pt;
+    font-size: 9.4pt;
     white-space: nowrap;
   }
 
@@ -649,7 +715,7 @@ defineEmits<{
     border: 0;
     border-bottom: 1px solid #000;
     padding: 0;
-    font-size: 6.8pt;
+    font-size: 9.4pt;
     width: 100%;
     min-width: 4mm;
     max-width: 18mm;
@@ -667,6 +733,16 @@ defineEmits<{
     max-width: 8mm;
   }
 
+  .apartment-grid .ownership-document-field {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .apartment-grid .ownership-document-field input {
+    max-width: none;
+    min-width: 58mm;
+  }
+
   .property-type-select {
     display: none;
   }
@@ -675,7 +751,7 @@ defineEmits<{
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 6.8pt;
+    font-size: 9.4pt;
     color: #000;
   }
 
@@ -693,7 +769,7 @@ defineEmits<{
   }
 
   .owner-block-head strong {
-    font-size: 8.4pt;
+    font-size: 10.4pt;
   }
 
   .owner-grid {
@@ -711,7 +787,7 @@ defineEmits<{
   }
 
   .owner-field span {
-    font-size: 7.4pt;
+    font-size: 9.8pt;
     color: #000;
   }
 
@@ -726,12 +802,14 @@ defineEmits<{
   .owner-field input {
     padding: 0 0 1px;
     border-bottom: 1px solid #000;
+    font-size: 9.8pt;
   }
 
   .owner-field textarea {
     min-height: 8mm;
     padding: 2px 4px;
     border: 1px solid #000;
+    font-size: 9.8pt;
   }
 
   .question-section + .question-section {
@@ -739,6 +817,7 @@ defineEmits<{
   }
 
   .section-title {
+    margin: 2.5mm 0 1.2mm;
     padding: 0;
     border: 0;
     border-bottom: 1px solid #000;
@@ -750,12 +829,12 @@ defineEmits<{
 
   .question-list {
     padding-left: 0;
-    font-size: 8.4pt;
+    font-size: 8.8pt;
     list-style-position: inside;
   }
 
   .section-title {
-    font-size: 7.9pt;
+    font-size: 9.2pt;
   }
 
   .question-section {

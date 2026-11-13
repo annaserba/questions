@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import type { BulletinForm, BulletinQuestionSection } from '../types'
+import {
+  getHouseAdministratorAddress,
+  getHouseInitiator,
+} from '../data/bulletin'
 
 export interface NoticeMaterial {
   src: string
@@ -14,6 +18,8 @@ defineProps<{
     noticeDate: string
     votingStartDate: string
     votingEndDate: string
+    paperDecisionStartDate: string
+    paperDecisionEndDate: string
   }
   questionSections: BulletinQuestionSection[]
   materials: NoticeMaterial[]
@@ -34,8 +40,10 @@ defineProps<{
 
       <div class="notice-meta">
         <p><strong>Сообщается о проведении:</strong> общего собрания собственников помещений в многоквартирном доме</p>
+        <p><strong>Инициатор общего собрания:</strong> {{ getHouseInitiator(form.houseAddress) }}</p>
         <p><strong>Форма проведения:</strong> {{ form.meetingType }}</p>
         <p><strong>Дата уведомления:</strong> {{ formattedDates.noticeDate }}</p>
+        <p><strong>Размещено:</strong> {{ formattedDates.noticeDate }}</p>
         <p><strong>Дата начала голосования:</strong> {{ formattedDates.votingStartDate }}</p>
         <p><strong>Дата окончания голосования:</strong> {{ formattedDates.votingEndDate }}</p>
       </div>
@@ -47,6 +55,18 @@ defineProps<{
           участие в голосовании по вопросам повестки дня.
         </p>
       </div>
+
+      <section class="meeting-procedure">
+        <h3>Порядок приема решений и ознакомления с материалами</h3>
+        <p><strong>Прием письменных решений:</strong> {{ form.paperDecisionReceptionProcedure }}</p>
+        <p>
+          <strong>Срок приема письменных решений:</strong>
+          с {{ formattedDates.paperDecisionStartDate }} {{ form.paperDecisionStartTime }}
+          по {{ formattedDates.paperDecisionEndDate }} {{ form.paperDecisionEndTime }}.
+        </p>
+        <p><strong>Ознакомление с материалами:</strong> {{ form.materialsReviewProcedure }}</p>
+        <p><strong>Хранение копий протокола и решений:</strong> {{ form.protocolStorageAddress }}</p>
+      </section>
 
       <div class="agenda">
         <h3>Повестка дня</h3>
@@ -73,6 +93,11 @@ defineProps<{
 
       <div v-if="materials.length > 0" class="notice-materials">
         <h3>Приложения</h3>
+        <p class="attachments-note">
+          С приложениями можно ознакомиться в ГИС ЖКХ через портал Госуслуг или
+          в бумажном виде по адресу: {{ getHouseAdministratorAddress(form.houseAddress) }},
+          по предварительному согласованию с администратором.
+        </p>
         <ol class="attachments-list">
           <li
             v-for="(mat, idx) in materials"
@@ -285,6 +310,25 @@ defineProps<{
   background: #fbfdff;
 }
 
+.meeting-procedure {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 1px solid var(--gos-line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.meeting-procedure h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: var(--gos-blue);
+}
+
+.meeting-procedure p {
+  margin: 6px 0;
+  line-height: 1.45;
+}
+
 .notice-materials h3 {
   margin: 0 0 12px;
   font-size: 1.05rem;
@@ -292,6 +336,11 @@ defineProps<{
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--gos-blue);
+}
+
+.attachments-note {
+  margin: 0 0 10px;
+  line-height: 1.45;
 }
 
 .attachments-list {
@@ -574,6 +623,29 @@ defineProps<{
     padding: 0;
     border: 0;
     background: transparent;
+  }
+
+  .meeting-procedure {
+    margin-top: 8pt;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    line-height: 1.2;
+    break-inside: avoid;
+  }
+
+  .meeting-procedure h3 {
+    margin: 0 0 4pt;
+    font-family: "Times New Roman", serif;
+    font-size: 10pt;
+    color: #000;
+  }
+
+  .meeting-procedure p {
+    margin: 2pt 0;
   }
 
   .notice-materials h3 {

@@ -14,9 +14,40 @@ export const houseChairman: Record<string, string> = {
   'пр-т. Октябрьской революции, 48/1': 'Серба Анна Владимировна',
 }
 
+export const houseInitiator: Record<string, string> = {
+  'пр-т. Октябрьской революции, 48': 'Филиппова Галина Вячеславовна',
+  'пр-т. Октябрьской революции, 48/1': 'Серба Анна Владимировна',
+}
+
+export function getHouseInitiator(houseAddress: string): string {
+  return houseInitiator[houseAddress] || '______________________________'
+}
+
 export const houseCouncil: Record<string, string> = {
   'пр-т. Октябрьской революции, 48': 'Филиппова Г. В. (кв. 59), Мельниченко Л. М. (кв. 149), Прилуцкий С. В. (кв. 178), Борисенко В. В. (кв. 30)',
   'пр-т. Октябрьской революции, 48/1': 'Серба А. В. (кв. 198), Хохлова Н. (кв. 194), Иванова О. В. (кв. 31)',
+}
+
+const houseAdministratorAddresses: Record<string, string> = {
+  'пр-т. Октябрьской революции, 48':
+    'г. Севастополь, пр-т Октябрьской революции, д. 48, кв. 59',
+  'пр-т. Октябрьской революции, 48/1':
+    'г. Севастополь, пр-т Октябрьской революции, д. 48/1, кв. 198',
+}
+
+export function getHouseAdministratorAddress(houseAddress: string): string {
+  return houseAdministratorAddresses[houseAddress] || '______________________________'
+}
+
+export function getMeetingAdministrationDefaults(houseAddress: string) {
+  const administratorAddress = getHouseAdministratorAddress(houseAddress)
+
+  return {
+    paperDecisionReceptionProcedure:
+      `Оформленные в письменной форме решения принимаются администратором общего собрания по адресу: ${administratorAddress}, по предварительному согласованию с администратором.`,
+    protocolStorageAddress:
+      `Копия протокола общего собрания и решений собственников хранится у администратора общего собрания по адресу: ${administratorAddress}.`,
+  }
 }
 
 const ownerCookieName = 'voting_owner_profile'
@@ -103,9 +134,11 @@ export function createDefaultForm(): BulletinForm {
 
   const votingEndDate = new Date(votingStartDate)
   votingEndDate.setMonth(votingStartDate.getMonth() + 2)
+  const houseAddress = houseAddressOptions[0]
+  const meetingAdministration = getMeetingAdministrationDefaults(houseAddress)
 
   return {
-    houseAddress: houseAddressOptions[0],
+    houseAddress,
     managementCompany: 'ООО «Южный берег»',
     previousManagementCompany: 'ООО «УК Стрелецкая бухта»',
     meetingType:
@@ -113,6 +146,14 @@ export function createDefaultForm(): BulletinForm {
     noticeDate: toIsoDate(noticeDate),
     votingStartDate: toIsoDate(votingStartDate),
     votingEndDate: toIsoDate(votingEndDate),
+    paperDecisionReceptionProcedure: meetingAdministration.paperDecisionReceptionProcedure,
+    materialsReviewProcedure:
+      'С материалами собрания можно ознакомиться в ГИС ЖКХ в сообщении о проведении собрания и на настоящем сайте в разделе «Приложения». В бумажном виде материалы доступны по адресу приема письменных решений по предварительному согласованию с администратором.',
+    paperDecisionStartDate: toIsoDate(votingStartDate),
+    paperDecisionStartTime: '00:00',
+    paperDecisionEndDate: addDays(toIsoDate(votingEndDate), -2),
+    paperDecisionEndTime: '23:59',
+    protocolStorageAddress: meetingAdministration.protocolStorageAddress,
     ownerName: '',
     apartment: '',
     area: '',

@@ -69,6 +69,14 @@ const menuOpen = ref(false);
         >
           Уведомление
         </button>
+        <button
+          v-if="canManageMeeting"
+          :class="['switch-button', { active: currentDocument === 'registry' }]"
+          type="button"
+          @click="$emit('update:current-document', 'registry')"
+        >
+          Реестр
+        </button>
       </div>
     </section>
 
@@ -175,6 +183,41 @@ const menuOpen = ref(false);
             :max="maxVotingEndDate"
             type="date"
           />
+        </label>
+      </div>
+
+      <div class="meeting-details">
+        <label>
+          <span>Порядок приема бумажных решений</span>
+          <textarea v-model="form.paperDecisionReceptionProcedure" rows="3" />
+        </label>
+
+        <label>
+          <span>Порядок ознакомления с информацией и материалами</span>
+          <textarea v-model="form.materialsReviewProcedure" rows="3" />
+        </label>
+
+        <div class="grid">
+          <label>
+            <span>Начало приема бумажных решений</span>
+            <div class="date-time-fields">
+              <input v-model="form.paperDecisionStartDate" type="date" />
+              <input v-model="form.paperDecisionStartTime" type="time" />
+            </div>
+          </label>
+
+          <label>
+            <span>Окончание приема бумажных решений</span>
+            <div class="date-time-fields">
+              <input v-model="form.paperDecisionEndDate" type="date" />
+              <input v-model="form.paperDecisionEndTime" type="time" />
+            </div>
+          </label>
+        </div>
+
+        <label>
+          <span>Место хранения копии протокола и решений</span>
+          <textarea v-model="form.protocolStorageAddress" rows="3" />
         </label>
       </div>
     </section>
@@ -426,6 +469,50 @@ const menuOpen = ref(false);
 .grid textarea:focus {
   outline: 2px solid rgba(255, 255, 255, 0.72);
   outline-offset: 1px;
+}
+
+.meeting-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.meeting-details > label {
+  display: grid;
+  gap: 6px;
+}
+
+.meeting-details span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.meeting-details textarea,
+.date-time-fields input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid rgba(207, 227, 255, 0.28);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font: inherit;
+}
+
+.meeting-details textarea {
+  resize: vertical;
+}
+
+.meeting-details textarea:focus,
+.date-time-fields input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.72);
+  outline-offset: 1px;
+}
+
+.date-time-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 92px;
+  gap: 8px;
 }
 
 .rule-list {

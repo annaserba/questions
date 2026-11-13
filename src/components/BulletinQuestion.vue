@@ -234,14 +234,18 @@ const expanded = ref(false)
     break-inside: avoid;
     border: 1px solid #bfbfbf;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 1.5mm;
     font-family: "Times New Roman", serif;
     list-style-position: inside;
   }
 
   .question-item::marker {
     font-weight: 700;
-    font-size: 9pt;
+    font-size: 9.2pt;
+  }
+
+  .question-item:last-child {
+    margin-bottom: 0;
   }
 
   .question-item h3,
@@ -255,15 +259,15 @@ const expanded = ref(false)
     display: inline;
     margin: 0;
     border-bottom: 0;
-    font-size: 7.6pt;
-    line-height: 1.05;
+    font-size: 8.8pt;
+    line-height: 1.12;
   }
 
   .question-description {
     margin: 0;
     color: #000;
-    font-size: 7.3pt;
-    line-height: 1.05;
+    font-size: 8.8pt;
+    line-height: 1.12;
   }
 
   .vote-options {
@@ -287,7 +291,7 @@ const expanded = ref(false)
     border-radius: 0;
     background: #fff;
     color: #000;
-    font-size: 6pt;
+    font-size: 7.2pt;
     box-shadow: none;
   }
 

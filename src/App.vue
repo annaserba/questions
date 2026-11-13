@@ -4,6 +4,7 @@ import BulletinSheet from './components/BulletinSheet.vue'
 import ControlPanel from './components/ControlPanel.vue'
 import MeetingNotice from './components/MeetingNotice.vue'
 import VoterStartScreen from './components/VoterStartScreen.vue'
+import VoteRegistry from './components/VoteRegistry.vue'
 import maketImg from './images/maket.png'
 import photo1 from './images/photo1.jpg'
 import photo2 from './images/photo2.jpg'
@@ -17,6 +18,7 @@ import {
   buildQuestions,
   createDefaultForm,
   formatRuDate,
+  getMeetingAdministrationDefaults,
   getOwnerFormFromCookie,
   houseAddressOptions,
   saveOwnerFormToCookie,
@@ -24,11 +26,16 @@ import {
 import type {
   DocumentView,
   MeetingSettings,
+  VoteProgressSettings,
+  VoteRegistry as VoteRegistryData,
+  VoteRegistryStatus,
   VoterProfile,
   VoteChoice,
 } from './types'
 import apartments48_1 from './data/apartments-48-1.json'
 import apartments48 from './data/apartments-48.json'
+import initialVoteRegistry from './data/vote-registry.json'
+import initialVoteProgress from './data/vote-progress.json'
 
 const apartmentsByHouse: Record<string, Record<string, { cadastral: string; floor: string; area: string; share: string; name?: string; phone: string; wantsBlank: boolean }>> = {
   'пр-т. Октябрьской революции, 48': apartments48 as any,
@@ -159,10 +166,12 @@ if (storedProfile) {
 const documentPath: Record<DocumentView, string> = {
   bulletin: '/',
   notice: '/notice',
+  registry: '/registry',
 }
 
 function getDocumentFromPath(): DocumentView {
   if (window.location.pathname === '/notice') return 'notice'
+  if (window.location.pathname === '/registry') return 'registry'
   return 'bulletin'
 }
 
@@ -189,6 +198,15 @@ function saveVotesToStorage(): void {
 const meetingSaveStatus = ref('')
 const meetingSettingsLoaded = ref(false)
 let meetingSaveTimer: number | undefined
+const noticeDates = reactive<Record<string, string>>({})
+const paperDecisionEndDates = reactive<Record<string, string>>({})
+const voteRegistry = reactive<VoteRegistryData>(initialVoteRegistry as VoteRegistryData)
+const voteProgress = reactive<VoteProgressSettings>(initialVoteProgress as VoteProgressSettings)
+const voteRegistryLoaded = ref(false)
+const voteRegistrySaving = ref(false)
+const voteRegistrySaveStatus = ref('')
+let voteRegistrySaveTimer: number | undefined
+let voteProgressSaveTimer: number | undefined
 const canManageMeeting = computed(() => managerUnlocked.value && isManagerIdentity())
 const startProfile = computed<VoterProfile>(() => ({
   houseAddress: form.houseAddress,
@@ -225,6 +243,8 @@ const formattedDates = computed(() => ({
   noticeDate: formatRuDate(form.noticeDate),
   votingStartDate: formatRuDate(form.votingStartDate),
   votingEndDate: formatRuDate(form.votingEndDate),
+  paperDecisionStartDate: formatRuDate(form.paperDecisionStartDate),
+  paperDecisionEndDate: formatRuDate(form.paperDecisionEndDate),
 }))
 
 function updatePrintSignatureName(signatureName: string): void {
@@ -377,7 +397,15 @@ watch(
 )
 
 function printPage(): void {
+  const originalTitle = document.title
+  const documentLabel = currentDocument.value === 'notice' ? 'Уведомление' : 'Бюллетень'
+  const houseLabel = form.houseAddress
+    .replace('пр-т. Октябрьской революции, ', 'ПОР ')
+    .replace('/', '-')
+
+  document.title = `${documentLabel} ${houseLabel}`
   window.print()
+  document.title = originalTitle
 }
 
 function setCurrentDocument(document: DocumentView): void {
@@ -456,17 +484,53 @@ function handleVoteSelection(questionIndex: number, vote: VoteChoice): void {
 }
 
 function getMeetingSettings(): MeetingSettings {
+  noticeDates[form.houseAddress] = form.noticeDate
+  paperDecisionEndDates[form.houseAddress] = form.paperDecisionEndDate
+
   return {
     noticeDate: form.noticeDate,
+    noticeDates: { ...noticeDates },
     votingStartDate: form.votingStartDate,
     votingEndDate: form.votingEndDate,
+    paperDecisionReceptionProcedure: form.paperDecisionReceptionProcedure,
+    materialsReviewProcedure: form.materialsReviewProcedure,
+    paperDecisionStartDate: form.paperDecisionStartDate,
+    paperDecisionStartTime: form.paperDecisionStartTime,
+    paperDecisionEndDate: form.paperDecisionEndDate,
+    paperDecisionEndTime: form.paperDecisionEndTime,
+    paperDecisionEndDates: { ...paperDecisionEndDates },
+    protocolStorageAddress: form.protocolStorageAddress,
   }
 }
 
 function applyMeetingSettings(settings: MeetingSettings): void {
-  form.noticeDate = settings.noticeDate
+  Object.assign(noticeDates, settings.noticeDates)
+  form.noticeDate = noticeDates[form.houseAddress] || settings.noticeDate
   form.votingStartDate = settings.votingStartDate
   form.votingEndDate = settings.votingEndDate
+  form.paperDecisionReceptionProcedure = settings.paperDecisionReceptionProcedure
+  form.materialsReviewProcedure = settings.materialsReviewProcedure
+  form.paperDecisionStartDate = settings.paperDecisionStartDate
+  form.paperDecisionStartTime = settings.paperDecisionStartTime
+  Object.assign(paperDecisionEndDates, settings.paperDecisionEndDates)
+  form.paperDecisionEndDate =
+    paperDecisionEndDates[form.houseAddress] || settings.paperDecisionEndDate
+  form.paperDecisionEndTime = settings.paperDecisionEndTime
+  form.protocolStorageAddress = settings.protocolStorageAddress
+  syncHouseAdministrationDetails()
+}
+
+function syncHouseAdministrationDetails(): void {
+  const currentDefaults = houseAddressOptions.map(getMeetingAdministrationDefaults)
+  const nextDefaults = getMeetingAdministrationDefaults(form.houseAddress)
+
+  if (currentDefaults.some((item) => item.paperDecisionReceptionProcedure === form.paperDecisionReceptionProcedure)) {
+    form.paperDecisionReceptionProcedure = nextDefaults.paperDecisionReceptionProcedure
+  }
+
+  if (currentDefaults.some((item) => item.protocolStorageAddress === form.protocolStorageAddress)) {
+    form.protocolStorageAddress = nextDefaults.protocolStorageAddress
+  }
 }
 
 async function loadMeetingSettingsFromProject(): Promise<void> {
@@ -532,6 +596,121 @@ function scheduleMeetingSettingsSave(): void {
   }, 350)
 }
 
+function todayIsoDate(): string {
+  const now = new Date()
+  const offset = now.getTimezoneOffset() * 60_000
+  return new Date(now.getTime() - offset).toISOString().slice(0, 10)
+}
+
+function updateVoteRegistryStatus(
+  house: string,
+  entrance: string,
+  floor: string,
+  apartment: string,
+  status: VoteRegistryStatus,
+): void {
+  const entry = voteRegistry[house]?.[entrance]?.[floor]?.find((item) => item.apartment === apartment)
+  if (!entry) return
+
+  entry.status = status
+  entry.updatedAt = status === 'pending' ? '' : todayIsoDate()
+  scheduleVoteRegistrySave()
+}
+
+function updateVoteRegistryNote(house: string, entrance: string, floor: string, apartment: string, note: string): void {
+  const entry = voteRegistry[house]?.[entrance]?.[floor]?.find((item) => item.apartment === apartment)
+  if (!entry) return
+
+  entry.note = note.trim()
+  scheduleVoteRegistrySave()
+}
+
+async function loadVoteRegistryFromProject(): Promise<void> {
+  try {
+    const response = await fetch('/api/vote-registry')
+    if (!response.ok) return
+
+    const payload = await response.json() as { registry?: VoteRegistryData }
+    if (payload.registry) {
+      Object.keys(voteRegistry).forEach((house) => delete voteRegistry[house])
+      Object.assign(voteRegistry, payload.registry)
+    }
+  } catch {
+    // The starter JSON remains available if the local API is unavailable.
+  } finally {
+    voteRegistryLoaded.value = true
+  }
+}
+
+async function loadVoteProgressFromProject(): Promise<void> {
+  try {
+    const response = await fetch('/api/vote-progress')
+    if (!response.ok) return
+    const payload = await response.json() as { settings?: VoteProgressSettings }
+    if (payload.settings) {
+      Object.keys(voteProgress).forEach((house) => delete voteProgress[house])
+      Object.assign(voteProgress, payload.settings)
+    }
+  } catch {
+    // The starter values remain available if the local API is unavailable.
+  }
+}
+
+function updateVoteProgress(house: string, area: number): void {
+  voteProgress[house] = Math.max(0, Number.isFinite(area) ? area : 0)
+  if (voteProgressSaveTimer) window.clearTimeout(voteProgressSaveTimer)
+  voteProgressSaveTimer = window.setTimeout(() => {
+    void saveVoteProgressToProject()
+  }, 250)
+}
+
+async function saveVoteProgressToProject(): Promise<void> {
+  try {
+    await fetch('/api/vote-progress', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(voteProgress),
+    })
+  } catch {
+    // The next change will retry saving the progress settings.
+  }
+}
+
+async function saveVoteRegistryToProject(): Promise<void> {
+  voteRegistrySaving.value = true
+  voteRegistrySaveStatus.value = 'Сохраняю в JSON...'
+
+  try {
+    const response = await fetch('/api/vote-registry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(voteRegistry),
+    })
+    if (!response.ok) {
+      const payload = await response.json() as { error?: string }
+      throw new Error(payload.error || 'Не удалось сохранить реестр.')
+    }
+    voteRegistrySaveStatus.value = 'Реестр сохранен в проект'
+    window.setTimeout(() => {
+      if (voteRegistrySaveStatus.value === 'Реестр сохранен в проект') {
+        voteRegistrySaveStatus.value = ''
+      }
+    }, 1800)
+  } catch (error) {
+    voteRegistrySaveStatus.value = error instanceof Error ? error.message : 'Не удалось сохранить реестр.'
+  } finally {
+    voteRegistrySaving.value = false
+  }
+}
+
+function scheduleVoteRegistrySave(): void {
+  if (!canManageMeeting.value || !voteRegistryLoaded.value) return
+  if (voteRegistrySaveTimer) window.clearTimeout(voteRegistrySaveTimer)
+  voteRegistrySaveTimer = window.setTimeout(() => {
+    void saveVoteRegistryToProject()
+  }, 250)
+}
+
 function voteForAll(): void {
   questions.value.forEach((_, idx) => {
     questionVotes[idx + 1] = 'for'
@@ -545,7 +724,7 @@ function injectPrintFooter(): void {
   if (document.getElementById(printFooterStyleId)) return
   const style = document.createElement('style')
   style.id = printFooterStyleId
-  style.textContent = `@media print { @page { margin-bottom: 20mm; @bottom-left { content: "Подпись собственника __________________________"; padding-top: 2mm; font-family: "Times New Roman", serif; font-size: 7.6pt; color: #000; } @bottom-right { content: "Расшифровка подписи " var(--print-signature-name, "__________________________"); padding-top: 2mm; font-family: "Times New Roman", serif; font-size: 7.6pt; color: #000; text-align: right; } } }`
+  style.textContent = `@media print { @page { margin-bottom: 20mm; @bottom-left { content: "Подпись __________________________"; padding-top: 2mm; font-family: "Times New Roman", serif; font-size: 7.6pt; color: #000; } @bottom-right { content: "Расшифровка подписи " var(--print-signature-name, "__________________________") "   Дата ____________________"; padding-top: 2mm; font-family: "Times New Roman", serif; font-size: 7.6pt; color: #000; text-align: right; } } @page :first { @bottom-left { content: none; } @bottom-right { content: none; } } }`
   document.head.appendChild(style)
 }
 
@@ -569,6 +748,13 @@ window.addEventListener('popstate', () => {
 watch(
   () => form.houseAddress,
   () => {
+    syncHouseAdministrationDetails()
+    if (noticeDates[form.houseAddress]) {
+      form.noticeDate = noticeDates[form.houseAddress]
+    }
+    if (paperDecisionEndDates[form.houseAddress]) {
+      form.paperDecisionEndDate = paperDecisionEndDates[form.houseAddress]
+    }
     const saved = loadVotesFromStorage()
     Object.keys(questionVotes).forEach(k => delete questionVotes[Number(k)])
     Object.assign(questionVotes, saved)
@@ -578,12 +764,27 @@ watch(
 watch(profileCompleted, (completed) => {
   if (completed) {
     void loadMeetingSettingsFromProject()
+    void loadVoteRegistryFromProject()
+    void loadVoteProgressFromProject()
   }
 }, { immediate: true })
 
 watch(
-  () => [form.noticeDate, form.votingStartDate, form.votingEndDate],
+  () => [
+    form.noticeDate,
+    form.votingStartDate,
+    form.votingEndDate,
+    form.paperDecisionReceptionProcedure,
+    form.materialsReviewProcedure,
+    form.paperDecisionStartDate,
+    form.paperDecisionStartTime,
+    form.paperDecisionEndDate,
+    form.paperDecisionEndTime,
+    form.protocolStorageAddress,
+  ],
   () => {
+    noticeDates[form.houseAddress] = form.noticeDate
+    paperDecisionEndDates[form.houseAddress] = form.paperDecisionEndDate
     scheduleMeetingSettingsSave()
   },
 )
@@ -614,7 +815,7 @@ watch(
       @print="printPage"
     />
     <div class="documents">
-      <header class="page-header">
+      <header v-if="currentDocument !== 'registry'" class="page-header">
         <label class="header-label">
           <span>Адрес дома</span>
           <select
@@ -659,8 +860,21 @@ watch(
           Голосовать ЗА везде
         </button>
       </header>
+      <VoteRegistry
+        v-if="currentDocument === 'registry' && canManageMeeting"
+        :house-address="form.houseAddress"
+        :registry="voteRegistry"
+        :house-progress="voteProgress"
+        :saving="voteRegistrySaving"
+        :save-status="voteRegistrySaveStatus"
+        :is-page="true"
+        @close="setCurrentDocument('bulletin')"
+        @update-status="updateVoteRegistryStatus"
+        @update-note="updateVoteRegistryNote"
+        @update-house-progress="updateVoteProgress"
+      />
       <MeetingNotice
-        v-if="currentDocument === 'notice'"
+        v-else-if="currentDocument === 'notice'"
         :form="form"
         :question-sections="questionSections"
         :formatted-dates="formattedDates"
@@ -675,7 +889,7 @@ watch(
         @select-vote="handleVoteSelection"
       />
 
-      <footer class="materials-footer" :class="{ open: materialsOpen }">
+      <footer v-if="currentDocument !== 'registry'" class="materials-footer" :class="{ open: materialsOpen }">
         <button class="materials-toggle" type="button" @click="materialsOpen = !materialsOpen">
           <h3>Приложения</h3>
           <span class="materials-caret">{{ materialsOpen ? '▲' : '▼' }}</span>

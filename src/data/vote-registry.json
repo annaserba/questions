@@ -1,0 +1,6086 @@
+{
+  "пр-т. Октябрьской революции, 48/1": {
+    "1": {
+      "1": [
+        {
+          "apartment": "1",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-898-34-17",
+          "area": "",
+          "cadastral": "91:02:001013:7108",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "2",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Царков Сергей Александрович",
+          "phone": "",
+          "area": "42",
+          "cadastral": "91:02:001013:7109",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "3",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Царков Сергей Александрович",
+          "phone": "",
+          "area": "59",
+          "cadastral": "91:02:001013:7110",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "4",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "ООО \"Опт индустрия\"",
+          "phone": "7978-721-11-49",
+          "area": "41.3",
+          "cadastral": "91:02:001013:7111",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "5",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Чижов Алексей Николаевич",
+          "phone": "",
+          "area": "61.8",
+          "cadastral": "91:02:001013:7112",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "6",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Козыкина",
+          "phone": "9182495932",
+          "area": "97.6",
+          "cadastral": "91:02:001013:7113",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "7",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Лещенко",
+          "phone": "7978 56 82891",
+          "area": "59.1",
+          "cadastral": "91:02:001013:7114-91/001/2020-3\nот 17.09.2020",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "8",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-844-55-98",
+          "area": "51.9",
+          "cadastral": "91:02:001013:7115",
+          "previousVote": "paper"
+        }
+      ],
+      "2": [
+        {
+          "apartment": "9",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7116",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "10",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Хорошилова Любовь Иванова",
+          "phone": "",
+          "area": "41.9",
+          "cadastral": "91:02:001013:7117",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "11",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "9789177815, 7978-615-87-97",
+          "area": "58.5",
+          "cadastral": "91:02:001013:7118",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "12",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7918-581-75-36",
+          "area": "",
+          "cadastral": "91:02:001013:7119",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "13",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-179-13-71",
+          "area": "61.2",
+          "cadastral": "91:02:001013:7120",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "14",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7121",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "15",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787097421",
+          "area": "",
+          "cadastral": "91:02:001013:7122",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "16",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Мамонова Ольга Болисовна",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7123",
+          "previousVote": "paper"
+        }
+      ],
+      "3": [
+        {
+          "apartment": "17",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787500462",
+          "area": "",
+          "cadastral": "91:02:001013:7124",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "18",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "без паспорта",
+          "phone": "8978-749-38-89",
+          "area": "",
+          "cadastral": "91:02:001013:7125",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "19",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79113061631",
+          "area": "58.7",
+          "cadastral": "91:02:001013:7126",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "20",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79781134312, 7978-051-72-24",
+          "area": "",
+          "cadastral": "91:02:001013:7127",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "21",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787420875",
+          "area": "",
+          "cadastral": "91:02:001013:7128",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "22",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7129",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "23",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8953-308-17-27",
+          "area": "58.7",
+          "cadastral": "91:02:001013:7130",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "24",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Инна Манковская + 205",
+          "phone": "79049884583",
+          "area": "",
+          "cadastral": "91:02:001013:7131",
+          "previousVote": "none"
+        }
+      ],
+      "4": [
+        {
+          "apartment": "25",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-831-50-91",
+          "area": "31.8",
+          "cadastral": "91:02:001013:7132",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "26",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Оксана офис 32 (парихмахерская около 1ого подъезда)",
+          "phone": "8978-795-99-92",
+          "area": "41.2",
+          "cadastral": "91:02:001013:7133",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "27",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Злобин",
+          "phone": "",
+          "area": "58.6",
+          "cadastral": "91:02:001013:7134",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "28",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-070-09-11",
+          "area": "41",
+          "cadastral": "91:02:001013:7135",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "29",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Виктор Головенский",
+          "phone": "7978 898 3417",
+          "area": "61.2",
+          "cadastral": "91:02:001013:7136",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "30",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7989-293-67-14",
+          "area": "97.2",
+          "cadastral": "91:02:001013:7137",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "31",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8919-889-54-46",
+          "area": "58.9",
+          "cadastral": "91:02:001013:7138",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "32",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-712-55-45",
+          "area": "51.4",
+          "cadastral": "91:02:001013:7139",
+          "previousVote": "online"
+        }
+      ],
+      "5": [
+        {
+          "apartment": "33",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7983451366",
+          "area": "",
+          "cadastral": "91:02:001013:7140",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "34",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "=+79787152636, 7978-872-27-17",
+          "area": "",
+          "cadastral": "91:02:001013:7141",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "35",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7142",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "36",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "41.4",
+          "cadastral": "91:02:001013:7143",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "37",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "=+79788664720, 7978-866-47-20, 7978-091-54-59",
+          "area": "",
+          "cadastral": "91:02:001013:7144",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "38",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Ирина Сергеенкова",
+          "phone": "7978-749-04-33",
+          "area": "97.4",
+          "cadastral": "91:02:001013:7145",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "39",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-801-23-72",
+          "area": "59.2",
+          "cadastral": "91:02:001013:7146",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "40",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-759-59-31",
+          "area": "51.2",
+          "cadastral": "91:02:001013:7147",
+          "previousVote": "paper"
+        }
+      ],
+      "6": [
+        {
+          "apartment": "41",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "без паспорта",
+          "phone": "8978-282-42-61",
+          "area": "",
+          "cadastral": "91:02:001013:7148",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "42",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787672545",
+          "area": "41.2",
+          "cadastral": "91:02:001013:7149",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "43",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-832-24-04",
+          "area": "58.7",
+          "cadastral": "91:02:001013:7150",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "44",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-809-91-71",
+          "area": "",
+          "cadastral": "91:02:001013:7151",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "45",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Курпшена, видимо у нас есть бланк и электронно",
+          "phone": "7978-091-54-59",
+          "area": "61.3",
+          "cadastral": "91:02:001013:7152",
+          "previousVote": "online_and_paper"
+        },
+        {
+          "apartment": "46",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-704-67-17",
+          "area": "96.9",
+          "cadastral": "91:02:001013:7153",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "47",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-795-67-42",
+          "area": "",
+          "cadastral": "91:02:001013:7154",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "48",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79780001897",
+          "area": "",
+          "cadastral": "91:02:001013:7155",
+          "previousVote": "none"
+        }
+      ],
+      "7": [
+        {
+          "apartment": "49",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7156",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "50",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79788218253",
+          "area": "",
+          "cadastral": "91:02:001013:7157",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "51",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79780073508, 79780381038",
+          "area": "58.5",
+          "cadastral": "91:02:001013:7158",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "52",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "40.6",
+          "cadastral": "91:02:001013:7159",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "53",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7914-024-84-93, 7914-024-84-91",
+          "area": "61",
+          "cadastral": "91:02:001013:7160",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "54",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-796-59-30",
+          "area": "",
+          "cadastral": "91:02:001013:7161",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "55",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79878879122",
+          "area": "59.3",
+          "cadastral": "91:02:001013:7162-92/002/2023-3\nот 16.06.2023",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "56",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79781020782",
+          "area": "50.5",
+          "cadastral": "91:02:001013:7163",
+          "previousVote": "paper"
+        }
+      ],
+      "8": [
+        {
+          "apartment": "57",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7164",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "58",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7165",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "59",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7914-262-04-20",
+          "area": "",
+          "cadastral": "91:02:001013:7166",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "60",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978739-90-35",
+          "area": "40.7",
+          "cadastral": "91:02:001013:7167",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "61",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-942-95-31, 7978-880-26-51",
+          "area": "",
+          "cadastral": "91:02:001013:7168",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "62",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787902212",
+          "area": "97.3",
+          "cadastral": "91:02:001013:7169",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "63",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "без паспорта",
+          "phone": "8978-764-60-05",
+          "area": "59.2",
+          "cadastral": "91:02:001013:7170",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "64",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-900-58-28",
+          "area": "",
+          "cadastral": "91:02:001013:7171",
+          "previousVote": "none"
+        }
+      ],
+      "9": [
+        {
+          "apartment": "65",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-744-90-16",
+          "area": "31.3",
+          "cadastral": "91:02:001013:7172",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "66",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-229-65-24",
+          "area": "41.2",
+          "cadastral": "91:02:001013:7173",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "67",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7174",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "68",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7175",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "69",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-784-57-20",
+          "area": "",
+          "cadastral": "91:02:001013:7177",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "70",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79780471685, 7978-047-16-85",
+          "area": "95.8",
+          "cadastral": "91:02:001013:7177",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "71",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7178",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "72",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-876-42-90",
+          "area": "51.5",
+          "cadastral": "91:02:001013:7179",
+          "previousVote": "paper"
+        }
+      ],
+      "10": [
+        {
+          "apartment": "73",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "797886627",
+          "area": "31.4",
+          "cadastral": "91:02:001013:7180",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "74",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Черкесов",
+          "phone": "79788950749",
+          "area": "41.3",
+          "cadastral": "91:02:001013:7181",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "75",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Сергей",
+          "phone": "79787889958",
+          "area": "",
+          "cadastral": "91:02:001013:7182",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "76",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "40.7",
+          "cadastral": "91:02:001013:7183",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "77",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Ирина Сергеенкова",
+          "phone": "7978-749-04-20",
+          "area": "60.7",
+          "cadastral": "91:02:001013:7185",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "78",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-730-15-24",
+          "area": "97",
+          "cadastral": "91:02:001013:7185",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "79",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7186",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "80",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79781467629",
+          "area": "51.2",
+          "cadastral": "91:02:001013:7187",
+          "previousVote": "paper"
+        }
+      ]
+    },
+    "2": {
+      "1": [
+        {
+          "apartment": "81",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79781467629",
+          "area": "37.5",
+          "cadastral": "91:02:001013:7189",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "82",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "нет паспорта",
+          "phone": "7978-842-51-59",
+          "area": "",
+          "cadastral": "91:02:001013:7190",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "83",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787493193",
+          "area": "",
+          "cadastral": "91:02:001013:7191",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "84",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-749-41-93",
+          "area": "",
+          "cadastral": "91:02:001013:7192",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "85",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787494192",
+          "area": "",
+          "cadastral": "91:02:001013:7193",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "86",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79104179111",
+          "area": "",
+          "cadastral": "91:02:001013:7194",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "87",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-535-97-08",
+          "area": "38.4",
+          "cadastral": "91:02:001013:7195",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "88",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7916-530-68-57",
+          "area": "",
+          "cadastral": "91:02:001013:7196",
+          "previousVote": "none"
+        }
+      ],
+      "2": [
+        {
+          "apartment": "89",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-032-34-07",
+          "area": "",
+          "cadastral": "91:02:001013:7197",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "90",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "38.2",
+          "cadastral": "91:02:001013:7198",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "91",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-760-92-66",
+          "area": "",
+          "cadastral": "91:02:001013:7199",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "92",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "57.9",
+          "cadastral": "91:02:001013:7200",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "93",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Кореяк",
+          "phone": "8978-748-65-21",
+          "area": "58",
+          "cadastral": "91:02:001013:7201",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "94",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7202",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "95",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "38.4",
+          "cadastral": "91:02:001013:7203",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "96",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8988-414-71-50",
+          "area": "",
+          "cadastral": "91:02:001013:7204",
+          "previousVote": "none"
+        }
+      ],
+      "3": [
+        {
+          "apartment": "97",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-562-58-01",
+          "area": "36.8",
+          "cadastral": "91:02:001013:7205",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "98",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7206",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "99",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-822-84-96",
+          "area": "",
+          "cadastral": "91:02:001013:7207",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "100",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Елена Богданова",
+          "phone": "7 978 817 5764",
+          "area": "56.1",
+          "cadastral": "91:02:001013:7208",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "101",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-817-57-64",
+          "area": "55.9",
+          "cadastral": "91:02:001013:7209",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "102",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "36",
+          "cadastral": "91:02:001013:7210",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "103",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-765-58-05",
+          "area": "",
+          "cadastral": "91:02:001013:7211",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "104",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "39.7",
+          "cadastral": "91:02:001013:7212",
+          "previousVote": "paper"
+        }
+      ],
+      "4": [
+        {
+          "apartment": "105",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-704-02-04",
+          "area": "37.2",
+          "cadastral": "91:02:001013:7213",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "106",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7214",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "107",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "53.7",
+          "cadastral": "91:02:001013:7215",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "108",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7984-136-27-33",
+          "area": "55.6",
+          "cadastral": "91:02:001013:7216",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "109",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-739-04-44",
+          "area": "55.7",
+          "cadastral": "91:02:001013:7217",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "110",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-890-73-15",
+          "area": "",
+          "cadastral": "91:02:001013:7218",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "111",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "797873048-95, 7978-275-01-50",
+          "area": "38",
+          "cadastral": "91:02:001013:7219",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "112",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "39.8",
+          "cadastral": "91:02:001013:7220",
+          "previousVote": "paper"
+        }
+      ],
+      "5": [
+        {
+          "apartment": "113",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-545-89-15",
+          "area": "",
+          "cadastral": "91:02:001013:7221",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "114",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "возможно противники без номера квартиры",
+          "phone": "7916-804-92-21",
+          "area": "",
+          "cadastral": "91:02:001013:7222",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "115",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "55.1",
+          "cadastral": "91:02:001013:7223",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "116",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Анна",
+          "phone": "7978-063-17-01",
+          "area": "55.8",
+          "cadastral": "91:02:001013:7224",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "117",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-725-42-87",
+          "area": "",
+          "cadastral": "91:02:001013:7225",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "118",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-570-00-87",
+          "area": "36.1",
+          "cadastral": "91:02:001013:7226",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "119",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7227",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "120",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-809-91-71",
+          "area": "",
+          "cadastral": "91:02:001013:7228",
+          "previousVote": "none"
+        }
+      ],
+      "6": [
+        {
+          "apartment": "121",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "37.1",
+          "cadastral": "91:02:001013:7229",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "122",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7911-381-53-87",
+          "area": "38.5",
+          "cadastral": "91:02:001013:7230",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "123",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "53.1",
+          "cadastral": "91:02:001013:7231",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "124",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7232",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "125",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7233",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "126",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-014-50-54",
+          "area": "36",
+          "cadastral": "91:02:001013:7234",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "127",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787959757",
+          "area": "38.2",
+          "cadastral": "91:02:001013:7235",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "128",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7236",
+          "previousVote": "none"
+        }
+      ],
+      "7": [
+        {
+          "apartment": "129",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Немец",
+          "phone": "",
+          "area": "36.9",
+          "cadastral": "91:02:001013:7237",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "130",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79780199016",
+          "area": "37.9",
+          "cadastral": "91:02:001013:7238",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "131",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7238",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "132",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-033-94-39",
+          "area": "55.9",
+          "cadastral": "91:02:001013:7240",
+          "previousVote": "online_and_paper"
+        },
+        {
+          "apartment": "133",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "55.5",
+          "cadastral": "91:02:001013:7241",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "134",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79788375942",
+          "area": "35.7",
+          "cadastral": "91:02:001013:7242",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "135",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8678-861-28-10",
+          "area": "",
+          "cadastral": "91:02:001013:7243",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "136",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-746-47-39",
+          "area": "39.8",
+          "cadastral": "91:02:001013:7243",
+          "previousVote": "paper"
+        }
+      ],
+      "8": [
+        {
+          "apartment": "137",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7245",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "138",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-543-32-96",
+          "area": "38.3",
+          "cadastral": "91:02:001013:7246",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "139",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Чунарев",
+          "phone": "",
+          "area": "52.6",
+          "cadastral": "91:02:001013:7247",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "140",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79788042660",
+          "area": "",
+          "cadastral": "91:02:001013:7248",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "141",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-245-69-76",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7248",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "142",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8918-199-73-33",
+          "area": "",
+          "cadastral": "91:02:001013:7250",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "143",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-748-87-93",
+          "area": "37.9",
+          "cadastral": "91:02:001013:7251",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "144",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787409068",
+          "area": "39.9",
+          "cadastral": "91:02:001013:7251",
+          "previousVote": "paper"
+        }
+      ],
+      "9": [
+        {
+          "apartment": "145",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7 931 213 1737",
+          "area": "36.8",
+          "cadastral": "91:02:001013:7253",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "146",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79090110265",
+          "area": "",
+          "cadastral": "91:02:001013:7254",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "147",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "52.9",
+          "cadastral": "91:02:001013:7255",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "148",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7256",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "149",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "55.5",
+          "cadastral": "91:02:001013:7257",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "150",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-7447721",
+          "area": "35.8",
+          "cadastral": "91:02:001013:7258",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "151",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Пигарева",
+          "phone": "79788317842",
+          "area": "37.7",
+          "cadastral": "91:02:001013:7259",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "152",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "39.9",
+          "cadastral": "91:02:001013:7260",
+          "previousVote": "paper"
+        }
+      ],
+      "10": [
+        {
+          "apartment": "153",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-263-62-58",
+          "area": "36.7",
+          "cadastral": "91:02:001013:7261",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "154",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7262",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "155",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7263",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "156",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "55.5",
+          "cadastral": "91:02:001013:7264",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "157",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-909-18-78",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7265",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "158",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-057-31-07",
+          "area": "35.6",
+          "cadastral": "91:02:001013:7266",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "159",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7914-607-80-76",
+          "area": "37.6",
+          "cadastral": "91:02:001013:7267",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "160",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79115530321",
+          "area": "39.9",
+          "cadastral": "91:02:001013:7268",
+          "previousVote": "online"
+        }
+      ]
+    },
+    "3": {
+      "1": [
+        {
+          "apartment": "161",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "=+79002023500, 7917-425-00-52",
+          "area": "40.1",
+          "cadastral": "91:02:001013:7268",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "162",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Пигарева Любовь",
+          "phone": "8978-165-34-46",
+          "area": "38.2",
+          "cadastral": "91:02:001013:7269",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "163",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "36.6",
+          "cadastral": "91:02:001013:7270",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "164",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7271",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "165",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Пигарева",
+          "phone": "79787093496",
+          "area": "58.1",
+          "cadastral": "91:02:001013:7272",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "166",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Пигарева",
+          "phone": "7918-050-21-03",
+          "area": "55.2",
+          "cadastral": "91:02:001013:7273",
+          "previousVote": "paper"
+        }
+      ],
+      "2": [
+        {
+          "apartment": "167",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-725-48-67",
+          "area": "39.8",
+          "cadastral": "91:02:001013:7274",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "168",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7275",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "169",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-761-45-42",
+          "area": "36.4",
+          "cadastral": "91:02:001013:7276",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "170",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-044-54-37",
+          "area": "58",
+          "cadastral": "91:02:001013:7277",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "171",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Журавлёв Сергей Иванович Живут на маячной друзья",
+          "phone": "79124159332",
+          "area": "",
+          "cadastral": "91:02:001013:7278",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "172",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "85",
+          "cadastral": "91:02:001013:7279",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "173",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7918-159-57-56",
+          "area": "",
+          "cadastral": "91:02:001013:7280",
+          "previousVote": "none"
+        }
+      ],
+      "3": [
+        {
+          "apartment": "174",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Наталья Ивановна",
+          "phone": "79787254867",
+          "area": "",
+          "cadastral": "91:02:001013:7281",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "175",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Владимир Викторович",
+          "phone": "79787156281",
+          "area": "38.4",
+          "cadastral": "91:02:001013:7282",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "176",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Злобин Василий Васильевич",
+          "phone": "8978-126-85-05",
+          "area": "36.3",
+          "cadastral": "91:02:001013:7283",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "177",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-455-05-75",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7284",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "178",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Мария",
+          "phone": "7978-766-97-59",
+          "area": "55.9",
+          "cadastral": "91:02:001013:7285",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "179",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-682-85-82",
+          "area": "84.9",
+          "cadastral": "91:02:001013:7286",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "180",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-768-37-89",
+          "area": "55.3",
+          "cadastral": "91:02:001013:7287",
+          "previousVote": "paper"
+        }
+      ],
+      "4": [
+        {
+          "apartment": "181",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-873-76-23",
+          "area": "39.8",
+          "cadastral": "91:02:001013:7288",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "182",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8978-037-35-08, 7978-215-81-12",
+          "area": "",
+          "cadastral": "91:02:001013:7289",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "183",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-776-85-98",
+          "area": "",
+          "cadastral": "91:02:001013:7290",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "184",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Опт +195, 197, 215",
+          "phone": "",
+          "area": "55.8",
+          "cadastral": "91:02:001013:7291",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "185",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-748-79-53",
+          "area": "55",
+          "cadastral": "91:02:001013:7292",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "186",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79780445698",
+          "area": "85",
+          "cadastral": "91:02:001013:7293",
+          "previousVote": "online_and_paper"
+        },
+        {
+          "apartment": "187",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7294",
+          "previousVote": "none"
+        }
+      ],
+      "5": [
+        {
+          "apartment": "188",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-796-91-08",
+          "area": "",
+          "cadastral": "91:02:001013:7295",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "189",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Терентьева +217",
+          "phone": "79108235310",
+          "area": "",
+          "cadastral": "91:02:001013:7296",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "190",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Злобин Василий Васильевич +27, 176",
+          "phone": "79781268505",
+          "area": "36.3",
+          "cadastral": "91:02:001013:7297",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "191",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-818-95-55",
+          "area": "55.9",
+          "cadastral": "91:02:001013:7298",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "192",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7924-466-72-70",
+          "area": "55.8",
+          "cadastral": "91:02:001013:7299",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "193",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787975022, 7914-197-02-25",
+          "area": "",
+          "cadastral": "91:02:001013:7300",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "194",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7914-197-02-25",
+          "area": "55.3",
+          "cadastral": "91:02:001013:7301",
+          "previousVote": "paper"
+        }
+      ],
+      "6": [
+        {
+          "apartment": "195",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Опт",
+          "phone": "7916-102-66-62",
+          "area": "40.2",
+          "cadastral": "91:02:001013:7302",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "196",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7303",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "197",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Опт",
+          "phone": "",
+          "area": "36.2",
+          "cadastral": "91:02:001013:7304",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "198",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-812-74-02",
+          "area": "55.8",
+          "cadastral": "91:02:001013:7305",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "199",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7306",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "200",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-710-62-88",
+          "area": "85.2",
+          "cadastral": "91:02:001013:7307",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "201",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7308",
+          "previousVote": "none"
+        }
+      ],
+      "7": [
+        {
+          "apartment": "202",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-073-20-81",
+          "area": "39.8",
+          "cadastral": "91:02:001013:7309",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "203",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Лопашинский",
+          "phone": "79789185656",
+          "area": "37.9",
+          "cadastral": "91:02:001013:7310",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "204",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787280098, 7978-728-00-98",
+          "area": "35.7",
+          "cadastral": "91:02:001013:7311",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "205",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Инна Марковская +24 в Германии",
+          "phone": "=+7 (904) 988-45-83",
+          "area": "",
+          "cadastral": "91:02:001013:7312",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "206",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-045-40-71",
+          "area": "",
+          "cadastral": "91:02:001013:7313",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "207",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7314",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "208",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-587-48-57, 7978-587-48-57",
+          "area": "54.8",
+          "cadastral": "91:02:001013:7315",
+          "previousVote": "online"
+        }
+      ],
+      "8": [
+        {
+          "apartment": "209",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Квач Надежда?",
+          "phone": "8978-722-71-39",
+          "area": "",
+          "cadastral": "91:02:001013:7316",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "210",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Немец",
+          "phone": "7982-534-10-00, +7 (982) 205-93-35",
+          "area": "37.9",
+          "cadastral": "91:02:001013:7317",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "211",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Немец",
+          "phone": "7982-534-10-00",
+          "area": "35.6",
+          "cadastral": "91:02:001013:7318",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "212",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8924-278-50-60, 7924-278-50-60",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7319",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "213",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-710-11-07",
+          "area": "55.6",
+          "cadastral": "91:02:001013:7320",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "214",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Белышева Ольга",
+          "phone": "79787237175",
+          "area": "84.8",
+          "cadastral": "91:02:001013:7321",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "215",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Опт",
+          "phone": "7978-509-82-19",
+          "area": "54.7",
+          "cadastral": "91:02:001013:7322",
+          "previousVote": "paper"
+        }
+      ],
+      "9": [
+        {
+          "apartment": "216",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "79787125305",
+          "area": "",
+          "cadastral": "91:02:001013:7323",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "217",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Терентьева +189",
+          "phone": "79108235310",
+          "area": "",
+          "cadastral": "91:02:001013:7324",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "218",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7325",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "219",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "без паспорта",
+          "phone": "79780287259",
+          "area": "",
+          "cadastral": "91:02:001013:7326",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "220",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-042-09-72",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7327",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "221",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Яковлев Илья собств.",
+          "phone": "79600246060",
+          "area": "84.7",
+          "cadastral": "91:02:001013:7328",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "222",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Суркова Ольга",
+          "phone": "7978-578-97-38, 7978-578-97-39",
+          "area": "",
+          "cadastral": "91:02:001013:7329",
+          "previousVote": "none"
+        }
+      ],
+      "10": [
+        {
+          "apartment": "223",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7330",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "224",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "37.7",
+          "cadastral": "91:02:001013:7331",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "225",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "36.3",
+          "cadastral": "91:02:001013:7332",
+          "previousVote": "paper"
+        },
+        {
+          "apartment": "226",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "7978-284-65-50",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7333",
+          "previousVote": "online_and_paper"
+        },
+        {
+          "apartment": "227",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "8918-249-59-32",
+          "area": "55.4",
+          "cadastral": "91:02:001013:7334",
+          "previousVote": "online"
+        },
+        {
+          "apartment": "228",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Злата",
+          "phone": "79788675300",
+          "area": "84.3",
+          "cadastral": "91:02:001013:7335",
+          "previousVote": "online_and_paper"
+        },
+        {
+          "apartment": "229",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "Дарья",
+          "phone": "7978-266-80-79",
+          "area": "",
+          "cadastral": "91:02:001013:7336",
+          "previousVote": "paper"
+        }
+      ]
+    },
+    "commercial": {
+      "commercial": [
+        {
+          "apartment": "1",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7337",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "2",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7338",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "3",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7339",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "4",
+          "ownerName": "Руслана ИП кабзан",
+          "phone": "79787306003",
+          "area": "28.3",
+          "cadastral": "91:02:001013:7340",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "5",
+          "ownerName": "",
+          "phone": "",
+          "area": "27.8",
+          "cadastral": "91:02:001013:7341",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "6",
+          "ownerName": "",
+          "phone": "",
+          "area": "28.3",
+          "cadastral": "91:02:001013:7342",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "7",
+          "ownerName": "",
+          "phone": "",
+          "area": "28.1",
+          "cadastral": "91:02:001013:7343",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "8",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "9",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7345",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "10",
+          "ownerName": "ООО сердолик Пинская Ирина",
+          "phone": "",
+          "area": "32.5",
+          "cadastral": "91:02:001013:7346",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "11",
+          "ownerName": "Андрей",
+          "phone": "7 978 767-97-99",
+          "area": "59.8",
+          "cadastral": "91:02:001013:7347",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "12",
+          "ownerName": "забрать 17 июля",
+          "phone": "7 978 767-97-99",
+          "area": "32.5",
+          "cadastral": "91:02:001013:7348",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "13",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7349",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "14",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7350",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "15",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7351",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "16",
+          "ownerName": "ООО сердолик Пинская Ирина",
+          "phone": "",
+          "area": "48.9",
+          "cadastral": "91:02:001013:7352",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "17",
+          "ownerName": "ООО сердолик Пинская Ирина",
+          "phone": "",
+          "area": "35.2",
+          "cadastral": "91:02:001013:7353",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "18",
+          "ownerName": "Оксана Владимировна. \"Козырное бельё\"",
+          "phone": "79787655805",
+          "area": "35.1",
+          "cadastral": "91:02:001013:7354",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "19",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7355",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "20",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7356",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "21",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7357",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "22",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7358",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "23",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7359",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "24",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7360",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "25",
+          "ownerName": "Голд лук",
+          "phone": "",
+          "area": "54.0",
+          "cadastral": "",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "26",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7362",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "27",
+          "ownerName": "Anton",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7363",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "28",
+          "ownerName": "Lavanda nails Алёна Юхневич",
+          "phone": "",
+          "area": "35.1",
+          "cadastral": "91:02:001013:7364",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "29",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7365",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "30",
+          "ownerName": "Руслана собс. Музыка тела",
+          "phone": "79787306003",
+          "area": "35.2",
+          "cadastral": "91:02:001013:7366",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "31",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7367",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "32",
+          "ownerName": "",
+          "phone": "",
+          "area": "32.3",
+          "cadastral": "91:02:001013:7368",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "33",
+          "ownerName": "",
+          "phone": "",
+          "area": "93.3",
+          "cadastral": "91:02:001013:7369",
+          "previousVote": "paper",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        }
+      ]
+    }
+  },
+  "пр-т. Октябрьской революции, 48": {
+    "1": {
+      "1": [
+        {
+          "apartment": "1",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7092",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "2",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7093",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "3",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7094",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "4",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7046",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "5",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7096",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "6",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7097",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "7",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7098",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "8",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7099",
+          "previousVote": "none"
+        }
+      ],
+      "2": [
+        {
+          "apartment": "9",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7100",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "10",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7101",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "11",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7102",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "12",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7103",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "13",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7104",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "14",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7105",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "15",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7106",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "16",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6831",
+          "previousVote": "none"
+        }
+      ],
+      "3": [
+        {
+          "apartment": "17",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6832",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "18",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6833",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "19",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6834",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "20",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6835",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "21",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6836",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "22",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6837",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "23",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6838",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "24",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6839",
+          "previousVote": "none"
+        }
+      ],
+      "4": [
+        {
+          "apartment": "25",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6840",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "26",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6841",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "27",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6842",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "28",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6843",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "29",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6844",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "30",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6845",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "31",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6846",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "32",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6847",
+          "previousVote": "none"
+        }
+      ],
+      "5": [
+        {
+          "apartment": "33",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6848",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "34",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6849",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "35",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6850",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "36",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6851",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "37",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6852",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "38",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6853",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "39",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6854",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "40",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6855",
+          "previousVote": "none"
+        }
+      ],
+      "6": [
+        {
+          "apartment": "41",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6856",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "42",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6857",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "43",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6858",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "44",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6859",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "45",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6860",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "46",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6861",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "47",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6862",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "48",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6863",
+          "previousVote": "none"
+        }
+      ],
+      "7": [
+        {
+          "apartment": "49",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6864",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "50",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6865",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "51",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6866",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "52",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6867",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "53",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6868",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "54",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6869",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "55",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6870",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "56",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6871",
+          "previousVote": "none"
+        }
+      ],
+      "8": [
+        {
+          "apartment": "57",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6872",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "58",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6873",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "59",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6874",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "60",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6875",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "61",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6876",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "62",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6877",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "63",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6878",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "64",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6879",
+          "previousVote": "none"
+        }
+      ],
+      "9": [
+        {
+          "apartment": "65",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6880",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "66",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6881",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "67",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6882",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "68",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6883",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "69",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6884",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "70",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6885",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "71",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6886",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "72",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6887",
+          "previousVote": "none"
+        }
+      ],
+      "10": [
+        {
+          "apartment": "73",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6888",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "74",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6889",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "75",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6890",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "76",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6891",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "77",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6892",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "78",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6893",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "79",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6894",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "80",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6895",
+          "previousVote": "none"
+        }
+      ]
+    },
+    "2": {
+      "1": [
+        {
+          "apartment": "81",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6896",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "82",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6897",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "83",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6898",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "84",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6899",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "85",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6900",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "86",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6901",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "87",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6902",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "88",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6903",
+          "previousVote": "none"
+        }
+      ],
+      "2": [
+        {
+          "apartment": "89",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6904",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "90",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6905",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "91",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6906",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "92",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6907",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "93",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6908",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "94",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6909",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "95",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6913",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "96",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6914",
+          "previousVote": "none"
+        }
+      ],
+      "3": [
+        {
+          "apartment": "97",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6915",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "98",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6916",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "99",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6914",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "100",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6910",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "101",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6911",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "102",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6912",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "103",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6918",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "104",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6919",
+          "previousVote": "none"
+        }
+      ],
+      "4": [
+        {
+          "apartment": "105",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6920",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "106",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6921",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "107",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6922",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "108",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6923",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "109",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6924",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "110",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6925",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "111",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6926",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "112",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6927",
+          "previousVote": "none"
+        }
+      ],
+      "5": [
+        {
+          "apartment": "113",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6928",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "114",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6929",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "115",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6930",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "116",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6931",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "117",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6932",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "118",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6933",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "119",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6934",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "120",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6935",
+          "previousVote": "none"
+        }
+      ],
+      "6": [
+        {
+          "apartment": "121",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6936",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "122",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6937",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "123",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6938",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "124",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6939",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "125",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6940",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "126",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6941",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "127",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6942",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "128",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6943",
+          "previousVote": "none"
+        }
+      ],
+      "7": [
+        {
+          "apartment": "129",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6944",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "130",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6945",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "131",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6946",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "132",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6947",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "133",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6948",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "134",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6949",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "135",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6950",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "136",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6951",
+          "previousVote": "none"
+        }
+      ],
+      "8": [
+        {
+          "apartment": "137",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6952",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "138",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6953",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "139",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6954",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "140",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6955",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "141",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6956",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "142",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6957",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "143",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6958",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "144",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6959",
+          "previousVote": "none"
+        }
+      ],
+      "9": [
+        {
+          "apartment": "145",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6960",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "146",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6961",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "147",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6962",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "148",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6963",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "149",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6964",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "150",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6965",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "151",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6966",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "152",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6967",
+          "previousVote": "none"
+        }
+      ],
+      "10": [
+        {
+          "apartment": "153",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6968",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "154",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6969",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "155",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6970",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "156",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6971",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "157",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6972",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "158",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6973",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "159",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6974",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "160",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6975",
+          "previousVote": "none"
+        }
+      ]
+    },
+    "3": {
+      "1": [
+        {
+          "apartment": "161",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6976",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "162",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6977",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "163",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6978",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "164",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6979",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "165",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6980",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "166",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6981",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "167",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6982",
+          "previousVote": "none"
+        }
+      ],
+      "2": [
+        {
+          "apartment": "168",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6983",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "169",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6984",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "170",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6985",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "171",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6986",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "172",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6987",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "173",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6988",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "174",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6989",
+          "previousVote": "none"
+        }
+      ],
+      "3": [
+        {
+          "apartment": "175",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6990",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "176",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6991",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "177",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6992",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "178",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6993",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "179",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6994",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "180",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6995",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "181",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6996",
+          "previousVote": "none"
+        }
+      ],
+      "4": [
+        {
+          "apartment": "182",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6997",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "183",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6998",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "184",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:6999",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "185",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7000",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "186",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7001",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "187",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7002",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "188",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7003",
+          "previousVote": "none"
+        }
+      ],
+      "5": [
+        {
+          "apartment": "189",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7004",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "190",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7005",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "191",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7006",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "192",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7007",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "193",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7008",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "194",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7009",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "195",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7010",
+          "previousVote": "none"
+        }
+      ],
+      "6": [
+        {
+          "apartment": "196",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7011",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "197",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7012",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "198",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7013",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "199",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7014",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "200",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7015",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "201",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7016",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "202",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7017",
+          "previousVote": "none"
+        }
+      ],
+      "7": [
+        {
+          "apartment": "203",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7018",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "204",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7019",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "205",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7020",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "206",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7021",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "207",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7022",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "208",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7023",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "209",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7024",
+          "previousVote": "none"
+        }
+      ],
+      "8": [
+        {
+          "apartment": "210",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7025",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "211",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7026",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "212",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7027",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "213",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7028",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "214",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7029",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "215",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7030",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "216",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7031",
+          "previousVote": "none"
+        }
+      ],
+      "9": [
+        {
+          "apartment": "217",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7032",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "218",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7033",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "219",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7034",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "220",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7035",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "221",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7036",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "222",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7037",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "223",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7038",
+          "previousVote": "none"
+        }
+      ],
+      "10": [
+        {
+          "apartment": "224",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7039",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "225",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7040",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "226",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7041",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "227",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7042",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "228",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7043",
+          "previousVote": "none"
+        },
+        {
+          "apartment": "229",
+          "status": "pending",
+          "updatedAt": "",
+          "note": "",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7044",
+          "previousVote": "none"
+        }
+      ]
+    },
+    "commercial": {
+      "commercial": [
+        {
+          "apartment": "1",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7043",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "2",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7044",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "3",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7045",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "4",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7046",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "5",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7047",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "6",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7048",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "7",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7049",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "8",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7050",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "9",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7051",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "10",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7052",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "11",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7053",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "12",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7054",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "13",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7055",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "14",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7056",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "15",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7057",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "16",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7058",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "17",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7059",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "18",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7060",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "19",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7061",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "20",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7062",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "21",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7063",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "22",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7064",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "23",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7065",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "24",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7066",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "25",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7067",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "26",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7068",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "27",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7069",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "28",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7070",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "29",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7071",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "30",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7072",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "31",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7073",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "32",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7074",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "33",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7075",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "34",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7076",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "35",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7077",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "36",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7078",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "37",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7079",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "38",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7080",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "39",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7081",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "40",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7082",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "41",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7083",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "42",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7084",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "43",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7085",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "44",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7086",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "45",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7087",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "46",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7088",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "47",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7089",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "48",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7090",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        },
+        {
+          "apartment": "49",
+          "ownerName": "",
+          "phone": "",
+          "area": "",
+          "cadastral": "91:02:001013:7091",
+          "previousVote": "none",
+          "status": "pending",
+          "updatedAt": "",
+          "note": ""
+        }
+      ]
+    }
+  }
+}
