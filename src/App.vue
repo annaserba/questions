@@ -6,9 +6,6 @@ import MeetingNotice from './components/MeetingNotice.vue'
 import VoterStartScreen from './components/VoterStartScreen.vue'
 import VoteRegistry from './components/VoteRegistry.vue'
 import maketImg from './images/maket.png'
-import photo1 from './images/photo1.jpg'
-import photo2 from './images/photo2.jpg'
-import photo3 from './images/photo3.jpg'
 import mchsImg from './images/IMG_20260618_235449.jpg'
 import dorozhnikiImg from './images/IMG_20260618_235454.jpg'
 import {
@@ -51,26 +48,8 @@ type Material = {
 
 const materials: Material[] = [
   { src: maketImg, label: 'Схема установки', type: 'image' },
-  { src: photo1, label: 'Коммерческое предложение, стр. 1', type: 'image' },
-  { src: photo2, label: 'Коммерческое предложение, стр. 2', type: 'image' },
-  { src: photo3, label: 'Коммерческое предложение, стр. 3', type: 'image' },
   { src: mchsImg, label: 'Согласование МЧС', type: 'image' },
   { src: dorozhnikiImg, label: 'Согласование дорожных служб', type: 'image' },
-  {
-    src: '/docs/management-contract-yuzhny-bereg.pdf',
-    label: 'Договор управления УК Уют',
-    type: 'file',
-    printPages: [
-      '/docs/management-contract-pages/page-1.png',
-      '/docs/management-contract-pages/page-2.png',
-      '/docs/management-contract-pages/page-3.png',
-      '/docs/management-contract-pages/page-4.png',
-      '/docs/management-contract-pages/page-5.png',
-      '/docs/management-contract-pages/page-6.png',
-      '/docs/management-contract-pages/page-7.png',
-      '/docs/management-contract-pages/page-8.png',
-    ],
-  },
 ]
 
 const lightboxIndex = ref<number | null>(null)
@@ -176,8 +155,9 @@ function getDocumentFromPath(): DocumentView {
 }
 
 const currentDocument = ref<DocumentView>(getDocumentFromPath())
+// Bump the version when question numbering or the substance of the agenda changes.
+const votesStorageKey = 'voting_question_votes_v5'
 const questionVotes = reactive<Record<number, VoteChoice | undefined>>(loadVotesFromStorage())
-const votesStorageKey = 'voting_question_votes'
 
 function loadVotesFromStorage(): Record<number, VoteChoice | undefined> {
   try {

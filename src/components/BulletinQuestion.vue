@@ -88,6 +88,7 @@ const expanded = ref(false)
 .question-description {
   margin-bottom: 8px;
   color: #344054;
+  white-space: pre-line;
 }
 
 .explanation-toggle {

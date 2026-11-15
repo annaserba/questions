@@ -295,6 +295,7 @@ defineProps<{
 
 .agenda p {
   margin: 6px 0 0;
+  white-space: pre-line;
 }
 
 .empty-agenda {

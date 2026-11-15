@@ -9,7 +9,7 @@ export const houseAddressOptions = [
   'пр-т. Октябрьской революции, 48/1',
 ] as const
 
-export const houseChairman: Record<string, string> = {
+export const houseAdministrator: Record<string, string> = {
   'пр-т. Октябрьской революции, 48': 'Филиппова Галина Вячеславовна',
   'пр-т. Октябрьской революции, 48/1': 'Серба Анна Владимировна',
 }
@@ -21,11 +21,6 @@ export const houseInitiator: Record<string, string> = {
 
 export function getHouseInitiator(houseAddress: string): string {
   return houseInitiator[houseAddress] || '______________________________'
-}
-
-export const houseCouncil: Record<string, string> = {
-  'пр-т. Октябрьской революции, 48': 'Филиппова Г. В. (кв. 59), Мельниченко Л. М. (кв. 149), Прилуцкий С. В. (кв. 178), Борисенко В. В. (кв. 30)',
-  'пр-т. Октябрьской революции, 48/1': 'Серба А. В. (кв. 198), Хохлова Н. (кв. 194), Иванова О. В. (кв. 31)',
 }
 
 const houseAdministratorAddresses: Record<string, string> = {
